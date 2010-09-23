@@ -1676,12 +1676,14 @@
     </CModel>
     <CModel id="SheepDeath" parent="UnitDeath">
         <Model value="Assets\Units\Critters\SheepDeath\SheepDeath.m3"/>
+        <LowQualityModel value="ZergSmallUnitDeathLow"/>
     </CModel>
     <CModel id="Cow" parent="Unit">
         <Model value="Assets\Units\Critters\Cow\Cow.m3"/>
     </CModel>
     <CModel id="CowDeath" parent="UnitDeath">
         <Model value="Assets\Units\Critters\CowDeath\CowDeath.m3"/>
+        <LowQualityModel value="ZergSmallUnitDeathLow"/>
     </CModel>
     <CModel id="SCVDeath" parent="UnitDeath" Race="Terran">
         <LowQualityModel value="TerranSmallUnitDeathLow"/>
@@ -5723,10 +5725,38 @@
     <CModel id="NydusRumble" parent="OneShotSpellFX">
         <Model value="Assets\Effects\Zerg\NydusRumble\NydusRumble.m3"/>
         <EditorCategories value="Race:Zerg"/>
-        <Radius value="2.000000"/>
+        <Radius value="1.200000"/>
         <SelectionLayer value="2"/>
         <SelectionRadius value="2.000000"/>
         <ShadowRadius value="2.000000"/>
+        <Events>
+            <Anim value="Stand,00"/>
+            <Name value="Nydus_ConstructionSmall"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="Nydus_ConstructionSmall"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,00"/>
+            <Name value="Nydus_ConstructionPeek"/>
+            <Type value="Sound"/>
+            <Time value="1.600000"/>
+            <Payload value="Nydus_ConstructionPeek"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,01"/>
+            <Name value="Nydus_ConstructionSmall"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="Nydus_ConstructionSmall"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,01"/>
+            <Name value="Nydus_ConstructionSmall"/>
+            <Type value="Sound"/>
+            <Time value="2.200000"/>
+            <Payload value="Nydus_ConstructionSmall"/>
+        </Events>
     </CModel>
     <CModel id="NydusCanalDeath" parent="BuildingDeath" Race="Zerg">
         <Occlusion value="Show"/>
@@ -6589,7 +6619,6 @@
     </CModel>
     <CModel id="InfestedTerransEgg" parent="Unit" Race="Zerg">
         <Model value="Assets\Effects\Zerg\InfestedTerranSpawnMissile\InfestedTerranSpawnMissile.m3"/>
-        <EditorCategories value="Race:Zerg"/>
     </CModel>
     <CModel id="InfestedTerransWeapon" parent="MissileFX">
         <Model value="Assets\Effects\Zerg\InfestedTerranSpawnMissile\InfestedTerranSpawnMissile.m3"/>
@@ -7548,7 +7577,6 @@
         <SelectionLayer value="2"/>
         <SelectionRadius value="0.650000"/>
         <SquibTypeDefault value="Flesh"/>
-        <Radius value="0.50000"/>
     </CModel>
     <CModel id="CreepTumorDeath" parent="BuildingDeath" Race="Zerg">
         <LowQualityModel value="ZergSmallUnitDeathLow"/>
@@ -8458,7 +8486,7 @@
     </CModel>
     <CModel id="BelShirTree" parent="Doodad">
         <VariationCount value="8"/>
-        <RadiusLoose value="1.250000"/>
+        <RadiusLoose value="2.000000"/>
         <!-- Random sample data to show how this stuff works.
         <Variations>
             <Number value="3"/>
@@ -9378,7 +9406,7 @@
         <Model value="Assets\Doodads\MarSaraBridge\MarSaraBridge.m3"/>
     </CModel>
     <CModel id="MarSaraBridgeDestroyed" parent="Doodad">
-        <RadiusLoose value="1.5"/>
+        <RadiusLoose value="1.500000"/>
     </CModel>
     <CModel id="MarSaraBridgeLong" parent="Doodad">
         <PhysicsType value="AlwaysKeyframed"/>
@@ -9397,12 +9425,12 @@
     <CModel id="MarSaraCheckStation" parent="Doodad"/>
     <CModel id="MarSaraCliffDoodadLarge" parent="Doodad">
         <VariationCount value="3"/>
-        <RadiusLoose value="1"/>
+        <RadiusLoose value="1.000000"/>
     </CModel>
     <CModel id="MarSaraCliffDoodadLargeLow" parent="Doodad">
         <VariationCount value="2"/>
         <Flags index="AOData" value="1"/>
-        <RadiusLoose value="1"/>
+        <RadiusLoose value="1.000000"/>
     </CModel>
     <CModel id="MarSaraConveyorBelt" parent="Doodad">
         <VariationCount value="2"/>
@@ -9638,7 +9666,7 @@
     </CModel>
     <CModel id="PortZionCompactor" parent="Doodad"/>
     <CModel id="PortZionCrane" parent="Doodad">
-        <RadiusLoose value="2"/>
+        <RadiusLoose value="2.000000"/>
     </CModel>
     <CModel id="PortZionCrusherDoodad" parent="Doodad">
         <RadiusLoose value="1.250000"/>
@@ -9816,10 +9844,10 @@
             <Adaptions TriggerOnSubstring="_Diffuse" Slot="main"/>
             <Adaptions TriggerOnSubstring="_Specular" Slot="main"/>
         </TextureDeclares>
-        <RadiusLoose value="20.00000"/>
+        <RadiusLoose value="20.000000"/>
         <ShadowRadius value="7.750000"/>
         <SelectionRadius value="7.750000"/>
-        <Radius value="20.0000"/>
+        <Radius value="20.000000"/>
         <Occlusion value="Hide"/>
     </CModel>
     <CModel id="RockWaterfall" parent="Doodad">
@@ -9985,6 +10013,7 @@
     </CModel>
     <CModel id="TerranCliffGapFiller" parent="Doodad">
         <VariationCount value="3"/>
+        <RadiusLoose value="0.750000"/>
     </CModel>
     <CModel id="ShakurasCliffGapFiller" parent="Doodad"/>
     <CModel id="ShakurasHexColumns" parent="Doodad">
@@ -10728,7 +10757,7 @@
     <CModel id="Waterfall" parent="Doodad"/>
     <CModel id="WaterTank" parent="Doodad">
         <VariationCount value="3"/>
-        <RadiusLoose value="1"/>
+        <RadiusLoose value="1.000000"/>
     </CModel>
     <CModel id="WaterTankTall" parent="Doodad">
         <VariationCount value="2"/>
@@ -12589,7 +12618,6 @@
     <CModel id="ContaminateWeapon" parent="MissileFX">
         <Model value="Assets\Effects\Zerg\SlimeMissile\SlimeMissile.m3"/>
         <EditorCategories value="Race:Zerg"/>
-        <Radius value="0.500000"/>
     </CModel>
     <CModel id="ContaminateModel" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Zerg\Infestation\Infestation.m3"/>

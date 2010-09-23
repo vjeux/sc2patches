@@ -391,6 +391,9 @@ native void AISetScoutTimes (int player, int starts, int obstructed, int resourc
 native point AIGetNextScoutLoc (int player);
 native void AIClearCampaignScout (int player);
 
+native void AIEarlyDefenseEnable (int player, bool enableScouting, bool enableDefending);
+native void AIEarlyDefenseProps (int player, fixed scoutRange, fixed peonRange, fixed threatRange);
+
 //--------------------------------------------------------------------------------------------------
 //  Construction
 //--------------------------------------------------------------------------------------------------

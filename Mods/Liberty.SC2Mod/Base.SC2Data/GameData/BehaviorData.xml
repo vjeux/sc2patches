@@ -6,6 +6,7 @@
         <ExpireEffect value="##id##"/>
         <InfoFlags index="Hidden" value="1"/>
         <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
         <Modification>
             <ModifyFlags index="DisableAbils" value="1"/>
             <ModifyFlags index="SuppressMoving" value="1"/>
@@ -222,6 +223,10 @@
             <AbilLinkDisableArray value="BurrowHydraliskDown"/>
             <AbilLinkDisableArray value="BurrowInfestorTerranUp"/>
             <AbilLinkDisableArray value="BurrowInfestorTerranDown"/>
+            <AbilLinkDisableArray value="SiegeMode"/>
+            <AbilLinkDisableArray value="Unsiege"/>
+            <AbilLinkDisableArray value="FighterMode"/>
+            <AbilLinkDisableArray value="AssaultMode"/>
         </Modification>
         <InfoIcon value="Assets\Textures\btn-ability-zerg-fungalgrowth.dds"/>
         <Duration value="8"/>
@@ -962,6 +967,8 @@
     <CBehaviorBuff id="VortexBehavior">
         <InfoIcon value="Assets\Textures\btn-ability-protoss-blackhole.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Replace value="FarthestDistance"/>
+        <ReplaceLocation Effect="VortexCreatePersistentInitial" Value="TargetPoint"/>
         <Modification MoveSpeedMinimum="2">
             <ModifyFlags index="DisableAbils" value="1"/>
             <ModifyFlags index="Detected" value="1"/>
@@ -987,6 +994,8 @@
         </Modification>
         <Alignment value="Negative"/>
         <Duration value="0.125"/>
+        <InitialEffect value="VortexForce"/>
+        <RefreshEffect value="VortexForce"/>
         <ExpireEffect value="PhaseShiftSet"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="VortexBehaviorEnemy" parent="VortexBehavior"/>
@@ -994,6 +1003,8 @@
         <InfoFlags index="Hidden" value="1"/>
         <InfoIcon value="Assets\Textures\btn-ability-protoss-blackhole.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Replace value="FarthestDistance"/>
+        <ReplaceLocation Effect="VortexCreatePersistentInitial" Value="TargetPoint"/>
         <Modification>
             <ModifyFlags index="Warpable" value="1"/>
         </Modification>

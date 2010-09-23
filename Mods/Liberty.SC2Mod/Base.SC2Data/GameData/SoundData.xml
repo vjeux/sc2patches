@@ -6421,7 +6421,7 @@
         <EditorCategories value="Race:Zerg"/>
     </CSound>
     <CSound id="Alert_TerranBuildError" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranBuildError.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranBuildError.ogg" FacialAnim="Alert_TerranBuildError"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="Alert_ProtossBuildError" parent="Alert">
@@ -6433,11 +6433,11 @@
         <EditorCategories value="Race:Zerg"/>
     </CSound>
     <CSound id="Alert_TerranEconomyUnderAttack" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranEconomyUnderAttack.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranEconomyUnderAttack.ogg" FacialAnim="Alert_TerranEconomyUnderAttack"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="Alert_TerranCommandCenterUpgradeComplete" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranCommandCenterUpgradeComplete.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranCommandCenterUpgradeComplete.ogg" FacialAnim="Alert_TerranCommandCenterUpgradeComplete"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="Alert_GamePaused_Prot" parent="Alert">
@@ -6456,15 +6456,15 @@
     </CSound>
     <CSound id="Alert_GameResumed_Terr" parent="Alert">
         <Flags index="Unpausable" value="1"/>
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranGameResumed.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranGameResumed.ogg" FacialAnim="Alert_TerranGameResumed"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="Alert_TerranMineralsDepleted" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranMineralsDepleted.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranMineralsDepleted.ogg" FacialAnim="Alert_TerranMineralsDepleted"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="Alert_TerranConstructionInterrupted" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranConstructionInterrupted.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranConstructionInterrupted.ogg" FacialAnim="Alert_TerranConstructionInterrupted"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="Alert_ProtossMineralsDepleted" parent="Alert">
@@ -6485,15 +6485,15 @@
         <EditorCategories value="Race:Zerg"/>
     </CSound>
     <CSound id="Alert_TerranThorRepairComplete" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranThorRepairComplete.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranThorRepairComplete.ogg" FacialAnim="Alert_TerranThorRepairComplete"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="Alert_TerranSalvageComplete" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranSalvageComplete.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranSalvageComplete.ogg" FacialAnim="Alert_TerranSalvageComplete"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="Alert_TerranAllyBaseUnderAttack" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranAllyBaseUnderAttack.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranAllyBaseUnderAttack.ogg" FacialAnim="Alert_TerranAllyBaseUnderAttack"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="Alert_ProtossVespeneGeyserExhausted" parent="Alert">
@@ -6974,7 +6974,7 @@
     </CSound>
     <CSound id="Alert_GamePaused_Terr" parent="Alert">
         <Flags index="Unpausable" value="1"/>
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranGamePaused.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranGamePaused.ogg" FacialAnim="Alert_TerranGamePaused"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="Sentry_WeaponStart" parent="Combat">
@@ -7330,11 +7330,11 @@
         <EditorCategories value="Race:Zerg"/>
     </CSound>
     <CSound id="Alert_TerranAuxiliaryMiningUnits" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranAuxiliaryMiningUnits.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranAuxiliaryMiningUnits.ogg" FacialAnim="Alert_TerranAuxiliaryMiningUnits"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="Alert_TerranPlaceOnVespeneGeyser" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranPlaceOnVespeneGeyser.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranPlaceOnVespeneGeyser.ogg" FacialAnim="Alert_TerranPlaceOnVespeneGeyser"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="e_cmdCantBuildTooFarFromCreepSource" parent="Alert">
@@ -7358,7 +7358,7 @@
         <EditorCategories value="Race:Protoss"/>
     </CSound>
     <CSound id="Alert_TerranVespeneGeyserExhausted" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranVespeneGeyserExhausted.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranVespeneGeyserExhausted.ogg" FacialAnim="Alert_TerranVespeneGeyserExhausted"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="e_cmdNotEnoughVespene_Prot" parent="Alert">
@@ -7374,47 +7374,47 @@
         <EditorCategories value="Race:Protoss"/>
     </CSound>
     <CSound id="e_cmdNotEnoughMinerals" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranNeedMoreMinerals.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranNeedMoreMinerals.ogg" FacialAnim="Alert_TerranNeedMoreMinerals"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="e_cmdNotEnoughVespene" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranNeedMoreGas.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranNeedMoreGas.ogg" FacialAnim="Alert_TerranNeedMoreGas"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="e_cmdNotEnoughEnergy" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranNotEnoughEnergy.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranNotEnoughEnergy.ogg" FacialAnim="Alert_TerranNotEnoughEnergy"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="e_cmdNotEnoughFood" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranNeedMoreFood.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranNeedMoreFood.ogg" FacialAnim="Alert_TerranNeedMoreFood"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="e_cmdCantFinishLandingLocationBlocked" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranLandingSequenceInterrupted.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranLandingSequenceInterrupted.ogg" FacialAnim="Alert_TerranLandingSequenceInterrupted"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="e_cmdCantLandLocationInvalid" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranUnacceptableLandingZone.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranUnacceptableLandingZone.ogg" FacialAnim="Alert_TerranUnacceptableLandingZone"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="e_cmdCantLandTooCloseToResources" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranUnacceptableLandingZone.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranUnacceptableLandingZone.ogg" FacialAnim="Alert_TerranUnacceptableLandingZone"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="e_cmdCantSeeLandLocation" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranUnacceptableLandingZone.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranUnacceptableLandingZone.ogg" FacialAnim="Alert_TerranUnacceptableLandingZone"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="e_cmdCantLandTooFarFromWater" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranUnacceptableLandingZone.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranUnacceptableLandingZone.ogg" FacialAnim="Alert_TerranUnacceptableLandingZone"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="e_cmdCantLandTooFarFromBuildPowerSource" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranUnacceptableLandingZone.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranUnacceptableLandingZone.ogg" FacialAnim="Alert_TerranUnacceptableLandingZone"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="e_cmdCantLandTooFarFromTrainPowerSource" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranUnacceptableLandingZone.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranUnacceptableLandingZone.ogg" FacialAnim="Alert_TerranUnacceptableLandingZone"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="e_cmdCantBuildLocationInvalid" parent="Alert">
@@ -7438,7 +7438,7 @@
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="e_cmdCantBuildOnThat" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranPlaceOnVespeneGeyser.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranPlaceOnVespeneGeyser.ogg" FacialAnim="Alert_TerranPlaceOnVespeneGeyser"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="e_cmdCantBuildTooCloseToResources" parent="Alert">
@@ -10146,15 +10146,15 @@
         <Volume value="-3.000000,-3.000000"/>
     </CSound>
     <CSound id="Alert_TerranAddOnComplete" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranAddOnComplete.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranAddOnComplete.ogg" FacialAnim="Alert_TerranAddOnComplete"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="Alert_TerranNukeReady" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranNukeReady.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranNukeReady.ogg" FacialAnim="Alert_TerranNukeReady"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="Alert_TerranNeedMoreFood" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranNeedMoreFood.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranNeedMoreFood.ogg" FacialAnim="Alert_TerranNeedMoreFood"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="Alert_ProtossNeedMoreFood" parent="Alert">
@@ -10166,7 +10166,7 @@
         <EditorCategories value="Race:Zerg"/>
     </CSound>
     <CSound id="Alert_TerranNeedMoreGas" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranNeedMoreGas.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranNeedMoreGas.ogg" FacialAnim="Alert_TerranNeedMoreGas"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="Alert_ProtossNeedMoreGas" parent="Alert">
@@ -10178,7 +10178,7 @@
         <EditorCategories value="Race:Zerg"/>
     </CSound>
     <CSound id="Alert_TerranNeedMoreMinerals" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranNeedMoreMinerals.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranNeedMoreMinerals.ogg" FacialAnim="Alert_TerranNeedMoreMinerals"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="Alert_ProtossNeedMoreMinerals" parent="Alert">
@@ -10190,15 +10190,15 @@
         <EditorCategories value="Race:Zerg"/>
     </CSound>
     <CSound id="Alert_TerranLandingSequenceInterrupted" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranLandingSequenceInterrupted.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranLandingSequenceInterrupted.ogg" FacialAnim="Alert_TerranLandingSequenceInterrupted"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="Alert_TerranUnacceptableLandingZone" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranUnacceptableLandingZone.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranUnacceptableLandingZone.ogg" FacialAnim="Alert_TerranUnacceptableLandingZone"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="Alert_TerranNotEnoughEnergy" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranNotEnoughEnergy.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranNotEnoughEnergy.ogg" FacialAnim="Alert_TerranNotEnoughEnergy"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="Alert_ProtossNotEnoughEnergy" parent="Alert">
@@ -10781,7 +10781,7 @@
         <Volume value="-6.000000,-6.000000"/>
     </CSound>
     <CSound id="IncomingTransmission" parent="Mission">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\IncomingTransmission.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\IncomingTransmission.ogg" FacialAnim="IncomingTransmission"/>
         <Mode value="2D"/>
         <Volume value="-6.000000,-6.000000"/>
     </CSound>
@@ -10790,32 +10790,32 @@
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="Alert_TerranAllyUnderAttack" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranAllyUnderAttack.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranAllyUnderAttack.ogg" FacialAnim="Alert_TerranAllyUnderAttack"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="Alert_TerranBaseUnderAttack" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranBaseUnderAttack.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranBaseUnderAttack.ogg" FacialAnim="Alert_TerranBaseUnderAttack"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="Alert_TerranForcesUnderAttack" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranForcesUnderAttack.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranForcesUnderAttack.ogg" FacialAnim="Alert_TerranForcesUnderAttack"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="Alert_TerranCalldownLaunch" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranCalldownLaunch.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranCalldownLaunch.ogg" FacialAnim="Alert_TerranCalldownLaunch"/>
         <EditorCategories value="Race:Terran"/>
         <Flags index="Ignorable" value="0"/>
     </CSound>
     <CSound id="Alert_TerranWarpTrainComplete" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranUpgradeComplete.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranUpgradeComplete.ogg" FacialAnim="Alert_TerranUpgradeComplete"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="Alert_TerranResearchComplete" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranResearchComplete.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranResearchComplete.ogg" FacialAnim="Alert_TerranResearchComplete"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="Alert_TerranUpgradeComplete" parent="Alert">
-        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranUpgradeComplete.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Adjutant\Alert_TerranUpgradeComplete.ogg" FacialAnim="Alert_TerranUpgradeComplete"/>
         <EditorCategories value="Race:Terran"/>
     </CSound>
     <CSound id="Banshee_Attack" parent="TerranAck">
@@ -15438,5 +15438,52 @@
     <CSound id="BriefingMovieTemplate" parent="Movie">
         <Flags index="Stream" value="0"/>
         <Volume value="-96.000000,-96.000000"/>
+    </CSound>
+    <CSound id="Nydus_ConstructionStart" parent="Spell">
+        <AssetArray File="Assets\Sounds\Uni\Units\Rocks\Rocks_ExplosionLarge0.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Units\Rocks\Rocks_ExplosionLarge1.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Units\Rocks\Rocks_ExplosionLarge2.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Units\Rocks\Rocks_ExplosionLarge3.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Units\Rocks\Rocks_ExplosionLarge4.wav"/>
+        <Flags index="Purgable" value="0"/>
+        <Pitch value="-2.000000,2.000000"/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="Nydus_Unburrow" parent="Spell">
+        <Pitch value="12.000000,12.000000"/>
+        <AssetArray File="Assets\Sounds\Zerg\SharedEffects\Burrowing\Zerg_UnburrowLarge0.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\SharedEffects\Burrowing\Zerg_UnburrowLarge1.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\SharedEffects\Burrowing\Zerg_UnburrowLarge2.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\SharedEffects\Burrowing\Zerg_UnburrowLarge3.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\SharedEffects\Burrowing\Zerg_UnburrowLarge4.wav"/>
+        <Flags index="Purgable" value="0"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CSound>
+    <CSound id="Nydus_ConstructionFinish" parent="Spell">
+        <AssetArray File="Assets\Sounds\Uni\Units\Rocks\Rocks_ExplosionLarge0.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Units\Rocks\Rocks_ExplosionLarge1.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Units\Rocks\Rocks_ExplosionLarge2.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Units\Rocks\Rocks_ExplosionLarge3.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Units\Rocks\Rocks_ExplosionLarge4.wav"/>
+        <Flags index="Purgable" value="0"/>
+        <Pitch value="-2.000000,2.000000"/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="Nydus_ConstructionPeek" parent="Spell">
+        <AssetArray File="Assets\Sounds\Uni\Units\Rocks\Rocks_ExplosionLarge0.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Units\Rocks\Rocks_ExplosionLarge1.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Units\Rocks\Rocks_ExplosionLarge2.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Units\Rocks\Rocks_ExplosionLarge3.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Units\Rocks\Rocks_ExplosionLarge4.wav"/>
+        <Pitch value="-2.000000,2.000000"/>
+        <Volume value="-16.000000,-16.000000"/>
+    </CSound>
+    <CSound id="Nydus_ConstructionSmall" parent="Spell">
+        <Pitch value="-1.640000,-3.160000"/>
+        <AssetArray File="Assets\Sounds\Zerg\SharedEffects\Burrowing\Zerg_UnburrowSmall0.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\SharedEffects\Burrowing\Zerg_UnburrowSmall1.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\SharedEffects\Burrowing\Zerg_UnburrowSmall2.wav"/>
+        <EditorCategories value="Race:Zerg"/>
+        <Volume value="-24.000000,-24.000000"/>
     </CSound>
 </Catalog>

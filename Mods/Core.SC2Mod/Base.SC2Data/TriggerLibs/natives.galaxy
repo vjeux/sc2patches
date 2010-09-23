@@ -1458,6 +1458,10 @@ native text     GameMapName ();
 native text     GameMapDescription ();
 native bool     GameMapIsBlizzard ();
 
+native void     GameSetMissionTimePaused (bool inPaused);
+native bool     GameIsMissionTimePaused ();
+native fixed    GameGetMissionTime ();
+
 native fixed    GameGetSpeed ();
 native void     GameSetSpeedValue (int speed);
 native int      GameGetSpeedValue ();
@@ -1466,8 +1470,9 @@ native int      GameGetSpeedValueMinimum ();
 native void     GameSetSpeedLocked (bool isLocked);
 native bool     GameIsSpeedLocked ();
 
-native string   GameAttributeGameValue (string name);
-native string   GameAttributePlayerValue (string name, int player);
+native string       GameAttributeGameValue (string name);
+native string       GameAttributePlayerValue (string name, int player);
+native playergroup  GameAttributePlayersForTeam (int team);
 
 native void     GameSetSeedLocked (bool locked);
 native bool     GameIsSeedLocked ();
@@ -1506,6 +1511,7 @@ native void     GameOver (int player, int type, bool showDialog, bool showScore)
 native void     RestartGame (playergroup inPlayerGroup);
 
 native void     GameCheatAllow (int cheat, bool allow);
+native bool     GameCheatIsAllowed (int cheat);
 native bool     GameCheatsEnabled (int category);
 
 // Game Events
@@ -1573,8 +1579,24 @@ native bool     MarkerGetMismatchFlag (marker m, int flag);
 // Math
 //--------------------------------------------------------------------------------------------------
 // General math
+native fixed Floor (fixed x);
+native fixed Ceiling (fixed x);
+native fixed Trunc (fixed x);
+native fixed Round (fixed x);
 native fixed SquareRoot (fixed x);
+native fixed Pow2 (fixed x);
+native fixed Log2 (fixed x);
 native fixed Pow (fixed x, fixed power);
+
+native int FloorI (fixed x);
+native int CeilingI (fixed x);
+native int TruncI (fixed x);
+native int RoundI (fixed x);
+native int SquareRootI (fixed x);
+native int Pow2I (fixed x);
+native int Log2I (fixed x);
+native int PowI (fixed x, fixed power);
+
 native fixed ModF (fixed x, fixed m);
 native fixed MinF (fixed x1, fixed x2);
 native fixed MaxF (fixed x1, fixed x2);
@@ -2069,9 +2091,28 @@ native void TriggerAddEventPlayerAllianceChange (trigger inTrigger, int player);
 native void TriggerAddEventPlayerLeft (trigger inTrigger, int player, int inResult);
 native void TriggerAddEventPlayerPropChange (trigger inTrigger, int player, int inProp);
 native void TriggerAddEventPlayerAIWave (trigger inTrigger, int player);
+native void TriggerAddEventPlayerEffectUsed (trigger t, int player, string inEffect);
 
-native int  EventPlayer ();
-native int  EventPlayerProperty ();
+// Effect amounts
+const int c_effectAmountAbsorbed    = 0;
+const int c_effectAmountDamaged     = 1;
+const int c_effectAmountDodged      = 2;
+const int c_effectAmountFound       = 3;
+const int c_effectAmountHealed      = 4;
+const int c_effectAmountKilled      = 5;
+const int c_effectAmountSplashed    = 6;
+
+native int      EventPlayer ();
+native int      EventPlayerProperty ();
+native int      EventPlayerPropertyChangeInt ();
+native fixed    EventPlayerPropertyChangeFixed ();
+native string   EventPlayerEffectUsed ();
+native point    EventPlayerEffectUsedPoint (int inLocation);
+native unit     EventPlayerEffectUsedUnit (int inLocation);
+native int      EventPlayerEffectUsedUnitOwner (int inLocation);
+native string   EventPlayerEffectUsedUnitType (int inLocation);
+native int      EventPlayerEffectUsedAmountInt (int inAmount, bool total);
+native fixed    EventPlayerEffectUsedAmountFixed (int inAmount, bool total);
 
 // Difficulty info
 native text DifficultyName (int inDifficulty);
@@ -3056,6 +3097,12 @@ const int c_unitPropMovementSpeed   = 20;
 const int c_unitPropTurnRate        = 21; // Read-only
 const int c_unitPropResources       = 22;
 const int c_unitPropRadius          = 23; // Read-only
+const int c_unitPropXP              = 24;
+const int c_unitPropLevel           = 25;
+const int c_unitPropBountyMinerals  = 26;
+const int c_unitPropBountyVespene   = 27;
+const int c_unitPropBountyTerrazine = 28;
+const int c_unitPropBountyCustom    = 29;
 
 const bool c_unitPropCurrent = true;
 const bool c_unitPropNormal  = false;
@@ -3081,6 +3128,8 @@ native void     UnitCreateEffectPoint (unit inUnit, string inEffect, point inTar
 native void     UnitCreateEffectUnit (unit inUnit, string inEffect, unit inTarget);
 native int      UnitValidateEffectPoint (unit inUnit, string inEffect, point inTarget);
 native int      UnitValidateEffectUnit (unit inUnit, string inEffect, unit inTarget);
+
+native void     UnitDamage (unit inAttacker, string inEffect, unit inVictim, fixed inBonus);
 
 // Unit AI options
 const int c_unitAIOptionUsable      = 0;
@@ -3401,6 +3450,10 @@ native unit     EventUnitInventoryItemTargetUnit ();
 // Property change events
 native void     TriggerAddEventUnitProperty (trigger t, unitref u, int prop);
 
+native int      EventUnitProperty ();
+native int      EventUnitPropertyChangeInt ();
+native fixed    EventUnitPropertyChangeFixed ();
+
 // State events
 //   region/range events    - true = entered,       false = exited
 //   cargo events           - true = loaded,        false = unloaded
@@ -3421,6 +3474,11 @@ native unit     EventUnitCargo ();
 native void     TriggerAddEventUnitSelected (trigger t, unitref u, int player, bool state);
 native void     TriggerAddEventUnitClick (trigger t, unitref u, int player);
 native void     TriggerAddEventUnitHighlight (trigger t, unitref u, int player, bool state);
+
+// Change Owner
+native void     TriggerAddEventUnitChangeOwner (trigger t, unitref u);
+native int      EventUnitOwnerOld ();
+native int      EventUnitOwnerNew ();
 
 // Order events
 native void     TriggerAddEventUnitOrder (trigger t, unitref u, abilcmd a);
@@ -3714,31 +3772,38 @@ const int c_customDialogResultNo  = 2;
 // Frames that can be synchronously shown / hidden
 const int c_syncFrameTypeFirst                = 0;
 
-const int c_syncFrameTypeMenuBar              = 0;
-const int c_syncFrameTypeCashPanel            = 1;
-const int c_syncFrameTypeTipAlertPanel        = 2;
-const int c_syncFrameTypeObjectivePanel       = 3;    
-const int c_syncFrameTypeCharacterSheetButton = 4;
-const int c_syncFrameTypeSupply               = 5;
-const int c_syncFrameTypeResourcePanel        = 6;
-const int c_syncFrameTypeRoomPanel            = 7;
-const int c_syncFrameTypePlanetPanel          = 8;
-const int c_syncFrameTypeMercenaryPanel       = 9;
-const int c_syncFrameTypeResearchPanel        = 10;
-const int c_syncFrameTypePurchasePanel        = 11;
-const int c_syncFrameTypeVictoryPanel         = 12;
-const int c_syncFrameTypeBattleReportPanel    = 13;
-const int c_syncFrameTypeAlertPanel           = 14;
-const int c_syncFrameTypeHeroPanel            = 15;
-const int c_syncFrameTypeErrorDisplayPanel    = 16;
-const int c_syncFrameTypeCreditsPanel		  = 17;
-const int c_syncFrameTypeTechTreePanel        = 18;
-const int c_syncFrameTypeTechGlossaryPanel    = 19;
-const int c_syncFrameTypeBattleUI             = 20;
-const int c_syncFrameTypeMinimapPanel         = 21;
-const int c_syncFrameTypeCommandPanel         = 22;
+const int c_syncFrameTypeMenuBar                = 0;
+const int c_syncFrameTypeCashPanel              = 1;
+const int c_syncFrameTypeTipAlertPanel          = 2;
+const int c_syncFrameTypeObjectivePanel         = 3;    
+const int c_syncFrameTypeCharacterSheetButton   = 4;
+const int c_syncFrameTypeSupply                 = 5;
+const int c_syncFrameTypeResourcePanel          = 6;
+const int c_syncFrameTypeRoomPanel              = 7;
+const int c_syncFrameTypePlanetPanel            = 8;
+const int c_syncFrameTypeMercenaryPanel         = 9;
+const int c_syncFrameTypeResearchPanel          = 10;
+const int c_syncFrameTypePurchasePanel          = 11;
+const int c_syncFrameTypeVictoryPanel           = 12;
+const int c_syncFrameTypeBattleReportPanel      = 13;
+const int c_syncFrameTypeAlertPanel             = 14;
+const int c_syncFrameTypeHeroPanel              = 15;
+const int c_syncFrameTypeErrorDisplayPanel      = 16;
+const int c_syncFrameTypeCreditsPanel		    = 17;
+const int c_syncFrameTypeTechTreePanel          = 18;
+const int c_syncFrameTypeTechGlossaryPanel      = 19;
+const int c_syncFrameTypeBattleUI               = 20;
+const int c_syncFrameTypeMinimapPanel           = 21;
+const int c_syncFrameTypeCommandPanel           = 22;
+const int c_syncFrameTypeInventoryPanel         = 23;
+const int c_syncFrameTypeAllianceButton         = 24;
+const int c_syncFrameTypeTeamResourceButton     = 25;
+const int c_syncFrameTypeAchievementMenuButton  = 26;
+const int c_syncFrameTypeHelpMenuButton         = 27;
+const int c_syncFrameTypeMissionTimePanel       = 28;
 
-const int c_syncFrameTypeLast                 = 22;
+// This should always be equivalent to the highest value in the syncFrameType list above
+const int c_syncFrameTypeLast                   = 28;
 
 // Game Menu Dialog Items
 const int c_gameMenuDialogItemAny                     = -1;

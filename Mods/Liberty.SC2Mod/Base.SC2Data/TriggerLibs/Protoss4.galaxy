@@ -2200,7 +2200,8 @@ static void ProtossLateGameArmy4 (int player, int state) {
 //  ProtossLate4
 //--------------------------------------------------------------------------------------------------
 void ProtossLate4 (int player) {
-    int count;
+    int armyCompareEstimate = AIArmyComparisonEstimate(player);
+    int minPylonCount;
 
     // only allow scouting if I have an observer to scout with, ie stop using workers
     AIScoutingEnable(player, 1, c_PU_Observer);
@@ -2230,14 +2231,14 @@ void ProtossLate4 (int player) {
 // Basic peons
     AISetStockPeons( player, 24, c_PU_Probe, c_stockMinPeons, c_stockAlways);
 
-// Make sure we hae enough pylon space to build things at the main town
-    count = 2;
+// Make sure we have enough pylon space to build things at the main town
+    minPylonCount = 2;
     if (AIIsTownFull(player, c_townMain)) { 
-        count = 6;
+        minPylonCount = 6;
     }
-    if (AIGetBuildingCountInTown(player, c_townMain, c_PB_Pylon, c_techCountQueuedOrBetter) < count) {
-        count = AITechCount(player, c_PB_Pylon, c_techCountQueuedOrBetter) + 1;
-        AISetStockUnitNext( player, count, c_PB_Pylon, c_stockAlways );
+    if (AIGetBuildingCountInTown(player, c_townMain, c_PB_Pylon, c_techCountQueuedOrBetter) < minPylonCount) {
+        minPylonCount = AITechCount(player, c_PB_Pylon, c_techCountQueuedOrBetter) + 1;
+        AISetStockUnitNext( player, minPylonCount, c_PB_Pylon, c_stockAlways );
     }
 
 // Urgent early detection
@@ -2249,10 +2250,10 @@ void ProtossLate4 (int player) {
     ProtossLateGameArmy4(player, e_armyTypeBase);
    
 // Basic towns, farms, & peons
-    AIDefaultEconomy(player, c_PB_Nexus, c_PB_Assimilator, c_PB_Pylon, c_PU_Probe, 50, c_stockAlways);
+    AIDefaultEconomy(player, c_PB_Nexus, c_PB_Assimilator, c_PB_Pylon, c_PU_Probe, 70, c_stockAlways);
 
 // Low expand (we're running low on minerals/gas)
-    AIDefaultExpansion(player, c_PB_Nexus, 5000, 2500, c_expandVitalHard);
+    AIAdjustedDefaultExpansion(player, c_PB_Nexus, 6000, 2000, c_expandVitalHard, armyCompareEstimate);
  
 // Minimum normal detection
     if (AISuspectDetectionDanger(player)) {
@@ -2272,12 +2273,12 @@ void ProtossLate4 (int player) {
 
 // Make Counter Units
     ProtossMakeCounters4(player);
-
+    
+// Normal expand
+    AIAdjustedDefaultExpansion(player, c_PB_Nexus, 10000, 4000, c_expandNormalHard, armyCompareEstimate);
+  
 // Medium sized army
     ProtossLateGameArmy4(player, e_armyTypeMedium);
-
-// Normal expand
-    AIDefaultExpansion(player, c_PB_Nexus, 12000, 6000, c_expandNormalHard);
 
 // Multiple detectors & scouts & a transport
     AISetStock( player, 1, c_PU_WarpPrism );
@@ -2285,6 +2286,9 @@ void ProtossLate4 (int player) {
 
 // Important upgrades
     ProtossImportantUpgrades4(player);
+
+// Middle expand
+    AIAdjustedDefaultExpansion(player, c_PB_Nexus, 15000, 7000, c_expandNormalHard, armyCompareEstimate);
 
 // Main base defense
     ProtossDefenseMainTown4(player);
@@ -2301,6 +2305,9 @@ void ProtossLate4 (int player) {
 // Large sized army
     ProtossLateGameArmy4(player, e_armyTypeLarge);
 
+// Late expand
+    AIAdjustedDefaultExpansion(player, c_PB_Nexus, 20000, 10000, c_expandNormalHard, armyCompareEstimate);
+
 // Other towns defense
     ProtossDefenseOtherTowns4(player);
 
@@ -2312,7 +2319,7 @@ void ProtossLate4 (int player) {
     AISetStockUnitNext( player, 6, c_PU_WarpPrism, c_stockAlways );
     
 // Extra production buildings
-    AISetStockUnitNext( player, 4, c_PB_Gateway, c_stockAlways );
+    AISetStockUnitNext( player, 6, c_PB_Gateway, c_stockAlways );
     AISetStockUnitNext( player, 3, c_PB_RoboticsFacility, c_stockAlways );
     AISetStockUnitNext( player, 2, c_PB_Stargate, c_stockAlways );
 
@@ -2321,11 +2328,11 @@ void ProtossLate4 (int player) {
         AISetStockUnitNext( player, 3, c_PB_Forge, c_stockAlways );
     }
 
+// Idle expand (very low priority, to prevent us from sitting around with idle peons)
+    AIAdjustedDefaultExpansion(player, c_PB_Nexus, 30000, 15000, c_expandIdleHard, armyCompareEstimate);
+
 // Entire Army
     ProtossLateGameArmy4(player, e_armyTypeFull);
-
-// Idle expand (very low priority, to prevent us from sitting around with idle peons)
-    AIDefaultExpansion(player, c_PB_Nexus, 24000, 12000, c_expandIdleHard);
 
     AIEnableStock(player);    
 // ****************** End Restock ****************** //

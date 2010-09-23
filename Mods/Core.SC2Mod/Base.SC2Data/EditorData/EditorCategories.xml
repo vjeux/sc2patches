@@ -3620,6 +3620,9 @@
     <fieldVal path="CActorModel_AutoScaleFactor" advanced="1">
         <value category="FieldType">Art</value>
     </fieldVal>
+    <fieldVal path="CActorModel_AutoScaleFromSelectionFactor" advanced="1">
+        <value category="FieldType">Art</value>
+    </fieldVal>
     <fieldVal path="CActorModel_EventDataFootprint" advanced="1">
         <value category="FieldType">Event</value>
     </fieldVal>
@@ -4275,6 +4278,9 @@
         <value category="FieldType">Sound</value>
     </fieldVal>
     <fieldVal path="CActorSplat_AutoScaleFactor" advanced="1">
+        <value category="FieldType">Art</value>
+    </fieldVal>
+    <fieldVal path="CActorSplat_AutoScaleFromSelectionFactor" advanced="1">
         <value category="FieldType">Art</value>
     </fieldVal>
     <fieldVal path="CActorSplat_Color" advanced="1">
@@ -5249,6 +5255,9 @@
         <value category="FieldType">Combat</value>
     </fieldVal>
     <fieldVal path="CBehaviorBuff_DamageResponse_ModifyLimit" advanced="1">
+        <value category="FieldType">Combat</value>
+    </fieldVal>
+    <fieldVal path="CBehaviorBuff_DamageResponse_ModifyMinimumDamage" advanced="1">
         <value category="FieldType">Combat</value>
     </fieldVal>
     <fieldVal path="CBehaviorBuff_DamageResponse_RequireEffectArray" advanced="1">

@@ -9,6 +9,7 @@
         <ConeVolume value="1.000000,1.000000"/>
         <DopplerLevel value="1.000000"/>
         <DupeDestroyCount value="16"/>
+        <DupeHistoryCount value="16"/>
         <DupeFadeBlend value="Unknown"/>
         <DupeMuteCount value="10"/>
         <DupeRepeatCount value="65535"/>

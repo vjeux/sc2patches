@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="us-ascii"?>
 <Catalog>
+    <CWeaponLegacy id="CrucioShockCannon">
+        <DisplayEffect value="CrucioShockCannonDummy"/>
+        <Effect value="CrucioShockCannonSwitch"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="ImpalerTentacle">
         <Period value="1.85"/>
     </CWeaponLegacy>
@@ -13,6 +17,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="KaiserBlades">
         <Effect value="KaiserBladesDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="PrismaticBeam">
         <Range value="6"/>

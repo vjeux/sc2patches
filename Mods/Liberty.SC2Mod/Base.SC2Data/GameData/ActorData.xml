@@ -312,18 +312,18 @@
         <On Terms="AbilMorph.*.Finish; MorphTo ##unitName##" Send="Create"/>
         <On Terms="AbilMorph.*.Start; MorphFrom ##unitName##" Send="Destroy"/>
     </CActorSplat>
-    <CActorModel default="1" id="TerranBuildingBuild" parent="ModelConstruction">
+    <CActorModel default="1" id="TerranBuildingBuild" parent="TerranModelConstruction">
         <Aliases value="_TerranBuildModel"/>
         <HostSiteOps Ops="SOpShadow TerranBuildingFacing"/>
         <On Terms="ActorCreation" Send="Create TerranConstructionAttached"/>
         <Model value="TerranBuildingBuild"/>
     </CActorModel>
-    <CActorModel default="1" id="TerranBuildingBuildSmall" parent="ModelConstruction">
+    <CActorModel default="1" id="TerranBuildingBuildSmall" parent="TerranModelConstruction">
         <Aliases value="_TerranBuildModelSmall"/>
         <HostSiteOps Ops="SOpShadow TerranBuildingFacing"/>
         <On Terms="ActorCreation" Send="Create TerranConstructionAttachedSmall"/>
     </CActorModel>
-    <CActorModel default="1" id="TerranBuildingBuildRefinery" parent="ModelConstruction">
+    <CActorModel default="1" id="TerranBuildingBuildRefinery" parent="TerranModelConstruction">
         <Aliases value="_TerranBuildModel"/>
         <On Terms="ActorCreation" Send="Create TerranConstructionAttached"/>
     </CActorModel>
@@ -351,6 +351,7 @@
     </CActorUnit>
     <CActorUnit default="1" id="ZergBuilding" parent="GenericUnitStandard">
         <PlacementActorModel value="ZergPlacementModel"/>
+        <PlaceholderActorModel value="ZergPlacementModel"/>
         <On Terms="UnitConstruction.##unitName##.Start" Send="Create ##unitName##Build"/>
         <On Terms="UnitConstruction.##unitName##.Start" Send="Create BuildingTerrainFlatten"/>
         <On Terms="UnitConstruction.##unitName##.Cancel" Target="_BuildingTerrainFlatten" Send="Destroy"/>
@@ -907,7 +908,6 @@
         <BarWidth value="36"/>
         <BarOffset value="40"/>
         <StatusBarFlags index="Shields" value="0"/>
-        <StatusBarFlags index="Life" value="0"/>
         <StatusBarFlags index="Energy" value="0"/>
         <StatusBarFlags index="Cargo" value="0"/>
         <StatusBarFlags index="Progress" value="0"/>
@@ -1036,20 +1036,17 @@
         <On Terms="ActorCreation; Option Shader Extreme" Send="ModelSwap VespeneGeyserHigh"/>
         <On Terms="Behavior.RawVespeneGeyserGas.HostStart" Send="SetMinimapVisibility"/>
         <On Terms="Behavior.RawVespeneGeyserGas.HostClear" Send="SetMinimapVisibility 1"/>
-        <On Terms="Behavior.RawVespeneGeyserGas.HostStart" Send="AnimBracketStart Cover Cover,Start Cover {} ClosingFull 30.000000 AsDuration"/>
-        <On Terms="Behavior.RawVespeneGeyserGas.HostFinish" Send="ModelSwap Invisible"/>
-        <On Terms="Behavior.RawVespeneGeyserGas.HostFinish" Send="AnimBracketStop Cover"/>
-        <On Terms="Behavior.RawVespeneGeyserGas.HostClear" Send="AnimBracketStop Cover"/>
+        <On Terms="Behavior.RawVespeneGeyserGas.HostStart" Send="AnimPlay CoverStart Cover,Start 0 0.000000 0.300000 30.200000 AsDuration"/>
+        <On Terms="Behavior.RawVespeneGeyserGas.HostFinish" Send="TimerSet 0.13 GeyserHostFinish"/>
+        <On Terms="TimerExpired; TimerName GeyserHostFinish" Send="AnimClear CoverStart"/>
+        <On Terms="TimerExpired; TimerName GeyserHostFinish" Send="AnimPlay Cover Cover PlayForever 0.000000 0.300000"/>
+        <On Terms="Behavior.RawVespeneGeyserGas.HostClear" Send="TimerKill GeyserHostFinish"/>
+        <On Terms="Behavior.RawVespeneGeyserGas.HostClear" Send="AnimClear CoverStart"/>
+        <On Terms="Behavior.RawVespeneGeyserGas.HostClear" Send="AnimClear Cover"/>
         <On Terms="Behavior.RawVespeneGeyserGas.Deplete" Send="AnimGroupRemove B"/>
         <On Terms="Behavior.RawVespeneGeyserGas.Deplete" Send="AnimGroupApply D"/>
         <On Terms="Behavior.RawVespeneGeyserGas.Restore" Send="AnimGroupRemove D"/>
         <On Terms="Behavior.RawVespeneGeyserGas.Restore" Send="AnimGroupApply B"/>
-        <On Terms="Signal.*.Covered" Send="ModelSwap Invisible"/>
-        <On Terms="Signal.*.Uncovered; Option Shader Extreme" Send="ModelSwap VespeneGeyserHigh"/>
-        <On Terms="Signal.*.Uncovered; Option Shader Ultra" Send="ModelSwap VespeneGeyserHigh"/>
-        <On Terms="Signal.*.Uncovered; Option Shader High" Send="ModelSwap VespeneGeyser"/>
-        <On Terms="Signal.*.Uncovered; Option Shader Medium" Send="ModelSwap VespeneGeyser"/>
-        <On Terms="Signal.*.Uncovered; Option Shader Low" Send="ModelSwap VespeneGeyser"/>
         <UnitFlags index="ShowBlobShadow" value="0"/>
         <StatusBarFlags index="Shields" value="0"/>
         <StatusBarFlags index="Life" value="0"/>
@@ -1071,20 +1068,17 @@
         <On Terms="ActorCreation; Option Shader Extreme" Send="ModelSwap VespeneGeyserHigh"/>
         <On Terms="Behavior.RawRichVespeneGeyserGas.HostStart" Send="SetMinimapVisibility"/>
         <On Terms="Behavior.RawRichVespeneGeyserGas.HostClear" Send="SetMinimapVisibility 1"/>
-        <On Terms="Behavior.RawRichVespeneGeyserGas.HostStart" Send="AnimBracketStart Cover Cover,Start Cover {} ClosingFull 30.000000 AsDuration"/>
-        <On Terms="Behavior.RawRichVespeneGeyserGas.HostFinish" Send="ModelSwap Invisible"/>
-        <On Terms="Behavior.RawRichVespeneGeyserGas.HostFinish" Send="AnimBracketStop Cover"/>
-        <On Terms="Behavior.RawRichVespeneGeyserGas.HostClear" Send="AnimBracketStop Cover"/>
+        <On Terms="Behavior.RawRichVespeneGeyserGas.HostStart" Send="AnimPlay CoverStart Cover,Start 0 0.000000 0.300000 30.200000 AsDuration"/>
+        <On Terms="Behavior.RawRichVespeneGeyserGas.HostFinish" Send="TimerSet 0.13 GeyserHostFinish"/>
+        <On Terms="TimerExpired; TimerName GeyserHostFinish" Send="AnimClear CoverStart"/>
+        <On Terms="TimerExpired; TimerName GeyserHostFinish" Send="AnimPlay Cover Cover PlayForever 0.000000 0.300000"/>
+        <On Terms="Behavior.RawRichVespeneGeyserGas.HostClear" Send="TimerKill GeyserHostFinish"/>
+        <On Terms="Behavior.RawRichVespeneGeyserGas.HostClear" Send="AnimClear CoverStart"/>
+        <On Terms="Behavior.RawRichVespeneGeyserGas.HostClear" Send="AnimClear Cover"/>
         <On Terms="Behavior.RawRichVespeneGeyserGas.Deplete" Send="AnimGroupRemove B"/>
         <On Terms="Behavior.RawRichVespeneGeyserGas.Deplete" Send="AnimGroupApply D"/>
         <On Terms="Behavior.RawRichVespeneGeyserGas.Restore" Send="AnimGroupRemove D"/>
         <On Terms="Behavior.RawRichVespeneGeyserGas.Restore" Send="AnimGroupApply B"/>
-        <On Terms="Signal.*.Covered" Send="ModelSwap Invisible"/>
-        <On Terms="Signal.*.Uncovered; Option Shader Extreme" Send="ModelSwap VespeneGeyserHigh"/>
-        <On Terms="Signal.*.Uncovered; Option Shader Ultra" Send="ModelSwap VespeneGeyserHigh"/>
-        <On Terms="Signal.*.Uncovered; Option Shader High" Send="ModelSwap VespeneGeyser"/>
-        <On Terms="Signal.*.Uncovered; Option Shader Medium" Send="ModelSwap VespeneGeyser"/>
-        <On Terms="Signal.*.Uncovered; Option Shader Low" Send="ModelSwap VespeneGeyser"/>
         <UnitFlags index="ShowBlobShadow" value="0"/>
         <StatusBarFlags index="Shields" value="0"/>
         <StatusBarFlags index="Life" value="0"/>
@@ -1104,16 +1098,17 @@
     <CActorUnit id="SpacePlatformGeyser" parent="GenericUnitStandard" unitName="SpacePlatformGeyser">
         <On Terms="Behavior.RawVespeneGeyserGas.HostStart" Send="SetMinimapVisibility"/>
         <On Terms="Behavior.RawVespeneGeyserGas.HostClear" Send="SetMinimapVisibility 1"/>
-        <On Terms="Behavior.RawVespeneGeyserGas.HostStart" Send="AnimBracketStart Cover Cover,Start Cover {} ClosingFull 30.000000 AsDuration"/>
-        <On Terms="Behavior.RawVespeneGeyserGas.HostFinish" Send="ModelSwap Invisible"/>
-        <On Terms="Behavior.RawVespeneGeyserGas.HostFinish" Send="AnimBracketStop Cover"/>
-        <On Terms="Behavior.RawVespeneGeyserGas.HostClear" Send="AnimBracketStop Cover"/>
+        <On Terms="Behavior.RawVespeneGeyserGas.HostStart" Send="AnimPlay CoverStart Cover,Start 0 0.000000 0.300000 30.200000 AsDuration"/>
+        <On Terms="Behavior.RawVespeneGeyserGas.HostFinish" Send="TimerSet 0.13 GeyserHostFinish"/>
+        <On Terms="TimerExpired; TimerName GeyserHostFinish" Send="AnimClear CoverStart"/>
+        <On Terms="TimerExpired; TimerName GeyserHostFinish" Send="AnimPlay Cover Cover PlayForever 0.000000 0.300000"/>
+        <On Terms="Behavior.RawVespeneGeyserGas.HostClear" Send="TimerKill GeyserHostFinish"/>
+        <On Terms="Behavior.RawVespeneGeyserGas.HostClear" Send="AnimClear CoverStart"/>
+        <On Terms="Behavior.RawVespeneGeyserGas.HostClear" Send="AnimClear Cover"/>
         <On Terms="Behavior.RawVespeneGeyserGas.Deplete" Send="AnimGroupRemove B"/>
         <On Terms="Behavior.RawVespeneGeyserGas.Deplete" Send="AnimGroupApply D"/>
         <On Terms="Behavior.RawVespeneGeyserGas.Restore" Send="AnimGroupRemove D"/>
         <On Terms="Behavior.RawVespeneGeyserGas.Restore" Send="AnimGroupApply B"/>
-        <On Terms="Signal.*.Covered" Send="ModelSwap Invisible"/>
-        <On Terms="Signal.*.Uncovered" Send="ModelSwap SpacePlatformGeyser"/>
         <UnitFlags index="ShowBlobShadow" value="0"/>
         <StatusBarFlags index="Shields" value="0"/>
         <StatusBarFlags index="Life" value="0"/>
@@ -1151,16 +1146,17 @@
     <CActorUnit id="TempleGeyser" parent="GenericUnitStandard" unitName="TempleGeyser">
         <On Terms="Behavior.RawVespeneGeyserGas.HostStart" Send="SetMinimapVisibility"/>
         <On Terms="Behavior.RawVespeneGeyserGas.HostClear" Send="SetMinimapVisibility 1"/>
-        <On Terms="Behavior.RawVespeneGeyserGas.HostStart" Send="AnimBracketStart Cover Cover,Start Cover {} ClosingFull 30.000000 AsDuration"/>
-        <On Terms="Behavior.RawVespeneGeyserGas.HostFinish" Send="ModelSwap Invisible"/>
-        <On Terms="Behavior.RawVespeneGeyserGas.HostFinish" Send="AnimBracketStop Cover"/>
-        <On Terms="Behavior.RawVespeneGeyserGas.HostClear" Send="AnimBracketStop Cover"/>
+        <On Terms="Behavior.RawVespeneGeyserGas.HostStart" Send="AnimPlay CoverStart Cover,Start 0 0.000000 0.300000 30.200000 AsDuration"/>
+        <On Terms="Behavior.RawVespeneGeyserGas.HostFinish" Send="TimerSet 0.13 GeyserHostFinish"/>
+        <On Terms="TimerExpired; TimerName GeyserHostFinish" Send="AnimClear CoverStart"/>
+        <On Terms="TimerExpired; TimerName GeyserHostFinish" Send="AnimPlay Cover Cover PlayForever 0.000000 0.300000"/>
+        <On Terms="Behavior.RawVespeneGeyserGas.HostClear" Send="TimerKill GeyserHostFinish"/>
+        <On Terms="Behavior.RawVespeneGeyserGas.HostClear" Send="AnimClear CoverStart"/>
+        <On Terms="Behavior.RawVespeneGeyserGas.HostClear" Send="AnimClear Cover"/>
         <On Terms="Behavior.RawVespeneGeyserGas.Deplete" Send="AnimGroupRemove B"/>
         <On Terms="Behavior.RawVespeneGeyserGas.Deplete" Send="AnimGroupApply D"/>
         <On Terms="Behavior.RawVespeneGeyserGas.Restore" Send="AnimGroupRemove D"/>
         <On Terms="Behavior.RawVespeneGeyserGas.Restore" Send="AnimGroupApply B"/>
-        <On Terms="Signal.*.Covered" Send="ModelSwap Invisible"/>
-        <On Terms="Signal.*.Uncovered" Send="ModelSwap TempleGeyser"/>
         <UnitFlags index="ShowBlobShadow" value="0"/>
         <StatusBarFlags index="Shields" value="0"/>
         <StatusBarFlags index="Life" value="0"/>
@@ -1277,7 +1273,6 @@
         <StageArray AnimProps="Birth,B,Stand"/>
         <StageArray AnimProps="Birth,C,Start"/>
         <StageArray AnimProps="Birth,C,Stand"/>
-        <StageArray AnimProps="Birth,D"/>
         <Supporter Subject="_TerranBuildModel"/>
     </CActorProgress>
     <CActorSound id="TerranConstructionSoundLevel0" parent="ProgressSound">
@@ -1309,7 +1304,6 @@
         <StageArray AnimProps="Birth,B,Stand"/>
         <StageArray AnimProps="Birth,C,Start"/>
         <StageArray AnimProps="Birth,C,Stand"/>
-        <StageArray AnimProps="Birth,D"/>
         <Supporter Subject="_TerranBuildModelSmall"/>
     </CActorProgress>
     <CActorSound id="TerranConstructionSoundLevel0Small" parent="ProgressSound">
@@ -1350,6 +1344,21 @@
     <CActorSetQueried id="TerranFlameSetLightSmokeTransition" parent="TerranFlameSetTransition" type="SmokeMedium"/>
     <CActorSetQueried id="TerranFlameSetHeavySmokeTransition" parent="TerranFlameSetTransition" type="SmokeLarge"/>
     <CActorSetQueried id="TerranFlameSetFireTransition" parent="TerranFlameSetTransition" type="FireLarge"/>
+    <CActorSetQueried id="TerranFlameSetFirePointDefenseDrone" parent="TerranFlameSet" type="FireLarge">
+        <AttachQuery Methods="AMFilterTarget AMRandomUniformAll AMReductionFire"/>
+    </CActorSetQueried>
+    <CActorStateMonitor id="TerranFlamesPointDefenseDrone">
+        <StateThinkInterval value="0.5"/>
+        <StateArray Name="Normal" Terms="ValidateUnit BurnDownNormal"/>
+        <StateArray Name="Fire" Terms="ValidateUnit BurnDownFire"/>
+        <!-- Creation -->
+        <On Terms="StateChange; StateValid Fire" Send="Create TerranFlameSetFirePointDefenseDrone"/>
+        <On Terms="StateChange; StateValid Fire" Send="Create TerranFlameLoopSmall"/>
+        <!-- Destruction -->
+        <On Terms="StateChange; !StateValid Fire" Target="TerranFlameSetFirePointDefenseDrone" Send="Destroy"/>
+        <On Terms="StateChange; !StateValid Fire" Target="TerranFlameLoopSmall" Send="Destroy"/>
+        <On Terms="UnitCreation.PointDefenseDrone" Send="Create"/>
+    </CActorStateMonitor>
     <CActorStateMonitor id="TerranFlamesSmallBuilding" parent="TerranFlames">
         <!-- Valid units -->
         <On Terms="UnitCreation.AutoTurret" Send="Create"/>
@@ -1602,6 +1611,7 @@
     <CActorAction id="AutoTurretRelease" parent="GenericAttack" effectImpact="RemovePrecursor" effectLaunch="AutoTurretReleaseLM">
         <LaunchAssets Sound="Raven_AutoTurretReleaseLaunch"/>
         <ImpactMap index="None" Sound="Raven_AutoTurretReleaseImpact"/>
+        <ImpactSiteOps Ops="SOpAttachOrigin SOpShadow"/>
     </CActorAction>
     <CActorModel id="AutoTurretReleaseMissileImpact">
         <!--        <On Terms="UnitDeath.AutoTurretReleaseWeapon" Send="Create"/> -->
@@ -1609,7 +1619,7 @@
         <On Terms="ActorCreation" Send="$Death"/>
         <On Terms="AnimDone; AnimName Death" Send="Destroy"/>
         <Host Subject="_Selectable"/>
-        <HostSiteOps Ops="SOpAttachCenter"/>
+        <HostSiteOps Ops="SOpAttachOrigin"/>
     </CActorModel>
     <!--                                                                                         -->
     <!-- Banshee ............................................................................... -->
@@ -1821,8 +1831,6 @@
         <On Terms="AbilMorph.*.Cancel; MorphFrom CommandCenter; MorphTo PlanetaryFortress" Send="AnimClear Morph"/>
         <On Terms="AbilMorph.*.Cancel; MorphFrom CommandCenter; MorphTo PlanetaryFortress" Send="AnimGroupRemove A"/>
         <On Terms="AbilMorph.*.Cancel; MorphFrom CommandCenter; MorphTo PlanetaryFortress" Send="AnimBaselineStart"/>
-        <On Terms="AbilMorph.UpgradeToPlanetaryFortressFast.Finish; MorphFrom CommandCenter; MorphTo PlanetaryFortress" Send="Destroy"/>
-        <On Terms="AbilMorph.UpgradeToPlanetaryFortressFast.Start; MorphFrom CommandCenter; MorphTo PlanetaryFortress" Send="AnimPlay Morph Morph,A 0 0.000000 0.000000 5.000000 AsDuration"/>
         <On Terms="Abil.*.TransportOccupy" Send="AnimPlay StandC Stand,Work,C PlayForever"/>
         <On Terms="Abil.*.TransportEmpty" Send="AnimClear StandC"/>
         <On Terms="Behavior.ColonyInfestation.On" Send="Create InfestationCommandCenter"/>
@@ -1887,17 +1895,18 @@
         <Model value="DropPodFalling"/>
         <On Terms="Effect.CalldownMULECreatePersistent.Start" Send="Create"/>
         <On Terms="Effect.CalldownMULETimedLife.Start" Send="AnimBracketStop BSD"/>
-        <On Terms="ActorCreation" Send="Create OrbitalCommand_CalldownMuleDrop"/>
-        <On Terms="ActorCreation" Send="TimerSet 2.100000 DelayDropPod"/>
-        <On Terms="TimerExpired; TimerName DelayDropPod" Send="Create OrbitalCommand_CalldownMuleImpact"/>
-        <On Terms="TimerExpired; TimerName DelayDropPod" Target="OrbitalCommand_CalldownMuleDrop" Send="Destroy"/>
         <On Terms="AnimBracketState.*.AfterOpening; AnimName BSD" Send="Create DropPodUnload"/>
         <HostSiteOps Ops="MercDropSOpShadow"/>
     </CActorModel>
     <CActorSound id="DropPodUnload" parent="SoundOneShot">
         <Sound value=""/>
     </CActorSound>
-    <CActorSound id="OrbitalCommand_CalldownMuleDrop" parent="SoundOneShot"/>
+    <CActorSound id="OrbitalCommand_CalldownMuleDrop" parent="SoundOneShot">
+        <On Terms="Effect.CalldownMULECreatePersistent.Start; At Target" Send="Create"/>
+        <On Terms="ActorCreation" Send="TimerSet 2.100000 DelayDropPod"/>
+        <On Terms="TimerExpired; TimerName DelayDropPod" Send="Create OrbitalCommand_CalldownMuleImpact"/>
+        <On Terms="TimerExpired; TimerName DelayDropPod" Send="Destroy"/>
+    </CActorSound>
     <CActorSound id="OrbitalCommand_CalldownMuleImpact" parent="SoundOneShot"/>
     <CActorSound id="OrbitalCommand_CalldownExtraSuppliesDrop" parent="SoundOneShot"/>
     <CActorSound id="OrbitalCommand_CalldownExtraSuppliesImpact" parent="SoundOneShot"/>
@@ -1954,6 +1963,7 @@
         <Model value="CommandCenter"/>
         <PortraitModel value="AdjutantPortrait"/>
         <On Terms="UnitBirth.OrbitalCommand" Send="AnimGroupApply B {} {} Instant"/>
+        <On Terms="UnitBirth.OrbitalCommandFlying" Send="AnimGroupApply B {} {} Instant"/>
         <On Terms="AbilMorph.*.Finish; MorphFrom CommandCenter; MorphTo OrbitalCommand" Send="Create"/>
         <On Terms="AbilMorph.*.Finish; MorphFrom CommandCenter; MorphTo OrbitalCommand" Send="AnimGroupApply B"/>
         <On Terms="Behavior.ColonyInfestation.On" Send="Create InfestationCommandCenter"/>
@@ -2723,6 +2733,7 @@
             <Image value="Assets\Textures\Wireframe-Terran-Reactor.dds"/>
         </Wireframe>
         <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-buildingarmor.dds"/>
+        <AddonIndicator value="Actor/AddonIndicator/Reactor"/>
     </CActorUnit>
     <CActorModel id="ReactorBuild" parent="TerranBuildingBuildSmall">
         <On Terms="ActorCreation" Send="SetScale 1.350000"/>
@@ -2769,6 +2780,7 @@
         <GroupSoundArray index="Board" value="ReactorGroupBoard"/>
         <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-buildingarmor.dds"/>
         <HighlightTooltip value="Unit/Name/Reactor"/>
+        <AddonIndicator value="Actor/AddonIndicator/Reactor"/>
     </CActorUnit>
     <CActorModel id="BarracksReactorBuild" parent="ReactorBuild"/>
     <CActorSplat id="BarracksReactorSplat" parent="GenericUnitSplat" unitName="BarracksReactor"/>
@@ -2813,6 +2825,7 @@
         <GroupSoundArray index="Board" value="ReactorGroupBoard"/>
         <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-buildingarmor.dds"/>
         <HighlightTooltip value="Unit/Name/Reactor"/>
+        <AddonIndicator value="Actor/AddonIndicator/Reactor"/>
     </CActorUnit>
     <CActorModel id="FactoryReactorBuild" parent="ReactorBuild"/>
     <CActorSplat id="FactoryReactorSplat" parent="GenericUnitSplat" unitName="FactoryReactor"/>
@@ -2858,6 +2871,7 @@
         <GroupSoundArray index="Board" value="ReactorGroupBoard"/>
         <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-buildingarmor.dds"/>
         <HighlightTooltip value="Unit/Name/Reactor"/>
+        <AddonIndicator value="Actor/AddonIndicator/Reactor"/>
     </CActorUnit>
     <CActorModel id="StarportReactorBuild" parent="ReactorBuild"/>
     <CActorSplat id="StarportReactorSplat" parent="GenericUnitSplat" unitName="StarportReactor"/>
@@ -2865,6 +2879,7 @@
     <!-- Nuke .................................................................................. -->
     <!--                                                                                         -->
     <CActorUnit id="Nuke" parent="GenericUnitStandard" unitName="Nuke">
+        <Model value="Invisible"/>
         <SoundArray index="Ready" value="Alert_TerranNukeReady"/>
         <UnitIcon value="Assets\Textures\btn-ability-terran-armnuke.dds"/>
         <StatusBarFlags index="Shields" value="0"/>
@@ -2880,8 +2895,9 @@
         <DeathArray index="Normal" ModelLink="PointDefenseDroneDeath" SoundLink="Raven_TargetingDroneExplode"/>
         <PortraitModel value="AdjutantPortrait"/>
         <PlacementModel value="PointDefenseDronePlacement"/>
-        <PlacementActorModel value="PointDefenseDronePlacementModel"/>
         <PlacementSound value="Terran_BuildingPlacement"/>
+        <PlacementActorModel value="PointDefenseDronePlacementModel"/>
+        <PlaceholderActorModel value="PointDefenseDronePlaceholderModel"/>
         <BarWidth value="36"/>
         <BarOffset value="20"/>
         <UnitIcon value="Assets\Textures\btn-unit-terran-targetingdrone.dds"/>
@@ -2901,6 +2917,7 @@
         <On Terms="ActorCreation" Send="Create FlyerHelperSplat"/>
         <HostSiteOps Ops="SOpShadowSyncAir SOpHigherBy3"/>
     </CActorModel>
+    <CActorModel id="PointDefenseDronePlaceholderModel" parent="PointDefenseDronePlacementModel"/>
     <CActorRange id="PointDefenseDroneWeaponRange">
         <Weapon value="PointDefenseLaser"/>
         <On Terms="SelectionLocalUpdate.PointDefenseDrone.Start" Send="Create"/>
@@ -3512,11 +3529,9 @@
         <On Terms="Effect.SupplyDropApplyTempBehavior.Start; At Target" Send="Create"/>
         <On Terms="ActorCreation" Send="TimerSet 1.300000 DelayDropSupply"/>
         <On Terms="Effect.SupplyDropApplyTempBehavior.Start; At Target" Send="Create OrbitalCommand_CalldownExtraSuppliesDrop"/>
-        <!--        <On Terms="Effect.SupplyDropApplyTempBehavior.Start; At Target" Send="$Birth"/> -->
         <On Terms="TimerExpired; TimerName DelayDropSupply" Send="Create OrbitalCommand_CalldownExtraSuppliesImpact"/>
         <On Terms="TimerExpired; TimerName DelayDropSupply" Target="OrbitalCommand_CalldownExtraSuppliesDrop" Send="Destroy"/>
         <On Terms="AnimDone; AnimName Birth" Send="$Stand PlayForever"/>
-        <!--        <On Terms="AnimDone; AnimName Birth; ValidateUnit IsSupplyDepotLowered" Send="AnimGroupApply Burrow Burrow Unburrow ClosingFull"/> -->
         <On Terms="AnimDone; AnimName Spell" Send="$Stand PlayForever"/>
         <On Terms="AnimDone; AnimName Spell" Send="AnimGroupApply Burrow Burrow Unburrow ClosingFull,Instant"/>
         <On Terms="AbilMorph.*.Start; MorphTo SupplyDepotLowered; !AnimPlaying Birth" Send="AnimGroupApply Burrow Burrow Unburrow ClosingFull"/>
@@ -3566,6 +3581,7 @@
             <Image value="Assets\Textures\Wireframe-Terran-TechLab.dds"/>
         </Wireframe>
         <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-buildingarmor.dds"/>
+        <AddonIndicator value="Actor/AddonIndicator/TechLab"/>
     </CActorUnit>
     <CActorModel id="TechLabBuild" parent="TerranBuildingBuildSmall">
         <On Terms="ActorCreation" Send="SetScale 1.350000"/>
@@ -3614,6 +3630,7 @@
         <GroupSoundArray index="Board" value="TechLabGroupBoard"/>
         <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-buildingarmor.dds"/>
         <HighlightTooltip value="Unit/Name/TechLab"/>
+        <AddonIndicator value="Actor/AddonIndicator/TechLab"/>
     </CActorUnit>
     <CActorModel id="BarracksTechLabBuild" parent="TechLabBuild"/>
     <CActorSplat id="BarracksTechLabSplat" parent="GenericUnitSplat" unitName="BarracksTechLab"/>
@@ -3660,6 +3677,7 @@
         <GroupSoundArray index="Board" value="TechLabGroupBoard"/>
         <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-buildingarmor.dds"/>
         <HighlightTooltip value="Unit/Name/TechLab"/>
+        <AddonIndicator value="Actor/AddonIndicator/TechLab"/>
     </CActorUnit>
     <CActorModel id="FactoryTechLabBuild" parent="TechLabBuild"/>
     <CActorSplat id="FactoryTechLabSplat" parent="GenericUnitSplat" unitName="FactoryTechLab"/>
@@ -3706,6 +3724,7 @@
         <GroupSoundArray index="Board" value="TechLabGroupBoard"/>
         <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-buildingarmor.dds"/>
         <HighlightTooltip value="Unit/Name/TechLab"/>
+        <AddonIndicator value="Actor/AddonIndicator/TechLab"/>
     </CActorUnit>
     <CActorModel id="StarportTechLabBuild" parent="TechLabBuild"/>
     <CActorSplat id="StarportTechLabSplat" parent="GenericUnitSplat" unitName="StarportTechLab"/>
@@ -4226,6 +4245,7 @@
     <!-- Carrier ............................................................................... -->
     <!--                                                                                         -->
     <CActorUnit id="Carrier" parent="GenericUnitStandard" unitName="Carrier">
+        <On Terms="Abil.CarrierHangar.Launch" Send="AnimPlay Cover Cover 0 0.500000 0.500000 3.000000 AsDuration"/>
         <Baselines index="Walk" BlendIn="1.500000" BlendOut="2.000000"/>
         <PortraitModel value="CarrierPortrait"/>
         <BuildModel value="CarrierWarpIn"/>
@@ -5471,7 +5491,7 @@
         <Macros value="ProtossBuildingPowerUp"/>
         <UnitFlags index="ShowBlobShadow" value="0"/>
         <BarWidth value="85"/>
-        <BarOffset value="0"/>
+        <BarOffset value="180"/>
         <UnitIcon value="Assets\Textures\btn-building-protoss-darkshrine.dds"/>
         <HeroIcon value="Assets\Textures\btn-building-protoss-darkshrine.dds"/>
         <WireframeShield>
@@ -6907,7 +6927,9 @@
         <Inherits index="Scale" value="1"/>
         <On Terms="Behavior.Contaminated.On" Send="Create"/>
         <On Terms="Behavior.Contaminated.Off" Send="AnimBracketStop BSD"/>
-        <HostSiteOps Ops="SOpAttachCenter"/>
+        <!-- This needs to be a soft attach to prevent crazy giant scales against a Command
+             Center under construction. -->
+        <HostSiteOps Ops="SOpAttachCenterSoft"/>
     </CActorModel>
     <CActorRange id="ContaminateRange" parent="RangeAbil" abil="Contaminate"/>
     <CActorSound id="ContaminateImpactSound" parent="SoundOneShot">
@@ -7001,11 +7023,11 @@
         <SoundArray index="Ready" value="CreepTumor_What"/>
         <SoundArray index="Construction" value="Zerg_BuildingMorphWhat"/>
         <LifeArmorIcon value="Assets\Textures\btn-armor-zerg-building.dds"/>
-<!--        <ErrorArray Error="CantBuildLocationInvalid" Text="e_cmdCantBuildTooFarFromCreepSource" Sound="Alert_ZergPlaceOnCreep"/>
-        <ErrorArray Error="CantSeeBuildLocation" Text="e_cmdCantBuildTooFarFromCreepSource" Sound="Alert_ZergPlaceOnCreep"/>
-        <ErrorArray Error="CantSeeLandLocation" Text="e_cmdCantBuildTooFarFromCreepSource" Sound="Alert_ZergPlaceOnCreep"/>
-        <ErrorArray Error="CantFindPlacementLocation" Text="e_cmdCantBuildTooFarFromCreepSource" Sound="Alert_ZergPlaceOnCreep"/>
-        <ErrorArray Error="CantBuildOnThat" Text="e_cmdCantBuildTooFarFromCreepSource" Sound="Alert_ZergPlaceOnCreep"/> -->
+        <ErrorArray Error="CantSeeBuildLocation" Sound="Alert_ZergBuildError" GroupSound="Alert_ZergBuildError"/>
+        <ErrorArray Error="CantSeeLandLocation" Sound="Alert_ZergBuildError" GroupSound="Alert_ZergBuildError"/>
+        <ErrorArray Error="CantBuildLocationInvalid" Sound="Alert_ZergBuildError" GroupSound="Alert_ZergBuildError"/>
+        <ErrorArray Error="CantLandLocationInvalid" Sound="Alert_ZergBuildError" GroupSound="Alert_ZergBuildError"/>
+        <ErrorArray Error="TargetIsOutOfRange" Sound="Alert_ZergBuildError" GroupSound="Alert_ZergBuildError"/>
     </CActorUnit>
     <CActorRange id="CreepTumorBuildRange" parent="RangeAbil" abil="CreepTumorBuild"/>
     <!--                                                                                         -->
@@ -7174,6 +7196,7 @@
         <PortraitModel value="OverlordPortrait"/>
         <PlacementModel value="ExtractorPlacement"/>
         <PlacementSound value="Zerg_BuildingPlacement"/>
+        <PlaceholderActorModel value="PlaceholderModel"/>
         <On Terms="Behavior.HarvestableVespeneGeyserGasZerg.Deplete" Send="SetTintColor 255,170,170"/>
         <On Terms="Behavior.HarvestableVespeneGeyserGasZerg.Deplete" Send="AnimGroupRemove D"/>
         <On Terms="Behavior.HarvestableVespeneGeyserGasZerg.Deplete" Send="AnimGroupApply B"/>
@@ -8011,6 +8034,15 @@
         <FogVisibility value="Visible"/>
         <On Terms="UnitBirth.NydusCanal" Send="Create"/>
     </CActorSound>
+    <CActorSound id="Nydus_ConstructionStart" parent="SoundOneShot">
+        <On Terms="UnitConstruction.NydusCanal.Start" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="Nydus_ConstructionFinish" parent="SoundOneShot">
+        <On Terms="UnitConstruction.NydusCanal.Finish" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="Nydus_Unburrow" parent="SoundOneShot">
+        <On Terms="UnitBirth.NydusCanal.Normal" Send="Create"/>
+    </CActorSound>
     <!--                                                                                         -->
     <!-- Overlord .............................................................................. -->
     <!--                                                                                         -->
@@ -8455,11 +8487,10 @@
         <SoundArray index="What" value="QueenWhat"/>
         <SoundArray index="Yes" value="QueenYes"/>
         <LifeArmorIcon value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level0.dds"/>
-<!--        <ErrorArray Error="CantBuildLocationInvalid" Text="e_cmdCantBuildTooFarFromCreepSource" Sound="Alert_ZergPlaceOnCreep"/>
-        <ErrorArray Error="CantSeeBuildLocation" Text="e_cmdCantBuildTooFarFromCreepSource" Sound="Alert_ZergPlaceOnCreep"/>
-        <ErrorArray Error="CantSeeLandLocation" Text="e_cmdCantBuildTooFarFromCreepSource" Sound="Alert_ZergPlaceOnCreep"/>
-        <ErrorArray Error="CantFindPlacementLocation" Text="e_cmdCantBuildTooFarFromCreepSource" Sound="Alert_ZergPlaceOnCreep"/>
-        <ErrorArray Error="CantBuildOnThat" Text="e_cmdCantBuildTooFarFromCreepSource" Sound="Alert_ZergPlaceOnCreep"/> -->
+        <ErrorArray Error="CantSeeBuildLocation" Sound="Alert_ZergBuildError" GroupSound="Alert_ZergBuildError"/>
+        <ErrorArray Error="CantSeeLandLocation" Sound="Alert_ZergBuildError" GroupSound="Alert_ZergBuildError"/>
+        <ErrorArray Error="CantBuildLocationInvalid" Sound="Alert_ZergBuildError" GroupSound="Alert_ZergBuildError"/>
+        <ErrorArray Error="CantLandLocationInvalid" Sound="Alert_ZergBuildError" GroupSound="Alert_ZergBuildError"/>
     </CActorUnit>
     <CActorSound id="Queen_Death" parent="SoundOneShot">
         <On Terms="UnitDeath.Queen; PassChance 25.000000" Send="Create"/>
@@ -8782,6 +8813,7 @@
         <WalkAnimMoveSpeed value="0.7968"/>
         <PlacementModel value="SporeCrawlerPlacement"/>
         <PlacementSound value="Zerg_BuildingPlacementSmall"/>
+        <PlaceholderActorModel value="PlaceholderModel"/>
         <PortraitModel value="OverlordPortrait"/>
         <!-- Burrow FX -->
         <On Terms="AbilMorph.*.Start; AbilKey Root" Send="Create LargeBurrowDownEffects"/>
@@ -8835,6 +8867,12 @@
         </Wireframe>
         <SoundArray index="Construction" value="Zerg_BuildingMorphWhat"/>
         <LifeArmorIcon value="Assets\Textures\btn-armor-zerg-building.dds"/>
+        <ErrorArray Error="CantSeeBuildLocation" Sound="Alert_ZergBuildError" GroupSound="Alert_ZergBuildError"/>
+        <ErrorArray Error="CantSeeLandLocation" Sound="Alert_ZergBuildError" GroupSound="Alert_ZergBuildError"/>
+        <ErrorArray Error="CantBuildLocationInvalid" Sound="Alert_ZergBuildError" GroupSound="Alert_ZergBuildError"/>
+        <ErrorArray Error="CantLandLocationInvalid" Sound="Alert_ZergBuildError" GroupSound="Alert_ZergBuildError"/>
+        <ErrorArray Error="CantBuildTooFarFromCreepSource" Sound="Alert_ZergPlaceOnCreep" GroupSound="Alert_ZergPlaceOnCreep"/>
+        <ErrorArray Error="CantLandTooFarFromCreepSource" Sound="Alert_ZergPlaceOnCreep" GroupSound="Alert_ZergPlaceOnCreep"/>
     </CActorUnit>
     <CActorModel id="SporeCrawlerBuild" parent="ZergBuildingBuild"/>
     <CActorSplat id="SporeCrawlerSplat" parent="BurrowedSplatBase">
@@ -8874,6 +8912,7 @@
         <WalkAnimMoveSpeed value="0.7968"/>
         <PlacementModel value="SpineCrawlerPlacement"/>
         <PlacementSound value="Zerg_BuildingPlacementSmall"/>
+        <PlaceholderActorModel value="PlaceholderModel"/>
         <PortraitModel value="OverlordPortrait"/>
         <On Terms="ActorCreation" Send="AnimGroupApply Burrow"/>
         <!-- Burrow FX -->
@@ -8943,10 +8982,12 @@
         </Wireframe>
         <SoundArray index="Construction" value="Zerg_BuildingMorphWhat"/>
         <LifeArmorIcon value="Assets\Textures\btn-armor-zerg-building.dds"/>
-        <ErrorArray Error="CantLandLocationInvalid" Sound="Alert_ZergPlaceOnCreep"/>
-        <ErrorArray Error="CantBuildOnThat" Sound="Alert_ZergPlaceOnCreep"/>
-        <ErrorArray Error="CantSeeLandLocation" Sound="Alert_ZergPlaceOnCreep"/>
-        <ErrorArray Error="CantSeeBuildLocation" Sound="Alert_ZergPlaceOnCreep"/>
+        <ErrorArray Error="CantSeeBuildLocation" Sound="Alert_ZergBuildError" GroupSound="Alert_ZergBuildError"/>
+        <ErrorArray Error="CantSeeLandLocation" Sound="Alert_ZergBuildError" GroupSound="Alert_ZergBuildError"/>
+        <ErrorArray Error="CantBuildLocationInvalid" Sound="Alert_ZergBuildError" GroupSound="Alert_ZergBuildError"/>
+        <ErrorArray Error="CantLandLocationInvalid" Sound="Alert_ZergBuildError" GroupSound="Alert_ZergBuildError"/>
+        <ErrorArray Error="CantBuildTooFarFromCreepSource" Sound="Alert_ZergPlaceOnCreep" GroupSound="Alert_ZergPlaceOnCreep"/>
+        <ErrorArray Error="CantLandTooFarFromCreepSource" Sound="Alert_ZergPlaceOnCreep" GroupSound="Alert_ZergPlaceOnCreep"/>
     </CActorUnit>
     <CActorModel id="SpineCrawlerBuild" parent="ZergBuildingBuild"/>
     <CActorSplat id="SpineCrawlerSplat" parent="BurrowedSplatBase">
@@ -10406,30 +10447,35 @@
         <On Terms="Behavior.CarryMineralFieldMinerals.On" Send="Create"/>
         <On Terms="Behavior.CarryMineralFieldMinerals.Off" Send="AnimBracketStop BSD"/>
         <HostSiteOps Ops="SOpAttachHardPoint"/>
+        <Inherits index="WarpGroup" value="1"/>
     </CActorModel>
     <CActorModel id="CarryHighYieldMineralFieldMinerals" parent="ModelAnimationStyleContinuousUNIT">
         <Inherits index="CloakEffect" value="1"/>
         <On Terms="Behavior.CarryHighYieldMineralFieldMinerals.On" Send="Create"/>
         <On Terms="Behavior.CarryHighYieldMineralFieldMinerals.Off" Send="AnimBracketStop BSD"/>
         <HostSiteOps Ops="SOpAttachHardPoint"/>
+        <Inherits index="WarpGroup" value="1"/>
     </CActorModel>
     <CActorModel id="CarryHarvestableVespeneGeyserGas" parent="ModelAnimationStyleContinuousUNIT">
         <Inherits index="CloakEffect" value="1"/>
         <On Terms="Behavior.CarryHarvestableVespeneGeyserGas.On" Send="Create"/>
         <On Terms="Behavior.CarryHarvestableVespeneGeyserGas.Off" Send="AnimBracketStop BSD"/>
         <HostSiteOps Ops="SOpAttachHardPoint"/>
+        <Inherits index="WarpGroup" value="1"/>
     </CActorModel>
     <CActorModel id="CarryHarvestableVespeneGeyserGasProtoss" parent="ModelAnimationStyleContinuousUNIT">
         <Inherits index="CloakEffect" value="1"/>
         <On Terms="Behavior.CarryHarvestableVespeneGeyserGasProtoss.On" Send="Create"/>
         <On Terms="Behavior.CarryHarvestableVespeneGeyserGasProtoss.Off" Send="AnimBracketStop BSD"/>
         <HostSiteOps Ops="SOpAttachHardPoint"/>
+        <Inherits index="WarpGroup" value="1"/>
     </CActorModel>
     <CActorModel id="CarryHarvestableVespeneGeyserGasZerg" parent="ModelAnimationStyleContinuousUNIT">
         <Inherits index="CloakEffect" value="1"/>
         <On Terms="Behavior.CarryHarvestableVespeneGeyserGasZerg.On" Send="Create"/>
         <On Terms="Behavior.CarryHarvestableVespeneGeyserGasZerg.Off" Send="AnimBracketStop BSD"/>
         <HostSiteOps Ops="SOpAttachHardPoint"/>
+        <Inherits index="WarpGroup" value="1"/>
     </CActorModel>
     <CActorSound id="ChargingSound" parent="SoundContinuous">
         <Sound value="Zealot_Charge"/>

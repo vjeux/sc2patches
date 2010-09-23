@@ -20,27 +20,27 @@ static void InitCounters (int player) {
     AICounterUnitSetup(player, c_PU_HighTemplar,        1.00, c_PU_Stalker,     1.00, c_PU_Stalker);
     AICounterUnitSetup(player, c_PU_DarkTemplar,        1.00, c_PU_Zealot,      1.00, c_PU_Zealot);
     AICounterUnitSetup(player, c_PU_Archon,             2.00, c_PU_Zealot,      1.00, c_PU_Carrier);
-    AICounterUnitSetup(player, c_PU_Immortal,           2.00, c_PU_Zealot,      2.00, c_PU_Zealot);
-    AICounterUnitSetup(player, c_PU_Colossus,           1.00, c_PU_Immortal,    1.00, c_PU_Immortal);
+    AICounterUnitSetup(player, c_PU_Immortal,           2.00, c_PU_Zealot,      3.00, c_PU_Zealot);
+    AICounterUnitSetup(player, c_PU_Colossus,           2.00, c_PU_Immortal,    3.00, c_PU_Phoenix);
     AICounterUnitSetup(player, c_PU_Phoenix,            1.00, c_PU_Stalker,     1.00, c_PU_Stalker);
-    AICounterUnitSetup(player, c_PU_VoidRay,            1.50, c_PU_Stalker,     1.50, c_PU_Stalker);
-    AICounterUnitSetup(player, c_PU_Carrier,            2.00, c_PU_VoidRay,     2.00, c_PU_VoidRay);
-    AICounterUnitSetup(player, c_PB_PhotonCannon,       3.00, c_PU_Zealot,      0.80, c_PU_Carrier);
+    AICounterUnitSetup(player, c_PU_VoidRay,            2.00, c_PU_Stalker,     3.00, c_PU_Stalker);
+    AICounterUnitSetup(player, c_PU_Carrier,            2.00, c_PU_VoidRay,     3.00, c_PU_VoidRay);
+    AICounterUnitSetup(player, c_PB_PhotonCannon,       3.00, c_PU_Zealot,      1.00, c_PU_Carrier);
 
     // versus Terran
-    AICounterUnitSetup(player, c_TU_Marine,             0.80, c_PU_Zealot,      0.20, c_PU_Colossus);
+    AICounterUnitSetup(player, c_TU_Marine,             0.80, c_PU_Zealot,      0.30, c_PU_Colossus);
     AICounterUnitSetup(player, c_TU_Marauder,           2.00, c_PU_Zealot,      0.70, c_PU_Immortal);
     AICounterUnitSetup(player, c_TU_Reaper,             1.00, c_PU_Stalker,     1.00, c_PU_Stalker);
     AICounterUnitSetup(player, c_TU_Ghost,              2.00, c_PU_Zealot,      2.00, c_PU_Zealot);
     AICounterUnitSetup(player, c_TU_Hellion,            1.00, c_PU_Stalker,     1.00, c_PU_Stalker);
-    AICounterUnitSetup(player, c_TU_SiegeTank_Alias,    0.60, c_PU_Immortal,    0.60, c_PU_Immortal);
-    AICounterUnitSetup(player, c_TU_Thor,               5.00, c_PU_Zealot,      5.00, c_PU_Zealot);
+    AICounterUnitSetup(player, c_TU_SiegeTank_Alias,    0.60, c_PU_Immortal,    0.80, c_PU_Immortal);
+    AICounterUnitSetup(player, c_TU_Thor,               5.00, c_PU_Zealot,      6.00, c_PU_Zealot);
     AICounterUnitSetup(player, c_TU_Viking_Alias,       1.00, c_PU_Stalker,     1.00, c_PU_Stalker);
     AICounterUnitSetup(player, c_TU_Medivac,            1.00, c_PU_Stalker,     1.00, c_PU_Stalker);
     AICounterUnitSetup(player, c_TU_Raven,              1.00, c_PU_Stalker,     1.00, c_PU_Stalker);
     AICounterUnitSetup(player, c_TU_Banshee,            0.70, c_PU_Phoenix,     0.70, c_PU_Phoenix);
     AICounterUnitSetup(player, c_TU_Battlecruiser,      2.00, c_PU_VoidRay,     2.00, c_PU_VoidRay);
-    AICounterUnitSetup(player, c_TB_Bunker,             4.00, c_PU_Zealot,      0.80, c_PU_Carrier);
+    AICounterUnitSetup(player, c_TB_Bunker,             4.00, c_PU_Zealot,      1.00, c_PU_Carrier);
 
     // versus Zerg
     AICounterUnitSetup(player, c_ZU_Zergling,           0.50, c_PU_Zealot,      0.50, c_PU_Zealot);
@@ -51,8 +51,8 @@ static void InitCounters (int player) {
     AICounterUnitSetup(player, c_ZU_Mutalisk,           1.00, c_PU_Stalker,     1.00, c_PU_Stalker);
     AICounterUnitSetup(player, c_ZU_Corruptor,          1.00, c_PU_Stalker,     1.00, c_PU_Stalker);
     AICounterUnitSetup(player, c_ZU_Ultralisk,          1.20, c_PU_Immortal,    1.20, c_PU_Immortal);
-    AICounterUnitSetup(player, c_ZU_BroodLord,          1.00, c_PU_Phoenix,     1.00, c_PU_Phoenix);
-    AICounterUnitSetup(player, c_ZB_SpineCrawler,       3.00, c_PU_Zealot,      0.80, c_PU_VoidRay);
+    AICounterUnitSetup(player, c_ZU_BroodLord,          2.00, c_PU_Phoenix,     3.00, c_PU_Phoenix);
+    AICounterUnitSetup(player, c_ZB_SpineCrawler,       3.00, c_PU_Zealot,      1.00, c_PU_VoidRay);
 }
 
 //--------------------------------------------------------------------------------------------------

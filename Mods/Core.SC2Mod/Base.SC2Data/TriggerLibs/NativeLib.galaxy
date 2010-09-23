@@ -9,6 +9,8 @@ playergroup libNtve_gv__PlayersInCineMode;
 bool[33] libNtve_gv__CineModeSavedSettingFog;
 bool[33] libNtve_gv__CineModeSavedSettingMask;
 int libNtve_gv__CineModeSavedSpeed;
+bool libNtve_gv__CineModeSavedCheatNoDefeatAllowed;
+bool libNtve_gv__CineModeSavedCheatNoVictoryAllowed;
 trigger[51] libNtve_gv_screenButtonCallbacks;
 int[51] libNtve_gv_screenButtonDialogs;
 const int libNtve_gv_c_ScreenButtonMaxCount = 50;
@@ -33,7 +35,6 @@ int libNtve_gv_tP_PulseScreenImageID;
 fixed libNtve_gv_tP_PulseScreenImagePeriod;
 fixed libNtve_gv_tP_PulseScreenImageTransparency1;
 fixed libNtve_gv_tP_PulseScreenImageTransparency2;
-timer[33] libNtve_gv__GameTimer;
 const int libNtve_gv_pLAYERMAX = 32;
 int[8] libNtve_gv_portraits;
 unitgroup[34] libNtve_gv_unitSelectionStored;
@@ -79,6 +80,8 @@ void libNtve_InitVariables () {
         libNtve_gv__CineModeSavedSettingMask[init_i] = false;
         init_i = init_i + 1;
     }
+    libNtve_gv__CineModeSavedCheatNoDefeatAllowed = false;
+    libNtve_gv__CineModeSavedCheatNoVictoryAllowed = false;
     init_i = 0;
     while (init_i <= 50) {
         libNtve_gv_screenButtonCallbacks[init_i] = null;
@@ -157,11 +160,6 @@ void libNtve_InitVariables () {
     libNtve_gv_tP_PulseScreenImagePeriod = 0.0;
     libNtve_gv_tP_PulseScreenImageTransparency1 = 0.0;
     libNtve_gv_tP_PulseScreenImageTransparency2 = 0.0;
-    init_i = 0;
-    while (init_i <= 32) {
-        libNtve_gv__GameTimer[init_i] = null;
-        init_i = init_i + 1;
-    }
     init_i = 0;
     while (init_i <= 33) {
         libNtve_gv_unitSelectionStored[init_i] = UnitGroupEmpty();
@@ -646,7 +644,6 @@ void libNtve_gf_ShowHidePlacementModels (bool lp_show);
 trigger libNtve_gt_ScreenButtonClicked;
 trigger libNtve_gt_FlashScreenButton;
 trigger libNtve_gt_PulseScreenImage;
-trigger libNtve_gt__MapInitialization;
 trigger libNtve_gt__BB_BossHPChanged;
 
 // Functions
@@ -1867,11 +1864,9 @@ void libNtve_gf__CineModeTurnOnOffForPlayer (int lp_player, bool lp_onOff) {
     // Implementation
     if ((lp_onOff == true)) {
         PlayerGroupAdd(libNtve_gv__PlayersInCineMode, lp_player);
-        TimerPause(libNtve_gv__GameTimer[lp_player], true);
     }
     else {
         PlayerGroupRemove(libNtve_gv__PlayersInCineMode, lp_player);
-        TimerPause(libNtve_gv__GameTimer[lp_player], false);
     }
 }
 
@@ -2142,12 +2137,15 @@ void libNtve_gf_GlobalCinematicSetting (bool lp_onOff) {
     }
     if ((lp_onOff == true)) {
         libNtve_gv__CineModeSavedSpeed = GameGetSpeedValue();
+        libNtve_gv__CineModeSavedCheatNoDefeatAllowed = GameCheatIsAllowed(c_gameCheatNoDefeat);
+        libNtve_gv__CineModeSavedCheatNoVictoryAllowed = GameCheatIsAllowed(c_gameCheatNoVictory);
         GameSetSpeedValue(c_gameSpeedNormal);
         GameSetSpeedLocked(true);
         GameSetSeedLocked(true);
         GamePauseAllCharges(true);
         VisEnable(c_visTypeMask, false);
         VisEnable(c_visTypeFog, false);
+        GameSetMissionTimePaused(true);
         GameCheatAllow(c_gameCheatAny, false);
     }
     else {
@@ -2157,7 +2155,18 @@ void libNtve_gf_GlobalCinematicSetting (bool lp_onOff) {
         GamePauseAllCharges(false);
         VisEnable(c_visTypeMask, true);
         VisEnable(c_visTypeFog, true);
+        GameSetMissionTimePaused(false);
         GameCheatAllow(c_gameCheatAny, true);
+        if ((libNtve_gv__CineModeSavedCheatNoDefeatAllowed == false)) {
+            GameCheatAllow(c_gameCheatNoDefeat, false);
+        }
+        else {
+        }
+        if ((libNtve_gv__CineModeSavedCheatNoVictoryAllowed == false)) {
+            GameCheatAllow(c_gameCheatNoVictory, false);
+        }
+        else {
+        }
     }
     libNtve_gv__CineModeGlobalOn = lp_onOff;
 }
@@ -2747,7 +2756,7 @@ bool libNtve_gf_UnitCanCreateEffectOnUnit (unit lp_caster, string lp_effect, uni
 
 fixed libNtve_gf_GamePlayTime (int lp_player) {
     // Implementation
-    return TimerGetElapsed(libNtve_gv__GameTimer[lp_player]);
+    return GameGetMissionTime();
 }
 
 void libNtve_gf_GameRemoveChargeRegen (string lp_inCharge) {
@@ -3420,7 +3429,7 @@ void libNtve_gf__StoryModeHideUI (playergroup lp_players) {
     libNtve_gf__StoreGameUIVisibleStates(true, lp_players);
     lv_indexFrame = c_syncFrameTypeFirst;
     while (lv_indexFrame <= c_syncFrameTypeLast) {
-        if (((lv_indexFrame != c_syncFrameTypeBattleUI) && (lv_indexFrame != c_syncFrameTypeMenuBar) && (lv_indexFrame != c_syncFrameTypeCashPanel) && (lv_indexFrame != c_syncFrameTypeTipAlertPanel))) {
+        if (((lv_indexFrame != c_syncFrameTypeBattleUI) && (lv_indexFrame != c_syncFrameTypeMenuBar) && (lv_indexFrame != c_syncFrameTypeCashPanel) && (lv_indexFrame != c_syncFrameTypeTipAlertPanel) && (lv_indexFrame != c_syncFrameTypeAchievementMenuButton) && (lv_indexFrame != c_syncFrameTypeHelpMenuButton))) {
             UISetFrameVisible(lp_players, lv_indexFrame, false);
         }
         else {
@@ -3690,7 +3699,7 @@ bool auto_libNtve_gf__BB_HPBarChange_TriggerFunc (bool testConds, bool runAction
     lv_newWidth = libNtve_gf__BB_HPBarCurrentWidth(lp_barID);
     lv_width = (libNtve_gv__BB_HPOldWidth[lp_barID] - lv_newWidth);
     libNtve_gv__BB_HPOldWidth[lp_barID] = lv_newWidth;
-    if ((lv_width >= 4)) {
+    if ((lv_width >= 1)) {
         DialogControlCreate(libNtve_gv__BB_Dialog[lp_barID], c_triggerControlTypeImage);
         libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeBorder, PlayerGroupAll());
         libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\ui_mission_leaderboard_progressbar_fill.dds", PlayerGroupAll());
@@ -4964,48 +4973,6 @@ void libNtve_gt_PulseScreenImage_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: _Map Initialization
-//--------------------------------------------------------------------------------------------------
-bool libNtve_gt__MapInitialization_Func (bool testConds, bool runActions) {
-    playergroup autoF196A52B_g;
-    int autoF196A52B_p;
-
-    // Variable Declarations
-    int lv_player;
-
-    // Variable Initialization
-    lv_player = 0;
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    autoF196A52B_g = PlayerGroupAll();
-    autoF196A52B_p = 1;
-    while (autoF196A52B_p <= PlayerGroupCount(autoF196A52B_g)) {
-        lv_player = PlayerGroupPlayer(autoF196A52B_g, autoF196A52B_p);
-        libNtve_gv__GameTimer[lv_player] = TimerCreate();
-        TimerStart(libNtve_gv__GameTimer[lv_player], c_timerDurationInfinite, false, c_timeGame);
-        if ((libNtve_gf_PlayerInCinematicMode(lv_player) == true)) {
-            TimerPause(libNtve_gv__GameTimer[lv_player], true);
-        }
-        else {
-        }
-        if (lv_player == PlayerGroupPlayer(autoF196A52B_g, autoF196A52B_p)) {
-            autoF196A52B_p = autoF196A52B_p + 1;
-        }
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libNtve_gt__MapInitialization_Init () {
-    libNtve_gt__MapInitialization = TriggerCreate("libNtve_gt__MapInitialization_Func");
-    TriggerAddEventMapInit(libNtve_gt__MapInitialization);
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: _BB_BossHPChanged
 //--------------------------------------------------------------------------------------------------
 bool libNtve_gt__BB_BossHPChanged_Func (bool testConds, bool runActions) {
@@ -5080,7 +5047,6 @@ void libNtve_InitTriggers () {
     libNtve_gt_ScreenButtonClicked_Init();
     libNtve_gt_FlashScreenButton_Init();
     libNtve_gt_PulseScreenImage_Init();
-    libNtve_gt__MapInitialization_Init();
     libNtve_gt__BB_BossHPChanged_Init();
 }
 

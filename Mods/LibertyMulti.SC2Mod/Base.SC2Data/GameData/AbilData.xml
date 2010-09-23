@@ -27,10 +27,14 @@
             <Resource index="Vespene" value="50"/>
         </InfoArray>
     </CAbilResearch>
+    <CAbilTrain id="BarracksTrain">
+        <InfoArray index="Train2" Time="45"/>
+    </CAbilTrain>
     <CAbilEffectTarget id="Corruption">
         <TargetFilters index="0" value="Visible;Player,Ally,Neutral,Structure,Missile,Stasis,Dead,Invulnerable"/>
         <Range index="0" value="6"/>
     </CAbilEffectTarget>
+    <CAbilBuild id="FactoryAddOns"/>
     <CAbilResearch id="FactoryTechLabResearch">
         <InfoArray index="Research3" Time="110" Upgrade="StrikeCannons">
             <Resource index="Minerals" value="150"/>
@@ -44,6 +48,9 @@
             <Vital index="Energy" value="25"/>
         </Cost>
     </CAbilEffectTarget>
+    <CAbilTrain id="GatewayTrain">
+        <InfoArray index="Train1" Time="38"/>
+    </CAbilTrain>
     <CAbilResearch id="InfestationPitResearch">
         <InfoArray index="Research4" Time="110" Upgrade="NeuralParasite">
             <Resource index="Minerals" value="150"/>
@@ -57,7 +64,12 @@
             <Resource index="Vespene" value="100"/>
         </InfoArray>
     </CAbilResearch>
-    <CAbilTrain id="LarvaTrain"/>
+    <CAbilTrain id="LarvaTrain">
+        <InfoArray index="Train8">
+            <Button DefaultButtonFace=""/>
+            <Unit index="0" removed="1"/>
+        </InfoArray>
+    </CAbilTrain>
     <CAbilResearch id="MercCompoundResearch">
         <InfoArray index="Research4">
             <Resource index="Minerals" value="50"/>
@@ -80,13 +92,6 @@
             <Cooldown TimeUse="2"/>
         </Cost>
     </CAbilEffectTarget>
-    <CAbilResearch id="RoboticsBayResearch">
-        <InfoArray index="Research1" Time="80" Upgrade="IncreasedRange">
-            <Resource index="Minerals" value="100"/>
-            <Resource index="Vespene" value="100"/>
-            <Button DefaultButtonFace="ResearchIncreasedRange" State="Restricted" Requirements="LearnIncreasedRange"/>
-        </InfoArray>
-    </CAbilResearch>
     <CAbilTrain id="RoboticsFacilityTrain">
         <InfoArray index="Train4" Time="55"/>
     </CAbilTrain>
@@ -128,11 +133,25 @@
         <InfoArray index="Train4" Time="90"/>
     </CAbilTrain>
     <CAbilBuild id="TerranBuild">
+        <InfoArray index="Build7" Time="35"/>
+        <InfoArray index="Build13" Unit="">
+            <Button DefaultButtonFace=""/>
+        </InfoArray>
         <InfoArray index="Build16" Time="65"/>
     </CAbilBuild>
-<!--    <CAbilEffectTarget id="InfestedTerrans">
+    <!--    <CAbilEffectTarget id="InfestedTerrans">
         <Range index="0" value="3"/>
         <Flags index="AllowMovement" value="1"/>
         <Flags index="NoDeceleration" value="1"/>
     </CAbilEffectTarget> -->
+    <CAbilWarpTrain id="WarpGateTrain">
+        <InfoArray index="Train1">
+            <Cooldown TimeUse="28"/>
+        </InfoArray>
+    </CAbilWarpTrain>
+    <CAbilBuild id="ZergBuild">
+        <InfoArray index="Build2" Unit="">
+            <Button DefaultButtonFace=""/>
+        </InfoArray>
+    </CAbilBuild>
 </Catalog>

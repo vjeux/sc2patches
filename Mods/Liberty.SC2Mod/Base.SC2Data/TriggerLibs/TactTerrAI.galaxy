@@ -362,20 +362,22 @@ point VikingModeChange (int player, unit aiUnit, unitgroup scanGroup, bool inAss
     string type = AIGetBullyType(aiUnit);
     point here = UnitGetPosition(aiUnit);
     point there;
-    unitgroup targetGroupThreat;
-    int onGroundThreatCount;
-    unitgroup targetGroup;
+    int inAirThreatToGroundCount;
+    unitgroup targetGroupAll;
+    unitgroup targetGroupGround;
+    unitgroup targetGroupAir;
+    unitgroup targetGroupAirThreatToGround;
 
     //  First, find all units within viking range.
     //
-    targetGroup = UnitGroupFilterRegion(scanGroup, RegionCircle(here, AIWeaponFixed(player, c_WE_VikingFighter, c_fieldRange)+2), 0);
-    inAir = UnitGroupCount(targetGroup, c_unitCountAll);
+    targetGroupAll = UnitGroupFilterRegion(scanGroup, RegionCircle(here, AIWeaponFixed(player, c_WE_VikingFighter, c_fieldRange)+2), 0);
 
     //  Next, find the number of ground and air units within viking range.
     //
-    targetGroup = UnitGroupFilterPlane(targetGroup, c_planeGround, 0);
-    onGround = UnitGroupCount(targetGroup, c_unitCountAll);
-    inAir = inAir - onGround; // air = all - ground
+    targetGroupGround = UnitGroupFilterPlane(targetGroupAll, c_planeGround, 0);
+    onGround = UnitGroupCount(targetGroupGround, c_unitCountAll);
+    targetGroupAir = UnitGroupFilterPlane(targetGroupAll, c_planeAir, 0);
+    inAir = UnitGroupCount(targetGroupAir, c_unitCountAll);
 
     //  If a bully type is set, check to see if we're in the right mode if idle.
     if (type != null && onGround == 0 && inAir == 0 && UnitOrderCount(aiUnit) == 0) {
@@ -387,21 +389,20 @@ point VikingModeChange (int player, unit aiUnit, unitgroup scanGroup, bool inAss
         }
     }
 
-    //  Only pay attention to threats on the ground.
-    //
-    targetGroupThreat = UnitGroupFilterThreat(targetGroup, aiUnit, null, 0);
-    onGroundThreatCount = UnitGroupCount(targetGroupThreat, c_unitCountAlive);
-
     if (inAssault) { // viking is on ground.
         //  Go to air mode when there's nothing on the ground anymore.
         //
         if (onGround == 0) {
             return UnitGetPosition(aiUnit);
         }
+        
         //  Also, go to air mode when a pack of new air units shows up and we have killed most of the
         //  ground units.
-        if (inAir >= onGroundThreatCount + 3 || (inAir > 0 && onGroundThreatCount == 0)) {  
-            return UnitGetPosition(aiUnit); 
+        targetGroupAirThreatToGround = UnitGroupFilterThreat(targetGroupAir, aiUnit, null, 0);
+        inAirThreatToGroundCount = UnitGroupCount(targetGroupAirThreatToGround, c_unitCountAlive);
+
+        if (inAirThreatToGroundCount > 0) {  
+            return UnitGetPosition(aiUnit);
         }
     }
     else { // viking is in air.
@@ -418,7 +419,7 @@ point VikingModeChange (int player, unit aiUnit, unitgroup scanGroup, bool inAss
             //  we are guaranteed to be able to navigate to it.
             //
             while (onGround > 0) {
-                there = UnitGetPosition(UnitGroupUnit(targetGroup, onGround));
+                there = UnitGetPosition(UnitGroupUnit(targetGroupGround, onGround));
                 testCliffLevel = CliffLevel(there);
                 if (cliffLevel >= testCliffLevel) {
                     return there;

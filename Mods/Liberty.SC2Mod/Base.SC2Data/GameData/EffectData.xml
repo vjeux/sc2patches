@@ -140,7 +140,7 @@
     <CEffectEnumArea id="DisguiseSearch">
         <EditorCategories value="Race:Zerg"/>
         <ImpactLocation Value="TargetUnit"/>
-        <SearchFilters value="Visible;Player,Ally,Neutral"/>
+        <SearchFilters value="Visible;Player,Ally,Neutral,Missile"/>
         <AreaArray Radius="12" Effect="Disguise"/>
         <AreaArray Effect="DisguiseRemoveBehavior"/>
         <MaxCount value="1"/>
@@ -519,6 +519,7 @@
         <ValidatorArray value="NotWarpingIn"/>
         <ValidatorArray value="NotFrenzied"/>
         <ValidatorArray value="HasNoCargo"/>
+        <ValidatorArray value="NotPointDefenseDrone"/>
         <Flags index="Channeled" value="1"/>
         <Marker Link="Abil/NeuralParasite">
             <MatchFlags index="Link" value="1"/>
@@ -746,10 +747,11 @@
         <DrainResourceCostFactor index="Terrazine" value="0.25"/>
         <DrainResourceCostFactor index="Custom" value="0.25"/>
         <RechargeVitalRate value="1"/>
+        <ValidatorArray value="NotWarpingIn"/>
         <ValidatorArray value="HiddenCompareBA"/>
         <ValidatorArray value="HiddenCompareAB"/>
+        <ValidatorArray value="NotVortexd"/>
         <TimeFactor value="1"/>
-        <PeriodicValidator value="TargetIsVisible"/>
     </CEffectCreateHealer>
     <CEffectIssueOrder id="SapStructureIssueAttackOrder">
         <EditorCategories value="Race:Zerg"/>
@@ -1066,7 +1068,6 @@
         <EffectArray value="VortexDummy"/>
         <EffectArray value="VortexUnsiege"/>
         <EffectArray value="VortexApplyDisable"/>
-        <EffectArray value="VortexForce"/>
     </CEffectSet>
     <CEffectApplyBehavior id="VortexEventHorizon">
         <EditorCategories value="Race:Protoss"/>
@@ -1158,15 +1159,6 @@
         <Death value="Blast"/>
         <AttributeBonus index="Armored" value="10"/>
     </CEffectDamage>
-    <CEffectSet id="CrucioShockCannonSet">
-        <EditorCategories value="Race:Terran"/>
-        <EffectArray value="CrucioShockCannonBlastSet"/>
-        <EffectArray value="CrucioShockCannonDirected"/>
-    </CEffectSet>
-    <CEffectSet id="CrucioShockCannonBlastSet">
-        <EditorCategories value="Race:Terran"/>
-        <EffectArray value="CrucioShockCannonBlast"/>
-    </CEffectSet>
     <CEffectDamage id="CrucioShockCannonBlast" parent="DU_WEAP">
         <EditorCategories value="Race:Terran"/>
         <ValidatorArray value="TargetRadiusSmall"/>
@@ -2121,6 +2113,7 @@
         <SpawnUnit value="Broodling"/>
         <CreateFlags index="Birth" value="0"/>
         <CreateFlags index="SetFacing" value="1"/>
+        <SpawnRange value="5"/>
     </CEffectCreateUnit>
     <CEffectSet id="BroodlingEscortLaunch">
         <EditorCategories value="Race:Zerg"/>
@@ -2250,10 +2243,11 @@
         <DrainResourceCostFactor index="Terrazine" value="0.25"/>
         <DrainResourceCostFactor index="Custom" value="0.25"/>
         <RechargeVitalRate value="1"/>
+        <ValidatorArray value="NotWarpingIn"/>
         <ValidatorArray value="HiddenCompareBA"/>
         <ValidatorArray value="HiddenCompareAB"/>
+        <ValidatorArray value="NotVortexd"/>
         <TimeFactor value="1"/>
-        <PeriodicValidator value="TargetIsVisible"/>
     </CEffectCreateHealer>
     <CEffectApplyBehavior id="WarpInEffect"/>
     <CEffectApplyBehavior id="WarpInEffect15"/>
@@ -2358,4 +2352,13 @@
         <EditorCategories value="Race:Zerg"/>
         <Behavior value="Contaminated"/>
     </CEffectApplyBehavior>
+    <CEffectSet id="CrucioShockCannonSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="CrucioShockCannonBlastSet"/>
+        <EffectArray value="CrucioShockCannonDirected"/>
+    </CEffectSet>
+    <CEffectSet id="CrucioShockCannonBlastSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="CrucioShockCannonBlast"/>
+    </CEffectSet>
 </Catalog>

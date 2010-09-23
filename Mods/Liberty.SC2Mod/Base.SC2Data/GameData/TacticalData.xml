@@ -34,7 +34,7 @@
         <Abil value="AutoTurret"/>
         <TargetFind value="TacticalAutoTurret"/>
     </CTacticalOrder>-->
-    <CTacticalSet id="Overlord">
+    <!--<CTacticalSet id="Overlord">
         <Array value="OverlordCreepStart"/>
         <Array value="OverlordCreepStop"/>
     </CTacticalSet>
@@ -46,7 +46,7 @@
         <Abil value="GenerateCreep"/>
         <AbilCmdIndex value="1"/>
         <Validator value="TacticalGenerateCreepStop"/>
-    </CTacticalOrder>
+    </CTacticalOrder>-->
     <CTacticalOrder id="SiegeTank">
         <Abil value="SiegeMode"/>
         <Validator value="TacticalSiegeTankSeige"/>

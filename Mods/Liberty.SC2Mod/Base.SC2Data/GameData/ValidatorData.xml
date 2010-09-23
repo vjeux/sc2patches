@@ -615,6 +615,11 @@
     <CValidatorUnitFilters id="TargetIsVisible">
         <Filters value="Visible;-"/>
     </CValidatorUnitFilters>
+    <CValidatorUnitType id="NotPointDefenseDrone">
+        <Value value="PointDefenseDrone"/>
+        <Find value="0"/>
+        <ResultFailed value="CantTargetThatUnit,Error/CantTargetPointDefenseDrone"/>
+    </CValidatorUnitType>
     <CValidatorUnitType id="TargetNotChangeling">
         <Value value="Changeling"/>
         <Find value="0"/>
@@ -674,8 +679,21 @@
         <Value value="1"/>
         <Behavior value="Hallucination"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="isWorker">
+        <Type value="Or"/>
+        <CombineArray value="IsDrone"/>
+        <CombineArray value="IsProbe"/>
+        <CombineArray value="IsSCV"/>
+        <CombineArray value="IsMULE"/>
+    </CValidatorCombine>
     <CValidatorUnitType id="IsDrone">
         <Value value="Drone"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="IsMULE">
+        <Value value="MULE"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="IsProbe">
+        <Value value="Probe"/>
     </CValidatorUnitType>
     <CValidatorUnitType id="IsUltralisk">
         <Value value="Ultralisk"/>

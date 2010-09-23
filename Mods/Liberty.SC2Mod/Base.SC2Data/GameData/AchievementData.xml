@@ -12,6 +12,7 @@
     <CAchievement id="Campaign_Progress_Liberty">
         <Category value="Achievement/Category/LibertyCampaign"/>
         <Flags index="Hidden" value="1"/>
+        <Points value="0"/>
     </CAchievement>
     <!--                                            -->
     <!-- Guide One                              -->
@@ -64,6 +65,7 @@
     <CAchievement id="Combat_Exploration_FreeForAllCrusher" parent="GUIDETHREE">
         <Flags index="Local" value="0"/>
         <Filters index="MatchFFA" value="1"/>
+        <Filters index="MatchAnonymous" value="1"/>
     </CAchievement>
     <CAchievement id="Exploration_GuideThree_PlayReplay" parent="GUIDETHREE">
         <Filters index="MapMelee" value="0"/>
@@ -252,6 +254,7 @@
     <CAchievement id="QuickMatch_Competitive_FFA_5000_Kills" parent="COMPETITIVE">
         <Flags index="Local" value="0"/>
         <Filters index="MatchFFA" value="1"/>
+        <Filters index="MatchAnonymous" value="1"/>
     </CAchievement>
     <!--                                            -->
     <!-- Challenges                             -->

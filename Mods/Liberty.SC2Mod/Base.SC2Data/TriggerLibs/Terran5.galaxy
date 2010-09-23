@@ -2624,6 +2624,8 @@ void TerranHarass5 (int player) {
 //  TerranLate5
 //--------------------------------------------------------------------------------------------------
 void TerranLate5 (int player) {
+    int armyCompareEstimate = AIArmyComparisonEstimate(player);
+
     // only allow scouting if I have an viking to scout with, ie stop using workers
     AIScoutingEnable(player, 1, c_TU_Medivac);
     // calculate a limit on how much simultaneous teching can happen
@@ -2661,10 +2663,10 @@ void TerranLate5 (int player) {
     TerranLateGameArmy5(player, e_armyTypeBase);
     
 // Basic towns, farms, & peons
-    AIDefaultEconomy(player, c_TB_CommandCenter_Alias, c_TB_Refinery, c_TB_SupplyDepot, c_TU_SCV, 50, c_stockAlways);
+    AIDefaultEconomy(player, c_TB_CommandCenter_Alias, c_TB_Refinery, c_TB_SupplyDepot, c_TU_SCV, 70, c_stockAlways);
 
 // Low expand (we're running low on minerals/gas)
-    AIDefaultExpansion(player, c_TB_CommandCenter, 5000, 2500, c_expandVitalHard);
+    AIAdjustedDefaultExpansion(player, c_TB_CommandCenter, 7000, 2500, c_expandVitalHard, armyCompareEstimate);
 
 // Minimum normal detection
     if (AISuspectDetectionDanger(player)) {
@@ -2686,11 +2688,11 @@ void TerranLate5 (int player) {
 // Make Counter Units
     TerranMakeCounters5(player);
     
+// Normal expand
+    AIAdjustedDefaultExpansion(player, c_TB_CommandCenter, 12000, 5000, c_expandNormalHard, armyCompareEstimate);
+
 // Medium sized army
     TerranLateGameArmy5(player, e_armyTypeMedium);
-
-// Normal expand
-    AIDefaultExpansion(player, c_TB_CommandCenter, 12000, 6000, c_expandNormalHard);
 
 // Multiple detectors & scouts & a transport
     AISetStockUnitNext( player, 2, c_TU_Medivac, c_stockAlways );
@@ -2698,6 +2700,9 @@ void TerranLate5 (int player) {
 
 // Important upgrades
     TerranImportantUpgrades5(player);
+
+// Middle expand
+    AIAdjustedDefaultExpansion(player, c_TB_CommandCenter, 18000, 8500, c_expandNormalHard, armyCompareEstimate);
 
 // Main base defense
     TerranDefenseMainTown5(player);
@@ -2723,6 +2728,9 @@ void TerranLate5 (int player) {
 // Large sized army
     TerranLateGameArmy5(player, e_armyTypeLarge);
 
+// Late expand
+    AIAdjustedDefaultExpansion(player, c_TB_CommandCenter, 24000, 12000, c_expandNormalHard, armyCompareEstimate);
+
 // Other towns defense
     TerranDefenseOtherTowns5(player);
 
@@ -2734,7 +2742,7 @@ void TerranLate5 (int player) {
     AISetStockUnitNext( player, 6, c_TU_Medivac, c_stockAlways );
     
 // Extra production buildings
-    AISetStockUnitNext( player, 4, c_TB_Barracks,           c_stockAlways );
+    AISetStockUnitNext( player, 5, c_TB_Barracks,           c_stockAlways );
     AISetStockUnitNext( player, 1, c_TB_BarracksTechLab,    c_stockAlways );
     AISetStockUnitNext( player, 1, c_TB_BarracksReactor,    c_stockAlways );
     AISetStockUnitNext( player, 3, c_TB_BarracksTechLab,    c_stockAlways );
@@ -2749,11 +2757,11 @@ void TerranLate5 (int player) {
         AISetStockUnitNext( player, 2, c_TB_Armory, c_stockAlways );
     }
 
+// Idle expand (very low priority, to prevent us from sitting around with idle peons)
+    AIAdjustedDefaultExpansion(player, c_TB_CommandCenter, 30000, 15000, c_expandIdleHard, armyCompareEstimate);
+
 // Entire Army
     TerranLateGameArmy5(player, e_armyTypeFull);
-
-// Idle expand (very low priority, to prevent us from sitting around with idle peons)
-    AIDefaultExpansion(player, c_TB_CommandCenter, 24000, 12000, c_expandIdleHard);
 
     AIEnableStock(player);    
 // ****************** End Restock ****************** //

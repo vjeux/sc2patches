@@ -28,6 +28,7 @@
         <AffectedUnitArray value="Reaper"/>
         <InfoTooltipPriority value="61"/>
         <Name value="Upgrade/Name/TerranInfantryWeapons"/>
+        <WebPriority value="0"/>
     </CUpgrade>
     <CUpgrade default="1" id="TerranInfantryArmors">
         <Race value="Terr"/>
@@ -59,6 +60,7 @@
         <ScoreValue value="ArmorTechnologyValue"/>
         <InfoTooltipPriority value="51"/>
         <Name value="Upgrade/Name/TerranInfantryArmors"/>
+        <WebPriority value="0"/>
     </CUpgrade>
     <CUpgrade default="1" id="TerranVehicleWeapons">
         <Race value="Terr"/>
@@ -90,6 +92,7 @@
         <ScoreCount value="WeaponTechnologyCount"/>
         <ScoreValue value="WeaponTechnologyValue"/>
         <Name value="Upgrade/Name/TerranVehicleWeapons"/>
+        <WebPriority value="0"/>
     </CUpgrade>
     <CUpgrade default="1" id="TerranVehicleArmors">
         <Race value="Terr"/>
@@ -114,6 +117,7 @@
         <ScoreCount value="ArmorTechnologyCount"/>
         <ScoreValue value="ArmorTechnologyValue"/>
         <Name value="Upgrade/Name/TerranVehicleArmors"/>
+        <WebPriority value="0"/>
     </CUpgrade>
     <CUpgrade default="1" id="TerranShipWeapons">
         <Race value="Terr"/>
@@ -143,6 +147,7 @@
         <ScoreCount value="WeaponTechnologyCount"/>
         <ScoreValue value="WeaponTechnologyValue"/>
         <Name value="Upgrade/Name/TerranShipWeapons"/>
+        <WebPriority value="0"/>
     </CUpgrade>
     <CUpgrade default="1" id="TerranShipArmors">
         <Race value="Terr"/>
@@ -174,6 +179,7 @@
         <ScoreCount value="ArmorTechnologyCount"/>
         <ScoreValue value="ArmorTechnologyValue"/>
         <Name value="Upgrade/Name/TerranShipArmors"/>
+        <WebPriority value="0"/>
     </CUpgrade>
     <CUpgrade default="1" id="ProtossGroundArmors">
         <Race value="Prot"/>
@@ -218,6 +224,7 @@
         <ScoreCount value="ArmorTechnologyCount"/>
         <ScoreValue value="ArmorTechnologyValue"/>
         <Name value="Upgrade/Name/ProtossGroundArmors"/>
+        <WebPriority value="0"/>
     </CUpgrade>
     <CUpgrade default="1" id="ProtossGroundWeapons">
         <Race value="Prot"/>
@@ -257,6 +264,7 @@
         <ScoreCount value="WeaponTechnologyCount"/>
         <ScoreValue value="WeaponTechnologyValue"/>
         <Name value="Upgrade/Name/ProtossGroundWeapons"/>
+        <WebPriority value="0"/>
     </CUpgrade>
     <CUpgrade default="1" id="ProtossShields">
         <Race value="Prot"/>
@@ -393,6 +401,7 @@
         <ScoreCount value="ArmorTechnologyCount"/>
         <ScoreValue value="ArmorTechnologyValue"/>
         <Name value="Upgrade/Name/ProtossShields"/>
+        <WebPriority value="0"/>
     </CUpgrade>
     <CUpgrade default="1" id="ProtossAirArmors">
         <Race value="Prot"/>
@@ -433,6 +442,7 @@
         <ScoreCount value="ArmorTechnologyCount"/>
         <ScoreValue value="ArmorTechnologyCount"/>
         <Name value="Upgrade/Name/ProtossAirArmors"/>
+        <WebPriority value="0"/>
     </CUpgrade>
     <CUpgrade default="1" id="ProtossAirWeapons">
         <Race value="Prot"/>
@@ -463,6 +473,7 @@
         <ScoreCount value="WeaponTechnologyCount"/>
         <ScoreValue value="WeaponTechnologyValue"/>
         <Name value="Upgrade/Name/ProtossAirWeapons"/>
+        <WebPriority value="0"/>
     </CUpgrade>
     <CUpgrade default="1" id="ZergMeleeWeapons">
         <Race value="Zerg"/>
@@ -496,6 +507,7 @@
         <ScoreCount value="WeaponTechnologyCount"/>
         <ScoreValue value="WeaponTechnologyValue"/>
         <Name value="Upgrade/Name/ZergMeleeWeapons"/>
+        <WebPriority value="0"/>
     </CUpgrade>
     <CUpgrade default="1" id="ZergMissileWeapons">
         <Race value="Zerg"/>
@@ -525,6 +537,7 @@
         <ScoreCount value="WeaponTechnologyCount"/>
         <ScoreValue value="WeaponTechnologyValue"/>
         <Name value="Upgrade/Name/ZergMissileWeapons"/>
+        <WebPriority value="0"/>
     </CUpgrade>
     <CUpgrade default="1" id="ZergGroundArmors">
         <Race value="Zerg"/>
@@ -598,6 +611,7 @@
         <ScoreCount value="ArmorTechnologyCount"/>
         <ScoreValue value="ArmorTechnologyValue"/>
         <Name value="Upgrade/Name/ZergGroundArmors"/>
+        <WebPriority value="0"/>
     </CUpgrade>
     <CUpgrade default="1" id="ZergFlyerArmors">
         <Race value="Zerg"/>
@@ -630,6 +644,7 @@
         <ScoreCount value="ArmorTechnologyCount"/>
         <ScoreValue value="ArmorTechnologyValue"/>
         <Name value="Upgrade/Name/Zerg Flyer Armors"/>
+        <WebPriority value="0"/>
     </CUpgrade>
     <CUpgrade default="1" id="ZergFlyerWeapons">
         <Race value="Zerg"/>
@@ -653,6 +668,7 @@
         <ScoreCount value="WeaponTechnologyCount"/>
         <ScoreValue value="WeaponTechnologyValue"/>
         <Name value="Upgrade/Name/ZergFlyerWeapons"/>
+        <WebPriority value="0"/>
     </CUpgrade>
     <CUpgrade id="BattlecruiserEnableSpecializations">
         <ScoreAmount value="300"/>
@@ -674,6 +690,7 @@
         <InfoTooltipPriority value="11"/>
         <Alert value="ResearchComplete"/>
         <Flags index="TechTreeCheat" value="1"/>
+        <AffectedUnitArray value="Battlecruiser"/>
     </CUpgrade>
     <CUpgrade id="CarrierLaunchSpeedUpgrade">
         <ScoreAmount value="300"/>
@@ -684,6 +701,7 @@
         <Race value="Prot"/>
         <Alert value="ResearchComplete"/>
         <Flags index="TechTreeCheat" value="1"/>
+        <AffectedUnitArray value="Carrier"/>
     </CUpgrade>
     <CUpgrade id="AnabolicSynthesis">
         <Icon value="Assets\Textures\btn-upgrade-zerg-anabolicsynthesis.dds"/>
@@ -694,6 +712,7 @@
         <EditorCategories value="Race:Zerg,UpgradeType:Talents"/>
         <Alert value="ResearchComplete"/>
         <Flags index="UpgradeCheat" value="0"/>
+        <AffectedUnitArray value="Ultralisk"/>
     </CUpgrade>
     <CUpgrade id="GhostMoebiusReactor">
         <ScoreAmount value="300"/>
@@ -704,6 +723,7 @@
         <Race value="Terr"/>
         <Alert value="ResearchComplete"/>
         <Flags index="TechTreeCheat" value="1"/>
+        <AffectedUnitArray value="Ghost"/>
     </CUpgrade>
     <CUpgrade id="ObverseIncubation">
         <Icon value="Assets\Textures\btn-upgrade-zerg-enduringcorruption.dds"/>
@@ -733,6 +753,7 @@
         <Race value="Prot"/>
         <Alert value="ResearchComplete"/>
         <Flags index="TechTreeCheat" value="1"/>
+        <AffectedUnitArray value="HighTemplar"/>
     </CUpgrade>
     <CUpgrade id="InfestorEnergyUpgrade">
         <ScoreAmount value="300"/>
@@ -743,6 +764,7 @@
         <Race value="Zerg"/>
         <Alert value="ResearchComplete"/>
         <Flags index="TechTreeCheat" value="1"/>
+        <AffectedUnitArray value="Infestor"/>
     </CUpgrade>
     <CUpgrade id="MedivacCaduceusReactor">
         <ScoreAmount value="300"/>
@@ -753,6 +775,7 @@
         <Race value="Terr"/>
         <Alert value="ResearchComplete"/>
         <Flags index="TechTreeCheat" value="1"/>
+        <AffectedUnitArray value="Medivac"/>
     </CUpgrade>
     <CUpgrade id="RavenCorvidReactor">
         <ScoreAmount value="300"/>
@@ -763,6 +786,7 @@
         <Race value="Terr"/>
         <Alert value="ResearchComplete"/>
         <Flags index="TechTreeCheat" value="1"/>
+        <AffectedUnitArray value="Raven"/>
     </CUpgrade>
     <CUpgrade id="ReaperSpeed">
         <Icon value="Assets\Textures\btn-upgrade-terran-reapernitropacks.dds"/>
@@ -870,6 +894,8 @@
         <AffectedUnitArray value="BarracksTechLab"/>
         <AffectedUnitArray value="FactoryTechLab"/>
         <AffectedUnitArray value="StarportTechLab"/>
+        <AffectedUnitArray value="AutoTurret"/>
+        <AffectedUnitArray value="PointDefenseDrone"/>
         <ScoreCount value="ArmorTechnologyCount"/>
         <ScoreValue value="ArmorTechnologyValue"/>
         <ScoreAmount value="400"/>
@@ -889,7 +915,7 @@
         <Flags index="TechTreeCheat" value="1"/>
     </CUpgrade>
     <CUpgrade id="HunterSeeker">
-        <Icon value="Assets\Textures\btn-ability-terran-huntermissile.dds"/>
+        <Icon value="Assets\Textures\btn-ability-terran-huntermissile-color.dds"/>
         <Alert value="ResearchComplete"/>
         <Race value="Terr"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
@@ -917,12 +943,13 @@
         <Flags index="TechTreeCheat" value="1"/>
     </CUpgrade>
     <CUpgrade id="PunisherGrenades">
-        <Icon value="Assets\Textures\btn-ability-terran-punishergrenade.dds"/>
+        <Icon value="Assets\Textures\btn-ability-terran-punishergrenade-color.dds"/>
         <Race value="Terr"/>
         <ScoreAmount value="300"/>
         <ScoreResult value="BuildOrder"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <Alert value="ResearchComplete"/>
+        <AffectedUnitArray value="Marauder"/>
     </CUpgrade>
     <CUpgrade id="ChitinousPlating">
         <Icon value="Assets\Textures\btn-upgrade-zerg-chitinousplating.dds"/>
@@ -960,11 +987,12 @@
         <Race value="Prot"/>
         <Alert value="ResearchComplete"/>
         <Flags index="TechTreeCheat" value="1"/>
+        <AffectedUnitArray value="VoidRay"/>
     </CUpgrade>
     <CUpgrade id="haltech">
         <Alert value="ResearchComplete"/>
         <Race value="Prot"/>
-        <Icon value="Assets\Textures\btn-ability-protoss-hallucination.dds"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-hallucination-color.dds"/>
         <EditorCategories value="Race:Protoss,UpgradeType:SpellResearch"/>
         <ScoreResult value="BuildOrder"/>
         <AffectedUnitArray value="Sentry"/>
@@ -1025,6 +1053,7 @@
         <ScoreAmount value="200"/>
         <InfoTooltipPriority value="0"/>
         <EffectArray Operation="Set" Reference="Weapon,GuassRifle,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,D8Charge,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,P38ScytheGuassPistol,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,PunisherGrenades,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,C10CanisterRifle,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
@@ -1035,6 +1064,7 @@
         <ScoreAmount value="350"/>
         <InfoTooltipPriority value="0"/>
         <EffectArray Operation="Set" Reference="Weapon,GuassRifle,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,D8Charge,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,P38ScytheGuassPistol,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,PunisherGrenades,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,C10CanisterRifle,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
@@ -1045,6 +1075,7 @@
         <ScoreAmount value="500"/>
         <InfoTooltipPriority value="0"/>
         <EffectArray Operation="Set" Reference="Weapon,GuassRifle,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,D8Charge,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,P38ScytheGuassPistol,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,PunisherGrenades,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,C10CanisterRifle,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
@@ -1646,7 +1677,7 @@
     </CUpgrade>
     <CUpgrade id="Stimpack" parent="Research">
         <Race value="Terr"/>
-        <Icon value="Assets\Textures\btn-ability-terran-stimpack.dds"/>
+        <Icon value="Assets\Textures\btn-ability-terran-stimpack-color.dds"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
         <ScoreResult value="BuildOrder"/>
         <AffectedUnitArray value="Marine"/>
@@ -1655,7 +1686,7 @@
     <CUpgrade id="PersonalCloaking">
         <Alert value="ResearchComplete"/>
         <Race value="Terr"/>
-        <Icon value="Assets\Textures\btn-ability-terran-cloak.dds"/>
+        <Icon value="Assets\Textures\btn-ability-terran-cloak-color.dds"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
         <ScoreResult value="BuildOrder"/>
         <AffectedUnitArray value="Ghost"/>
@@ -1673,7 +1704,7 @@
     <CUpgrade id="BansheeCloak">
         <Alert value="ResearchComplete"/>
         <Race value="Terr"/>
-        <Icon value="Assets\Textures\btn-ability-terran-cloak.dds"/>
+        <Icon value="Assets\Textures\btn-ability-terran-cloak-color.dds"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
         <ScoreResult value="BuildOrder"/>
         <AffectedUnitArray value="Banshee"/>
@@ -1694,7 +1725,7 @@
     <CUpgrade id="PsiStormTech">
         <Alert value="ResearchComplete"/>
         <Race value="Prot"/>
-        <Icon value="Assets\Textures\btn-ability-protoss-psistorm.dds"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-psistorm-color.dds"/>
         <EditorCategories value="Race:Protoss,UpgradeType:SpellResearch"/>
         <ScoreResult value="BuildOrder"/>
         <AffectedUnitArray value="HighTemplar"/>
@@ -1716,7 +1747,7 @@
     <CUpgrade id="Charge">
         <Alert value="ResearchComplete"/>
         <Race value="Prot"/>
-        <Icon value="Assets\Textures\btn-ability-protoss-charge.dds"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-charge-color.dds"/>
         <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
         <ScoreResult value="BuildOrder"/>
         <AffectedUnitArray value="Zealot"/>
@@ -1815,7 +1846,7 @@
     <CUpgrade id="BlinkTech">
         <Alert value="ResearchComplete"/>
         <Race value="Prot"/>
-        <Icon value="Assets\Textures\btn-ability-protoss-blink.dds"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-blink-color.dds"/>
         <EditorCategories value="Race:Protoss,UpgradeType:SpellResearch"/>
         <ScoreResult value="BuildOrder"/>
         <AffectedUnitArray value="Stalker"/>
@@ -1844,7 +1875,7 @@
     <CUpgrade id="ShieldWall" parent="Research">
         <InfoTooltipPriority value="2"/>
         <Race value="Terr"/>
-        <Icon value="Assets\Textures\btn-techupgrade-terran-combatshield.dds"/>
+        <Icon value="Assets\Textures\btn-techupgrade-terran-combatshield-color.dds"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <ScoreResult value="BuildOrder"/>
         <AffectedUnitArray value="Marine"/>

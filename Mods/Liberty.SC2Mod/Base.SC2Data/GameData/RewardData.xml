@@ -302,7 +302,7 @@
     <CRewardDecal id="QuickMatch_Solo_Terran_1000_Decal_Terran" parent="DECALTERRAN">
         <IconFile value="$Decals1"/>
         <IconSlot value="12"/>
-        <Texture value="Decal_Terran_0005_02"/>
+        <Texture value="Decal_Terran_0005_01"/>
     </CRewardDecal>
     <CRewardDecal id="QuickMatch_Solo_Terran_1500_Decal_Terran" parent="DECALTERRAN">
         <IconFile value="$Decals1"/>
@@ -1243,7 +1243,7 @@
     </CRewardIcon>
     <CRewardIcon id="Coop_Threesome_Insane" parent="ICONDEFAULT">
         <IconFile value="$Achievements3"/>
-        <IconSlot value="52"/>
+        <IconSlot value="53"/>
     </CRewardIcon>
     <CRewardIcon id="Coop_Meta_Insane" parent="ICONDEFAULT">
         <IconFile value="$Achievements2"/>

@@ -412,12 +412,12 @@
   
     <control label="SceneTimeline">
         <pos>0,0</pos>
-        <size>0,26</size>
+        <size>0,36</size>
         <autoResizeX/>
     </control>
   
     <control label="ActorItemTimeline">
-        <pos>0,26</pos>
+        <pos>0,36</pos>
         <size>0,0</size>
         <autoResizeX/>
         <autoResizeY/>
@@ -494,12 +494,12 @@
 
     <control label="FlagsLabel">
         <pos>4,160</pos>
-        <size>40,18</size>
+        <size>65,18</size>
         <text>EDSTR_OBJECTEDITOR_REQUIREMENTNODE_FLAGS</text>
     </control>
 
     <control label="TechTreeFlag">
-        <pos>39,158</pos>
+        <pos>70,158</pos>
         <size>70,20</size>
         <text>EDSTR_OBJECTEDITOR_REQUIREMENTNODE_TECHTREEFLAG</text>
     </control>
@@ -837,7 +837,7 @@
     
     <control label="CopyrightText">
         <pos>2,22</pos>
-        <size>300,18</size>
+        <size>330,18</size>
         <posReverseY/>
         <text>EDSTR_ABOUT_COPYRIGHT</text>
     </control>
@@ -2173,7 +2173,7 @@
     
     <control label="DocumentDescLongText">
         <pos>2,122</pos>
-        <size>2,96</size>
+        <size>2,85</size>
         <autoResizeX/>
     </control>
     
@@ -3391,7 +3391,7 @@
 
     <control label="FieldDetailActorMsgParamAreaLabel">
         <pos>0,208</pos>
-        <size>100,16</size>
+        <size>300,16</size>
     </control>
 
     <control label="FieldDetailActorMsgParamArea">
@@ -3551,64 +3551,86 @@
     </control>
     
     <!-- Yaw/Pitch/Roll -->
-    <value label="FieldDetailYawPitchRollHeight">100</value>
+    <value label="FieldDetailYawPitchRollHeight">80</value>
 
     <control label="FieldDetailYawLabel">
         <pos>2,5</pos>
-        <size>30, 25</size>
+        <size>30,25</size>
         <text>EDSTR_OBJECTEDITOR_YAW</text>
     </control>
     
     <control label="FieldDetailYaw">
         <pos>32,1</pos>
-        <size>80, 25</size>
+        <size>80,25</size>
     </control>
 
     <control label="FieldDetailPitchLabel">
         <pos>2,30</pos>
-        <size>30, 25</size>
+        <size>30,25</size>
         <text>EDSTR_OBJECTEDITOR_PITCH</text>
     </control>
 
     <control label="FieldDetailPitch">
         <pos>32,26</pos>
-        <size>80, 25</size>
+        <size>80,25</size>
     </control>
 
     <control label="FieldDetailRollLabel">
         <pos>2,56</pos>
-        <size>30, 25</size>
+        <size>30,25</size>
         <text>EDSTR_OBJECTEDITOR_ROLL</text>
     </control>
 
     <control label="FieldDetailRoll">
         <pos>32,52</pos>
-        <size>80, 25</size>
+        <size>80,25</size>
     </control>
 
     <!-- Phase Outro -->
-    <value label="FieldDetailPhaseOutroHeight">75</value>
+    <value label="FieldDetailPhaseOutroHeight">60</value>
 
-    <control label="FieldDetailPhaseOutroBlendLabel">
+    <control label="FieldDetailPhaseOutroBlendAtBaseLabel">
         <pos>2,5</pos>
-        <size>35, 25</size>
+        <size>40,25</size>
         <text>EDSTR_OBJECTEDITOR_PHASEOUTRO_BLEND</text>
     </control>
 
-    <control label="FieldDetailPhaseOutroBlend">
-        <pos>37,1</pos>
-        <size>100, 50</size>
+    <control label="FieldDetailPhaseOutroBlendAtBase">
+        <pos>50,1</pos>
+        <size>75,21</size>
     </control>
 
-    <control label="FieldDetailPhaseOutroStopLabel">
-        <pos>2,55</pos>
-        <size>35, 25</size>
+    <control label="FieldDetailPhaseOutroBlendAtRangeLabel">
+        <pos>135,5</pos>
+        <size>15,25</size>
+        <text>EDSTR_OBJECTEDITOR_PHASEOUTRO_RANGE</text>
+    </control>
+
+    <control label="FieldDetailPhaseOutroBlendAtRange">
+        <pos>155,1</pos>
+        <size>75,21</size>
+    </control>
+
+    <control label="FieldDetailPhaseOutroStopAtBaseLabel">
+        <pos>2,35</pos>
+        <size>40,25</size>
         <text>EDSTR_OBJECTEDITOR_PHASEOUTRO_STOP</text>
     </control>
 
-    <control label="FieldDetailPhaseOutroStop">
-        <pos>37,51</pos>
-        <size>100, 50</size>
+    <control label="FieldDetailPhaseOutroStopAtBase">
+        <pos>50,31</pos>
+        <size>75,21</size>
+    </control>
+
+    <control label="FieldDetailPhaseOutroStopAtRangeLabel">
+        <pos>135,35</pos>
+        <size>15,25</size>
+        <text>EDSTR_OBJECTEDITOR_PHASEOUTRO_RANGE</text>
+    </control>
+
+    <control label="FieldDetailPhaseOutroStopAtRange">
+        <pos>155,31</pos>
+        <size>75,21</size>
     </control>
     
     <!-- Throw Band -->
@@ -3713,7 +3735,7 @@
     </control>
 
     <control label="FieldDetailVariatorLabel2">
-        <pos>0,28</pos>
+        <pos>130,5</pos>
         <size>40,16</size>
         <text>EDSTR_OBJECTEDITOR_RANGE</text>
     </control>
@@ -3724,7 +3746,7 @@
     </control>
 
     <control label="FieldDetailVariatorEdit2">
-        <pos>44,24</pos>
+        <pos>174,1</pos>
         <size>70,21</size>
     </control>
     
@@ -4232,7 +4254,7 @@
     <value label="FieldDetailFootprintHeight">550</value>
 
     <control label="FieldDetailFootprintImage">
-        <pos>2,30</pos>
+        <pos>2,80</pos>
         <size>2,194</size>
         <autoResizeX/>
         <autoResizeY/>
@@ -4252,10 +4274,21 @@
     </control>
 
     <control label="FieldDetailFootprintComplexityLabel">
-        <pos>190,156</pos>
-        <size>260,24</size>
+        <pos>90,28</pos>
+        <size>460,20</size>
+        <text>EDSTR_OBJECTEDITOR_FOOTPRINT_TOOCOMPLEX</text>
+    </control>
+  
+    <control label="FieldDetailFootprintComplexityValLabel">
+        <pos>130,52</pos>
+        <size>80,24</size>
         <text>EDSTR_OBJECTEDITOR_FOOTPRINT_COMPLEXITY</text>
-        <posReverseY/>
+    </control>
+
+    <control label="FieldDetailFootprintComplexityVal">
+      <pos>210,50</pos>
+      <size>210,20</size>
+      <text>EDSTR_OBJECTEDITOR_FOOTPRINT_COMPLEXITY</text>
     </control>
 
     <control label="FieldDetailFootprintResolutionLabel">
@@ -6440,7 +6473,7 @@
 <!-- Animation name dialog -->
 <window label="AnimNameDialog">
     <size>300,200</size>
-    <minsize>150,150</minsize>
+    <minsize>175,150</minsize>
     <centerInParent/>
     <text>EDSTR_OBJECTEDITOR_ANIMNAME_DIALOG</text>
     <acceptButton/>
@@ -6470,12 +6503,12 @@
 
     <control label="TextLabel">
         <pos>2,109</pos>
-        <size>60,21</size>
+        <size>103,21</size>
         <text>EDSTR_OBJECTEDITOR_ANIMNAME_TEXTLABEL</text>
     </control>
 
     <control label="Text">
-        <pos>60,105</pos>
+        <pos>105,105</pos>
         <size>18,21</size>
         <autoResizeX/>
     </control>
@@ -6500,7 +6533,12 @@
 
     <control label="TreeView">
         <pos>2,26</pos>
-        <size>2,28</size>
+        <Windows>
+            <size>2,28</size>
+        </Windows>
+        <MacOSX>
+            <size>2,32</size>
+        </MacOSX>
         <autoResizeX/>
         <autoResizeY/>
     </control>
@@ -6873,7 +6911,7 @@
 <!-- Object Field Array Value dialog -->
 <window label="FieldArrayValueDialog">
     <size>400,400</size>
-    <minsize>200,150</minsize>
+    <minsize>400,150</minsize>
     <centerInParent/>
     <text>EDSTR_FIELDARRAYVALUE_TITLE</text>
     <acceptButton/>
@@ -6883,17 +6921,17 @@
     
     <control label="IndexLabel">
         <pos>2,5</pos>
-        <size>100,16</size>
+        <size>200,16</size>
     </control>
     
     <control label="IndexMenu">
-        <pos>102,1</pos>
+        <pos>205,1</pos>
         <size>2,21</size>
         <autoResizeX/>
     </control>
     
     <control label="IndexEdit">
-        <pos>102,1</pos>
+        <pos>205,1</pos>
         <size>50,21</size>
     </control>
     
@@ -6914,31 +6952,31 @@
 <!-- Object Properties dialog -->
 <window label="ObjectPropertiesDialog">
     <size>300,325</size>
-    <minsize>260,300</minsize>
+    <minsize>280,300</minsize>
     <text>EDSTR_OBJECTPROPS_TITLE</text>
     <acceptButton/>
     <cancelButton/>
     
     <control label="NameLabel">
         <pos>5,7</pos>
-        <size>80,16</size>
+        <size>100,16</size>
         <text>EDSTR_OBJECTPROPS_NAME</text>
     </control>
     
     <control label="NameEdit">
-        <pos>85,3</pos>
+        <pos>105,3</pos>
         <size>5,21</size>
         <autoResizeX/>
     </control>
     
     <control label="IDLabel">
         <pos>5,30</pos>
-        <size>80,16</size>
+        <size>100,16</size>
         <text>EDSTR_OBJECTPROPS_ID</text>
     </control>
     
     <control label="IDEdit">
-        <pos>85,26</pos>
+        <pos>105,26</pos>
         <size>75,21</size>
         <autoResizeX/>
     </control>
@@ -6953,34 +6991,34 @@
     
     <control label="TypeLabel">
         <pos>5,54</pos>
-        <size>80,32</size>
+        <size>100,32</size>
     </control>
     
     <control label="TypeMenu">
-        <pos>85,50</pos>
+        <pos>105,50</pos>
         <size>5,21</size>
         <autoResizeX/>
     </control>
       
     <control label="DefaultCheck">
-        <pos>85,74</pos>
+        <pos>105,74</pos>
         <text>EDSTR_OBJECTPROPS_ISDEFAULT</text>
     </control>
     
     <control label="ParentLabel">
         <pos>5,96</pos>
-        <size>80,16</size>
+        <size>100,16</size>
         <text>EDSTR_OBJECTPROPS_PARENT</text>
     </control>
     
     <control label="ParentMenu">
-        <pos>85,92</pos>
+        <pos>105,92</pos>
         <size>5,21</size>
         <autoResizeX/>
     </control>
     
     <control label="ParentNonDefault">
-        <pos>85,115</pos>
+        <pos>105,115</pos>
         <text>EDSTR_OBJECTPROPS_PARENT_NONDEFAULT</text>
     </control>
     
@@ -6990,41 +7028,41 @@
     
     <control label="CategoryLabel">
         <pos>0,4</pos>
-        <size>80,16</size>
+        <size>100,16</size>
     </control>
     
     <control label="CategoryMenu">
-        <pos>80,0</pos>
+        <pos>100,0</pos>
         <size>5,20</size>
         <autoResizeX/>
     </control>
     
     <control label="FieldLabel">
         <pos>0,4</pos>
-        <size>80,32</size>
+        <size>100,32</size>
         <text>EDSTR_OBJECTPROPS_FIELDS</text>
     </control>
     
     <control label="FieldRadioNoChange">
-        <pos>80,3</pos>
+        <pos>100,3</pos>
         <size>200,16</size>
         <text>EDSTR_OBJECTPROPS_FIELDNOCHANGE</text>
     </control>
     
     <control label="FieldRadioDefault">
-        <pos>80,21</pos>
+        <pos>100,21</pos>
         <size>200,16</size>
         <text>EDSTR_OBJECTPROPS_FIELDDEFAULT</text>
     </control>
     
     <control label="FieldRadioCopy">
-        <pos>80,39</pos>
+        <pos>100,39</pos>
         <size>75,16</size>
         <text>EDSTR_OBJECTPROPS_FIELDCOPY</text>
     </control>
     
     <control label="FieldCopyMenu">
-        <pos>98,56</pos>
+        <pos>118,56</pos>
         <size>5,21</size>
         <autoResizeX/>
     </control>
@@ -7145,7 +7183,7 @@
     <control label="TreeView">
         <pos>0,0</pos>
         <size>0,32</size>
-        <autoResizeX/>>
+        <autoResizeX/>
         <autoResizeY/>
     </control>
 </window>
@@ -7223,7 +7261,7 @@
     <minsize>800,700</minsize>
     <value label="PaneMinSizeMain">270</value>
     <value label="PaneMinSizeMinimap">100</value>
-    <value label="PaneMinSizePalette">500</value>
+    <value label="PaneMinSizePalette">550</value>
     
     <control label="MainPanes">
         <pos>0,0</pos>
@@ -9315,7 +9353,7 @@
         
     <control label="ElementList">
         <pos>0,23</pos>
-        <size>0,44</size>
+        <size>0,74</size>
         <autoResizeX/>
         <autoResizeY/>
         <value label="DefaultColWidthName">100</value>
@@ -9338,8 +9376,8 @@
     </control>
     
     <control label="ElementHint">
-        <pos>2,42</pos>
-        <size>2,42</size>
+        <pos>2,72</pos>
+        <size>2,72</size>
         <autoResizeX/>
         <posReverseY/>
     </control>
@@ -9885,7 +9923,7 @@
     
     <control label="PasswordLabel">
         <Windows><pos>7,92</pos></Windows>
-        <MacOSX><pos>7,1022</pos></MacOSX>
+        <MacOSX><pos>7,102</pos></MacOSX>
         <size>60,16</size>
         <posReverseY/>
         <text>EDSTR_BNET_LOGIN_PASSWORD</text>
@@ -9900,9 +9938,9 @@
     </control>
     
     <control label="ConnectButton">
-        <Windows><pos>67,72</pos></Windows>
-        <MacOSX><pos>67,82</pos></MacOSX>
-        <size>60,21</size>
+        <Windows><pos>87,72</pos></Windows>
+        <MacOSX><pos>87,82</pos></MacOSX>
+        <size>80,21</size>
         <posReverseX/>
         <posReverseY/>
         <text>EDSTR_BNET_LOGIN_CONNECT</text>
@@ -11196,8 +11234,8 @@
   
 <!-- Viewport Size Window -->
 <window label="ViewportSizeWindow">
-    <size>180,95</size>
-    <minsize>180,125</minsize>
+    <size>220,95</size>
+    <minsize>220,125</minsize>
     <centerInParent/>
     <text>EDSTR_VIEWPORTSIZE_TITLE</text>  
   
@@ -13024,14 +13062,14 @@
     </control>
 
     <control label="DurationSoundExtraLabel">
-        <pos>90,17</pos>
-        <size>60,16</size>
+        <pos>88,17</pos>
+        <size>65,16</size>
         <posReverseY/>
         <text>EDSTR_CINEMATICSACTION_DURATION_SOUNDEXTRA</text>
     </control>
     
     <control label="DurationSoundExtraEdit">
-        <pos>150,21</pos>
+        <pos>155,21</pos>
         <size>65,21</size>
         <posReverseY/>
     </control>
@@ -13425,19 +13463,30 @@
 
 <!-- Preferences - Battle.net -->
 <window label="PrefsPaneBattleNet">
-    <control label="AccountLabel">
+    <control label="RegionLabel">
         <pos>5,9</pos>
+        <size>60,16</size>
+        <text>EDSTR_PREFS_BATTLENETREGION</text>
+    </control>
+    
+    <control label="RegionMenu">
+        <pos>65,5</pos>
+        <size>150,21</size>
+    </control>
+    
+    <control label="AccountLabel">
+        <pos>5,32</pos>
         <size>60,16</size>
         <text>EDSTR_PREFS_BATTLENETACCOUNT</text>
     </control>
     
     <control label="AccountEdit">
-        <pos>65,5</pos>
+        <pos>65,28</pos>
         <size>150,21</size>
     </control>
     
     <control label="StartupPatchCheck">
-        <pos>5,29</pos>
+        <pos>5,52</pos>
         <text>EDSTR_PREFS_BATTLENETSTARTUPPATCHCHECK</text>
     </control>
 </window>
@@ -15458,11 +15507,10 @@
         <text>EDSTR_GAMEVARIANTS_VARDELETE</text>
     </control>
     
-    <control label="GenerateDefaultButton">
-        <size>130,20</size>
-        <pos>5,25</pos>
+    <control label="UseDefaultCheck">
+        <pos>5,22</pos>
         <posReverseY/>
-        <text>EDSTR_GAMEVARIANTS_GENDEFAULT</text>
+        <text>EDSTR_GAMEVARIANTS_USEDEFAULT</text>
     </control>
     
     <control label="TabControl">
@@ -15971,7 +16019,7 @@
         <centerRelX/>
         <posReverseY/>
         <text>EDSTR_MAPPROPS_BOUNDS_CAMERA</text>
-		<tooltip>EDSTR_MAPPROPS_BOUNDS_CAMERA_TIP</tooltip>
+        <tooltip>EDSTR_MAPPROPS_BOUNDS_CAMERA_TIP</tooltip>
     </control>
     
     <control label="BottomCameraText">
@@ -15993,14 +16041,14 @@
         <pos>2,36</pos>
         <posReverseY/>
         <text>EDSTR_MAPPROPS_BOUNDS_MODIFYCAMERA</text>
-		<tooltip>EDSTR_MAPPROPS_BOUNDS_MODIFYCAMERA_TIP</tooltip>
+        <tooltip>EDSTR_MAPPROPS_BOUNDS_MODIFYCAMERA_TIP</tooltip>
     </control>
     
     <control label="ModMapCheck">
         <pos>2,18</pos>
         <posReverseY/>
         <text>EDSTR_MAPPROPS_BOUNDS_MODIFYMAP</text>
-		<tooltip>EDSTR_MAPPROPS_BOUNDS_MODIFYMAP_TIP</tooltip>
+        <tooltip>EDSTR_MAPPROPS_BOUNDS_MODIFYMAP_TIP</tooltip>
     </control>
     
     <control label="SizeLabel">
@@ -16009,7 +16057,7 @@
         <posReverseX/>
         <posReverseY/>
         <text>EDSTR_MAPPROPS_BOUNDS_MAPSIZE</text>
-		<tooltip>EDSTR_MAPPROPS_BOUNDS_MAPSIZE_TIP</tooltip>
+        <tooltip>EDSTR_MAPPROPS_BOUNDS_MAPSIZE_TIP</tooltip>
     </control>
     
     <control label="DescriptionLabel">
@@ -16018,7 +16066,7 @@
         <posReverseX/>
         <posReverseY/>
         <text>EDSTR_MAPPROPS_BOUNDS_DESCRIPTION</text>
-		<tooltip>EDSTR_MAPPROPS_BOUNDS_DESCRIPTION_TIP</tooltip>
+        <tooltip>EDSTR_MAPPROPS_BOUNDS_DESCRIPTION_TIP</tooltip>
     </control>
     
     <control label="DescriptionText">
@@ -16034,7 +16082,7 @@
         <posReverseX/>
         <posReverseY/>
         <text>EDSTR_MAPPROPS_BOUNDS_SIZEPLAYABLE</text>
-		<tooltip>EDSTR_MAPPROPS_BOUNDS_SIZEPLAYABLE_TIP</tooltip>
+        <tooltip>EDSTR_MAPPROPS_BOUNDS_SIZEPLAYABLE_TIP</tooltip>
     </control>
     
     <control label="SizePlayableText">
@@ -16050,7 +16098,7 @@
         <posReverseX/>
         <posReverseY/>
         <text>EDSTR_MAPPROPS_BOUNDS_SIZEFULL</text>
-		<tooltip>EDSTR_MAPPROPS_BOUNDS_SIZEFULL_TIP</tooltip>
+        <tooltip>EDSTR_MAPPROPS_BOUNDS_SIZEFULL_TIP</tooltip>
     </control>
     
     <control label="SizeFullText">
@@ -16067,7 +16115,7 @@
         <pos>2,2</pos>
         <size>118,16</size>
         <text>EDSTR_MAPPROPS_TEXTURES_OLD</text>
-		<tooltip>EDSTR_MAPPROPS_TEXTURES_OLD_TIP</tooltip>
+        <tooltip>EDSTR_MAPPROPS_TEXTURES_OLD_TIP</tooltip>
     </control>
     
     <control label="TextureSetOldText">
@@ -16079,7 +16127,7 @@
         <pos>124,2</pos>
         <size>118,16</size>
         <text>EDSTR_MAPPROPS_TEXTURES_NEW</text>
-		<tooltip>EDSTR_MAPPROPS_TEXTURES_NEW_TIP</tooltip>
+        <tooltip>EDSTR_MAPPROPS_TEXTURES_NEW_TIP</tooltip>
     </control>
     
     <control label="TextureSetMenu">
@@ -16093,7 +16141,7 @@
         <size>60,21</size>
         <posReverseX/>
         <text>EDSTR_MAPPROPS_MODIFY</text>
-		<tooltip>EDSTR_MAPPROPS_TEXTURES_MODIFY_TIP</tooltip>
+        <tooltip>EDSTR_MAPPROPS_TEXTURES_MODIFY_TIP</tooltip>
     </control>
     
     <control label="TextureRemapLabel">

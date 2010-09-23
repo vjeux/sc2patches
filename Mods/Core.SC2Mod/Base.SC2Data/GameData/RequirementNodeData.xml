@@ -13,6 +13,10 @@
     <CRequirementOr default="1"/>
     <CRequirementXor default="1"/>
     <CRequirementNot default="1"/>
+    <CRequirementOdd default="1"/>
+    <CRequirementDiv default="1"/>
+    <CRequirementMod default="1"/>
+    <CRequirementMul default="1"/>
     <CRequirementSum default="1"/>
     <CRequirementConst default="1"/>
     <CRequirementAllowAbil default="1"/>

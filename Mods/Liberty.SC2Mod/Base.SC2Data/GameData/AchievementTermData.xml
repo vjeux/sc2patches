@@ -16,6 +16,9 @@
         <Quantity value="100"/>
         <ValidatorArray value="TargetIsEnemy"/>
     </CAchievementTermUnitDeath>
+    <CAchievementTermUnitRegen id="Combat_Mechanic_Shields_Archon" parent="Combat_Mechanic_Shields_Template">
+        <Unit value="Archon"/>
+    </CAchievementTermUnitRegen>
     <CAchievementTermUnitDeath id="QuickMatch_Competitive_FFA_5000_Kills">
         <Flags index="Persist" value="1"/>
         <Quantity value="5000"/>
@@ -388,6 +391,7 @@
         <ChildTable value="Combat_Mechanic_Shields_Observer"/>
         <ChildTable value="Combat_Mechanic_Shields_Colossus"/>
         <ChildTable value="Combat_Mechanic_Shields_Immortal"/>
+        <ChildTable value="Combat_Mechanic_Shields_Archon"/>
     </CAchievementTermCombine>
     <CAchievementTermUnitRegen id="Combat_Mechanic_Shields_Probe" parent="Combat_Mechanic_Shields_Template">
         <Unit value="Probe"/>
@@ -714,7 +718,7 @@
     <CAchievementTermEffectKilled id="Combat_Spells_AutoTurretSCVKills">
         <Quantity value="20"/>
         <Effect value="AutoTurret"/>
-        <ValidatorArray value="IsSCV"/>
+        <ValidatorArray value="IsWorker"/>
     </CAchievementTermEffectKilled>
     <!--=========================================================================================-->
     <CAchievementTermEffectKilled id="Combat_Spells_Seeker">

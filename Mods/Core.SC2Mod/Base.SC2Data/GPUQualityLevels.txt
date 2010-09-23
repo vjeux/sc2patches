@@ -199,6 +199,8 @@
 0x0423|Low|NVIDIA GeForce 8300 GS
 0x0424|Low|NVIDIA GeForce 8400 GS
 0x06e0|Low|NVIDIA GeForce 9300 GE
+0x0405|Low|Nvidia GeForce 9500M GS
+0x064B|Low|Nvidia Geforce 9500M G
 0x06e1|Medium|NVIDIA GeForce 9300 GS
 0x042C|Medium|NVIDIA GeForce 9400 GT
 0x0641|Medium|NVIDIA GeForce 9400 GT
@@ -209,6 +211,8 @@
 0x0645|Medium|NVIDIA GeForce 9500 GS
 0x0647|Medium|NVIDIA GeForce 9600M
 0x062B|Medium|NVIDIA GeForce 9800M
+0x0609|High|Nvidia GeForce 8800M GTS
+0x060C|High|Nvidia GeForce 8800M GTX
 0x0610|High|NVIDIA GeForce 9600 GSO
 0x0622|Ultra|NVIDIA GeForce 9600 GT
 0x0623|High|NVIDIA GeForce 9600 GS
@@ -225,6 +229,8 @@
 0x05E0|Ultra|NVIDIA GeForce GTX 295
 0x05EB|Ultra|NVIDIA GeForce GTX 295
 0x0615|Ultra|Nvidia GeForce GTS 250
+0x060A|High|Nvidia Geforce GTX 280M
+0x0E22|Ultra|GeForce GTX 460
 0x06C4|Ultra|GeForce GTX 465
 0x06CD|Ultra|GeForce GTX 470
 0x06C0|Ultra|GeForce GTX 480
@@ -236,6 +242,7 @@
 0x0CA4|Medium|NVIDIA GeForce GT 340
 0x0CA7|Medium|NVIDIA GeForce GT 330
 0x0618|Medium|Nvidia GeForce GTX 260M
+0x0A29|Medium|Nvidia GeForce GT 330M
 0x0CB1|High|Nvidia GeForce GTS 360M
 0x0652|Medium|NVIDIA GeForce GT 130M
 0x065F|Medium|Nvidia GeForce G210
@@ -245,6 +252,8 @@
 0x0A23|Low|NVIDIA GeForce 210
 0x0A22|Low|NVIDIA GeForce 315
 0x0A66|Low|NVIDIA GeForce 310
+0x0A74|Low|Nvidia GeForce 210M
+0x0A75|Low|Nvidia GeForce 310M
 0x0607|Medium|Nvidia GeForce GTS 240
 0x0A2A|Medium|Nvidia GeForce GT 230M
 0x0A34|Medium|Nvidia GeForce GT 240M
@@ -368,6 +377,10 @@
 0x5673|Low|ATI MOBILITY RADEON X700 Secondary
 0x5D4A|Low|ATI MOBILITY RADEON X800
 0x5D48|Low|ATI MOBILITY RADEON X800  XT
+0x9552|Low|ATI Mobility Radeon HD 4330
+0x9553|Low|ATI Mobility Radeon HD 4530
+0x9480|High|ATI Mobility Radeon HD 4650
+0x68C0|High|ATI Mobility Radeon HD 5730
 0x4153|Unsupported|ATI Radeon 9550/X1050 Series
 0x4173|Unsupported|ATI Radeon 9550/X1050 Series Secondary
 0x4150|Low|ATI RADEON 9600 Series

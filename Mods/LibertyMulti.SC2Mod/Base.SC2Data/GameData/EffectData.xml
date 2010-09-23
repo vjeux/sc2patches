@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="us-ascii"?>
 <Catalog>
+    <CEffectSwitch id="CrucioShockCannonSwitch">
+        <EditorCategories value="Race:Terran"/>
+        <CaseArray Validator="TargetRadiusSmall" Effect="CrucioShockCannonBlast"/>
+        <CaseArray Validator="TargetRadiusLarge" Effect="CrucioShockCannonDirected"/>
+    </CEffectSwitch>
+    <CEffectDamage id="ATSLaserBatteryU">
+        <Amount value="8"/>
+    </CEffectDamage>
     <CEffectCreatePersistent id="Corruption">
         <ValidatorArray index="0" value=""/>
     </CEffectCreatePersistent>
@@ -7,13 +15,18 @@
         <ValidatorArray index="0" value=""/>
     </CEffectApplyBehavior>
     <CEffectDamage id="CrucioShockCannonBlast">
-        <Amount value="50"/>
+        <Amount value="35"/>
+        <AttributeBonus index="Armored" value="15"/>
+        <ValidatorArray index="0" value=""/>
     </CEffectDamage>
     <CEffectDamage id="CrucioShockCannonDirected">
-        <Amount value="50"/>
+        <Amount value="35"/>
+        <AttributeBonus index="Armored" value="15"/>
+        <ValidatorArray index="0" value=""/>
     </CEffectDamage>
     <CEffectDamage id="CrucioShockCannonDummy">
-        <Amount value="50"/>
+        <Amount value="35"/>
+        <AttributeBonus index="Armored" value="15"/>
     </CEffectDamage>
     <CEffectSet id="FungalGrowthInitialSet">
         <TargetLocationType value="Point"/>
@@ -50,7 +63,7 @@
         <SearchFilters value="Ground;Player,Ally,Neutral,Stasis,Dead,Hidden,Invulnerable"/>
         <SearchFlags index="ExtendByUnitRadius" value="1"/>
         <SearchFlags index="OffsetByUnitRadius" value="0"/>
-        <AttributeBonus index="Armored" value="25"/>
+        <AttributeBonus index="Armored" value="20"/>
     </CEffectDamage>
     <CEffectCreatePersistent id="NeuralParasitePersistent">
         <PeriodCount value="30"/>
@@ -108,11 +121,11 @@
     <CEffectDamage id="TwinGatlingCannons">
         <Amount value="12"/>
     </CEffectDamage>
-<!--    <CEffectCreateUnit id="InfestedTerransCreateEgg">
+    <!--    <CEffectCreateUnit id="InfestedTerransCreateEgg">
         <ValidatorArray value="CliffLevelGE1"/>
         <SpawnRange value="3"/>
     </CEffectCreateUnit> -->
-<!--    <CEffectLaunchMissile id="InfestedTerransLaunchMissile">
+    <!--    <CEffectLaunchMissile id="InfestedTerransLaunchMissile">
         <Movers Link="InfestedTerransLayEggWeapon"/>
     </CEffectLaunchMissile> -->
 </Catalog>

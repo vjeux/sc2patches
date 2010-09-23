@@ -43,6 +43,8 @@
         <GlossaryStrongArray value="Phoenix"/>
         <GlossaryWeakArray index="1" value="Corruptor"/>
         <GlossaryWeakArray index="2" value="VoidRay"/>
+        <AbilArray index="5" removed="1"/>
+        <AbilArray index="6" removed="1"/>
     </CUnit>
     <CUnit id="Changeling">
         <GlossaryCategory value=""/>
@@ -54,6 +56,11 @@
         <GlossaryWeakArray index="0" value="VikingFighter"/>
         <GlossaryWeakArray index="1" value="Corruptor"/>
         <GlossaryWeakArray index="2" value="Immortal"/>
+        <AbilArray index="3" removed="1"/>
+        <AbilArray index="4" removed="1"/>
+    </CUnit>
+    <CUnit id="CommandCenter">
+        <AbilArray index="8" removed="1"/>
     </CUnit>
     <CUnit id="Corruptor">
         <Speed value="2.9531"/>
@@ -85,6 +92,14 @@
     <CUnit id="Ghost">
         <GlossaryWeakArray index="2" value="Stalker"/>
     </CUnit>
+    <CUnit id="GhostAcademy">
+        <AbilArray index="4" removed="1"/>
+    </CUnit>
+    <CUnit id="GreaterSpire">
+        <AbilArray index="1" Link="que5"/>
+        <AbilArray index="2" Link="SpireResearch"/>
+        <AbilArray index="3" removed="1"/>
+    </CUnit>
     <CUnit id="Hellion"/>
     <CUnit id="HighTemplar">
         <GlossaryStrongArray index="1" value="Hydralisk"/>
@@ -106,6 +121,8 @@
         <GlossaryWeakArray index="1" value="Zergling"/>
         <GlossaryWeakArray index="2" value="Zealot"/>
         <GlossaryPriority value="120"/>
+        <AbilArray index="3" removed="1"/>
+        <AbilArray index="4" removed="1"/>
     </CUnit>
     <CUnit id="InfestationPit">
         <CardLayouts index="0">
@@ -114,8 +131,9 @@
         </CardLayouts>
     </CUnit>
     <CUnit id="Infestor">
-        <AbilArray index="6" Link="Frenzy"/>
-        <AbilArray Link="InfestedTerrans"/>
+        <AbilArray index="4" Link="FungalGrowth"/>
+        <AbilArray index="5" Link="InfestedTerrans"/>
+        <AbilArray index="6" removed="1"/>
         <CardLayouts index="0">
             <LayoutButtons index="4" Face="NeuralParasite" AbilCmd="NeuralParasite,Execute"/>
             <LayoutButtons index="6" Face="FungalGrowth" AbilCmd="FungalGrowth,Execute"/>
@@ -126,12 +144,7 @@
         <GlossaryWeakArray value="HighTemplar"/>
     </CUnit>
     <CUnit id="InfestorBurrowed">
-        <AbilArray index="1" Link="NeuralParasite"/>
-        <AbilArray index="2" Link="move"/>
-        <AbilArray Link="BurrowInfestorUp"/>
-        <AbilArray Link="FungalGrowth"/>
         <AbilArray Link="InfestedTerrans"/>
-        <AbilArray Link="Frenzy"/>
         <Speed value="2"/>
         <CardLayouts index="0">
             <LayoutButtons Face="InfestedTerrans" Type="AbilCmd" AbilCmd="InfestedTerrans,Execute" Row="2" Column="0"/>
@@ -190,6 +203,8 @@
         <GlossaryWeakArray value="SporeCrawler"/>
         <GlossaryWeakArray value="PhotonCannon"/>
         <GlossaryPriority value="110"/>
+        <AbilArray index="2" removed="1"/>
+        <AbilArray index="3" removed="1"/>
     </CUnit>
     <CUnit id="Overlord">
         <GlossaryPriority value="200"/>
@@ -213,6 +228,8 @@
         <GlossaryStrongArray value="VoidRay"/>
         <GlossaryWeakArray index="1" value="Corruptor"/>
         <GlossaryWeakArray index="2" value="Carrier"/>
+        <AbilArray index="4" removed="1"/>
+        <AbilArray index="5" removed="1"/>
     </CUnit>
     <CUnit id="PhotonCannon">
         <GlossaryPriority value="200"/>
@@ -265,6 +282,13 @@
         <CardLayouts index="0">
             <LayoutButtons index="4" removed="1"/>
         </CardLayouts>
+    </CUnit>
+    <CUnit id="RoboticsFacility">
+        <AbilArray index="0" Link="BuildInProgress"/>
+        <AbilArray index="1" Link="que5"/>
+        <AbilArray index="2" Link="RoboticsFacilityTrain"/>
+        <AbilArray index="3" Link="Rally"/>
+        <AbilArray index="4" removed="1"/>
     </CUnit>
     <CUnit id="Sentry">
         <GlossaryStrongArray index="0" value="Zergling"/>
@@ -336,6 +360,7 @@
         <GlossaryWeakArray index="0" value="Banshee"/>
         <GlossaryWeakArray index="1" value="Mutalisk"/>
         <GlossaryWeakArray value="VoidRay"/>
+        <WeaponArray index="1" Link=""/>
     </CUnit>
     <CUnit id="UltraliskBurrowed">
         <LifeStart value="500"/>
@@ -360,6 +385,8 @@
     <CUnit id="VoidRay">
         <GlossaryWeakArray index="1" value="Mutalisk"/>
         <GlossaryWeakArray index="2" value="Phoenix"/>
+        <AbilArray index="3" removed="1"/>
+        <AbilArray index="4" removed="1"/>
     </CUnit>
     <CUnit id="WarpPrism">
         <GlossaryPriority value="130"/>

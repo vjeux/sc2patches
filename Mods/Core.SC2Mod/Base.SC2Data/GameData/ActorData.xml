@@ -65,6 +65,7 @@
         <AutoScaleFactor value="0"/>
         <AnimBlendTime value="-1.0"/>
         <ModelFlags index="AllowHitTest" value="1"/>
+        <ModelFlags index="UpdateVisibility" value="1"/>
         <ProximityPosition value="CenterModelBounds"/>
     </CActorModel>
     <CActorPower default="1">
@@ -155,6 +156,7 @@
     </CActorSite>
     <CActorSound default="1">
         <Sound value="##id##"/>
+        <SoundFlags index="UpdateVisibility" value="1"/>
         <Inherits index="Visibility" value="1"/>
         <!-- We do not destroy the sound on SoundDone here, b/c it is is possible to have a sound
              set that we play through sequentially.  Each sound sends a SoundDone when done, which
@@ -503,6 +505,10 @@
     <CActorSiteOpAttach id="SOpAttachCenter">
         <AttachQuery Methods="Center"/>
     </CActorSiteOpAttach>
+    <CActorSiteOpAttach id="SOpAttachCenterSoft">
+        <AttachQuery Methods="Center"/>
+        <ForceSoftAttach value="1"/>
+    </CActorSiteOpAttach>
     <CActorSiteOpAttach id="SOpAttachCenterStationary">
         <AttachQuery Methods="Center"/>
         <HoldPosition value="1"/>
@@ -779,12 +785,16 @@
         <Deceleration value="900"/>
         <MaxSpeed value="225"/>
     </CActorSiteOpRotationSmooth>
+    <CActorSiteOpSelectionOffset id="SOpSelectionOffset"/>
     <CActorSiteOpShadow id="SOpShadow"/>
     <CActorSiteOpShadow id="SOpShadowAsyncPrecise">
         <HeightSourceType value="AsyncPrecise"/>
     </CActorSiteOpShadow>
     <CActorSiteOpShadow id="SOpShadowSyncAir">
         <HeightSourceType value="SyncAir"/>
+    </CActorSiteOpShadow>
+    <CActorSiteOpShadow id="SOpShadowSyncGround">
+        <HeightSourceType value="SyncGround"/>
     </CActorSiteOpShadow>
     <CActorSiteOpTipability id="SOpTipability"/>
     <CActorSiteOpUp id="SOpUpDefault">
@@ -1004,6 +1014,27 @@
         <On Terms="UnitConstruction.*.Cancel" Send="Destroy"/>
         <On Terms="ActorOrphan" Send="Destroy"/>
     </CActorModel>
+    <CActorModel default="1" id="TerranModelConstruction">
+        <ModelFlags index="NeedsVolumeMonitoring" value="1"/>
+        <ModelFlags index="UseSyncSeed" value="1"/>
+        <ModelFlags index="AllowHitTest" value="1"/>
+        <Host Subject="_Selectable"/>
+        <Aliases value="_Snapshot"/>
+        <Inherits index="CastShadows" value="1"/>
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Decal" value="1"/>
+        <Inherits index="Opacity" value="1"/>
+        <Inherits index="Scale" value="1"/>
+        <Inherits index="TeamColor" value="1"/>
+        <Inherits index="TimeScale" value="1"/>
+        <Inherits index="TintColor" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <Inherits index="WarpGroup" value="1"/>
+        <On Terms="UnitConstruction.*.Cancel" Send="Destroy"/>
+        <On Terms="UnitConstruction.*.Finish" Send="AnimPlay BirthD Birth,D"/>
+        <On Terms="AnimDone; AnimName BirthD" Send="Destroy"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+    </CActorModel>
     <CActorModel default="1" id="BuffOneShot" parent="ModelAnimationStyleOneShot">
         <Flags index="SuppressSaveLoad" value="1"/>
         <Inherits index="CloakEffect" value="1"/>
@@ -1039,6 +1070,7 @@
         <FogVisibility value="Visible"/>
     </CActorDoodadPreserver>
     <CActorModel id="PlacementModel">
+        <Flags index="SuppressSaveLoad" value="1"/>
         <FogVisibility value="Visible"/>
         <Filter index="Neutral" value="1"/>
         <Filter index="Enemy" value="1"/>
@@ -1051,6 +1083,9 @@
         <On Terms="ActorOrphan" Send="Destroy"/>
         <On Terms="Signal.*.HidePlacement" Send="SetVisibility 0"/>
         <On Terms="Signal.*.ShowPlacement" Send="SetVisibility 1"/>
+    </CActorModel>
+    <CActorModel id="PlaceholderModel" parent="PlacementModel">
+        <HostSiteOps Ops="SOpShadowAsyncPrecise"/>
     </CActorModel>
     <CActorModel id="ZergPlacementModel" parent="PlacementModel">
         <On Terms="ActorCreation; !Option Model Low" Send="SetOpacity 0.45"/>
@@ -1266,6 +1301,7 @@
         <On Terms="Abil.##abil##.Cursor" Send="Create"/>
         <On Terms="ActorOrphan" Send="Destroy"/>
         <HostSiteOps Ops="SOpBasicScopeFollow"/>
+        <Flags index="SuppressSaveLoad" value="1"/>
     </CActorSplat>
     <!--                                                                                         -->
     <!--                                                                                         -->
@@ -1581,6 +1617,7 @@
         <BuildModel value="##unitName##"/>
         <PlacementModel value="##unitName##"/>
         <PlacementActorModel value="PlacementModel"/>
+        <PlaceholderActorModel value="PlaceholderModel"/>
         <PortraitActor value="PortraitActor"/>
         <PortraitModel value="StaticPortrait"/>
         <DeathActorModel value="UnitDeathModel"/>
@@ -1647,6 +1684,13 @@
         <On Terms="FlyerHelperChange; FlyerHelper Selected; !HasStatus FlyerHelper" Target="FlyerHelperSplat"  Send="Destroy"/>
         <On Terms="FlyerHelperChange; FlyerHelper All; ValidateUnit IsFlying; !ScopeContains FlyerHelperSplat" Send="Create FlyerHelperSplat"/>
     </CActorUnit>
+    <CActorEventMacro id="RemoveFlyerHelperMacro">
+        <Remove Terms="StatusOn.*.FlyerHelper; FlyerHelper All" Send="Create FlyerHelperSplat"/>
+        <Remove Terms="StatusOn.*.FlyerHelper; FlyerHelper Selected" Send="Create FlyerHelperSplat"/>
+        <Remove Terms="ActorCreation; FlyerHelper All; ValidateUnit IsFlying" Send="Create FlyerHelperSplat"/>
+        <Remove Terms="FlyerHelperChange; FlyerHelper Selected; HasStatus FlyerHelper; !ScopeContains FlyerHelperSplat" Send="Create FlyerHelperSplat"/>
+        <Remove Terms="FlyerHelperChange; FlyerHelper All; ValidateUnit IsFlying; !ScopeContains FlyerHelperSplat" Send="Create FlyerHelperSplat"/>
+    </CActorEventMacro>
     <!-- For anything unit that one would consider a conventional unit in the game. -->
     <CActorUnit default="1" id="GenericUnitBase" parent="GenericUnitSelectable">
         <UnitFlags index="StandAnimBirthVariation" value="1"/>
@@ -1749,6 +1793,7 @@
         <HostSiteOps Ops="SOpAttachHeadSound"/>
     </CActorSound>
     <CActorModel id="UnitDeathModel">
+        <ModelFlags index="UpdateVisibility" value="0"/>
         <ModelFlags index="UseSyncSeed" value="1"/>
         <ModelFlags index="SuppressMissingAttachErrors" value="1"/>
         <Host Subject="::Creator"/>
@@ -1782,6 +1827,7 @@
         <EventDataSound Name="TerranExplosionLarge" Actor="UnitSound" Sound="Terran_ExplosionLarge"/>
     </CActorModel>
     <CActorModel id="UnitDeathModelNoTeamColor">
+        <ModelFlags index="UpdateVisibility" value="0"/>
         <ModelFlags index="UseSyncSeed" value="1"/>
         <Host Subject="::Creator"/>
         <Inherits index="BaseModelScale" value="1"/>
@@ -1860,11 +1906,13 @@
        <Inherits index="Scale" value="0"/>
    </CActorUnit>
     <CActorSound id="UnitDeathSound" parent="SoundOneShot">
+        <SoundFlags index="UpdateVisibility" value="0"/>
         <Host Subject="::Creator"/>
         <!-- Means we get props and bearings once, and then stop. -->
         <On Terms="ActorCreation" Send="RefClear ::Host"/>
     </CActorSound>
     <CActorSound id="UnitDeathVoice" parent="SoundOneShot">
+        <SoundFlags index="UpdateVisibility" value="0"/>
         <Host Subject="::Creator"/>
         <!-- Means we get props and bearings once, and then stop. -->
         <On Terms="ActorCreation" Send="RefClear ::Host"/>
@@ -2285,4 +2333,5 @@
         UnitPortrait.*.LoadDone     Sent when the portrait model is done loading.
         UnitPortrait.*.Destruction  Sent when a CActorPortrait dies.
     -->
+    <CActorUnit id="StereoscopicOptionsUnit" parent="GenericUnitMinimal" unitName="StereoscopicOptionsUnit"/>
 </Catalog>

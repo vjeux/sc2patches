@@ -35,10 +35,9 @@
         <AlertIcon value="Assets\Textures\btn-upgrade-zerg-chitinousplating.dds"/>
     </CButton>
     <CButton id="CorruptionAbility">
-        <Icon value="Assets\Textures\btn-ability-zerg-corruption-multi.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-zerg-corruption-multi.dds"/>
+        <Icon value="Assets\Textures\btn-ability-zerg-corruption-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-corruption-color.dds"/>
         <EditorCategories value="Race:Zerg"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="EvolveTunnelingClaws">
         <Icon value="Assets\Textures\btn-upgrade-zerg-tunnelingclaws.dds"/>
@@ -46,15 +45,14 @@
         <EditorCategories value="Race:Zerg"/>
     </CButton>
     <CButton id="Feedback">
-        <Icon value="Assets\Textures\btn-ability-protoss-feedback.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-protoss-wrathofadun.dds"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-feedback-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-feedback-color.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="Frenzied">
-        <Icon value="Assets\Textures\btn-ability-zerg-frenzied.dds"/>
+        <Icon value="Assets\Textures\btn-ability-zerg-frenzied-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-frenzied-color.dds"/>
         <EditorCategories value="Race:Zerg"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="GhostHoldFire">
         <Icon value="Assets\Textures\BTN-Ability-Terran-HoldFire.dds"/>
@@ -62,18 +60,18 @@
         <TintRacially value="1"/>
     </CButton>
     <CButton id="GuardianShield">
-        <Icon value="Assets\Textures\btn-ability-protoss-shieldbattery.dds"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-shieldbattery-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-shieldbattery-color.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="Leech">
         <Icon value="Assets\Textures\btn-ability-zerg-leech.dds"/>
         <EditorCategories value="Race:Zerg"/>
     </CButton>
     <CButton id="MassRecall">
-        <Icon value="Assets\Textures\btn-ability-protoss-wormholetransit.dds"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-wormholetransit-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-wormholetransit-color.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="ObverseIncubation">
         <Icon value="Assets\Textures\btn-upgrade-zerg-enduringcorruption.dds"/>
@@ -81,10 +79,9 @@
         <EditorCategories value="Race:Zerg"/>
     </CButton>
     <CButton id="ResearchPunisherGrenades">
-        <Icon value="Assets\Textures\btn-ability-terran-punishergrenade.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-terran-punishergrenade.dds"/>
+        <Icon value="Assets\Textures\btn-ability-terran-punishergrenade-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-punishergrenade-color.dds"/>
         <EditorCategories value="Race:Terran"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="PointDefenseDrone">
         <Icon value="Assets\Textures\btn-unit-terran-targetingdrone.dds"/>
@@ -97,10 +94,9 @@
         <EditorCategories value="Race:Zerg"/>
     </CButton>
     <CButton id="FungalGrowth">
-        <Icon value="Assets\Textures\btn-ability-zerg-fungalgrowth.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-zerg-fungalgrowth.dds"/>
+        <Icon value="Assets\Textures\btn-ability-zerg-fungalgrowth-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-fungalgrowth-color.dds"/>
         <EditorCategories value="Race:Zerg"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="PointDefense">
         <Icon value="Assets\Textures\btn-ability-terran-pointdefenselaser.dds"/>
@@ -118,9 +114,9 @@
         <EditorCategories value="Race:Zerg"/>
     </CButton>
     <CButton id="Explode">
-        <Icon value="Assets\Textures\btn-ability-zerg-explode.dds"/>
+        <Icon value="Assets\Textures\btn-ability-zerg-explode-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-explode-color.dds"/>
         <EditorCategories value="Race:Zerg"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="GatherMULE">
         <Icon value="Assets\Textures\btn-ability-terran-gather.dds"/>
@@ -202,49 +198,44 @@
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="ResearchSeekerMissile">
-        <Icon value="Assets\Textures\BTN-Ability-Terran-HunterMissile.dds"/>
-        <AlertIcon value="Assets\Textures\BTN-Ability-Terran-HunterMissile.dds"/>
+        <Icon value="Assets\Textures\BTN-Ability-Terran-HunterMissile-color.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Ability-Terran-HunterMissile-color.dds"/>
         <EditorCategories value="Race:Terran"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="SapStructure">
-        <Icon value="Assets\Textures\btn-ability-zerg-attackstructure.dds"/>
+        <Icon value="Assets\Textures\btn-ability-zerg-attackstructure-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-attackstructure-color.dds"/>
         <EditorCategories value="Race:Zerg"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="CloakOnBanshee">
-        <Icon value="Assets\Textures\btn-ability-terran-cloak.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-terran-cloak.dds"/>
+        <Icon value="Assets\Textures\btn-ability-terran-cloak-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-cloak-color.dds"/>
         <EditorCategories value="Race:Terran"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="CloakOnGhost">
-        <Icon value="Assets\Textures\btn-ability-terran-cloak.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-terran-cloak.dds"/>
+        <Icon value="Assets\Textures\btn-ability-terran-cloak-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-cloak-color.dds"/>
         <EditorCategories value="Race:Terran"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="CloakingField">
-        <Icon value="Assets\Textures\btn-ability-protoss-cloakfield.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-protoss-cloakfield.dds"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-cloakfield-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-cloakfield-color.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="Charge">
-        <Icon value="Assets\Textures\btn-ability-protoss-charge.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-protoss-charge.dds"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-charge-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-charge-color.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="CliffWalk">
-        <Icon value="Assets\Textures\BTN-ability-Protoss-cliffwalk.dds"/>
+        <Icon value="Assets\Textures\BTN-ability-Protoss-cliffwalk-color.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-ability-Protoss-cliffwalk-color.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="Siphon">
-        <Icon value="Assets\Textures\btn-ability-zerg-rapidregeneration.dds"/>
+        <Icon value="Assets\Textures\btn-ability-zerg-rapidregeneration-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-rapidregeneration-color.dds"/>
         <EditorCategories value="Race:Zerg"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="SpawnChangeling">
         <Icon value="Assets\Textures\BTN-Unit-Zerg-changeling.dds"/>
@@ -252,9 +243,9 @@
         <EditorCategories value="Race:Zerg"/>
     </CButton>
     <CButton id="ConcussiveGrenade">
-        <Icon value="Assets\Textures\btn-ability-terran-punishergrenade.dds"/>
+        <Icon value="Assets\Textures\btn-ability-terran-punishergrenade-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-punishergrenade-color.dds"/>
         <EditorCategories value="Race:Terran"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="Detector">
         <Icon value="Assets\Textures\BTN-Status-Detector.dds"/>
@@ -262,14 +253,14 @@
         <EditorCategories value="Race:Neutral"/>
     </CButton>
     <CButton id="HardenedShield">
-        <Icon value="Assets\Textures\BTN-Ability-Protoss-HardenedShields.dds"/>
+        <Icon value="Assets\Textures\BTN-Ability-Protoss-HardenedShields-color.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Ability-Protoss-HardenedShields-color.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="HunterSeekerMissile">
-        <Icon value="Assets\Textures\BTN-Ability-Terran-HunterMissile.dds"/>
+        <Icon value="Assets\Textures\BTN-Ability-Terran-HunterMissile-color.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Ability-Terran-HunterMissile-color.dds"/>
         <EditorCategories value="Race:Terran"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="CalldownMULE">
         <Icon value="Assets\Textures\BTN-Unit-Terran-mule.dds"/>
@@ -282,9 +273,9 @@
         <EditorCategories value="Race:Zerg"/>
     </CButton>
     <CButton id="JetPack">
-        <Icon value="Assets\Textures\BTN-Ability-Terran-JetPack.dds"/>
+        <Icon value="Assets\Textures\BTN-Ability-Terran-JetPack-color.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Ability-Terran-JetPack-color.dds"/>
         <EditorCategories value="Race:Terran"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="ResearchNeosteelFrame">
         <Icon value="Assets\Textures\btn-upgrade-terran-neosteelframe.dds"/>
@@ -292,24 +283,20 @@
         <AlertIcon value="Assets\Textures\btn-upgrade-terran-neosteelframe.dds"/>
     </CButton>
     <CButton id="PermanentlyCloaked">
-        <Icon value="Assets\Textures\BTN-ability-Protoss-permanentlycloaked-darktemplar.dds"/>
+        <Icon value="Assets\Textures\BTN-ability-Protoss-permanentlycloaked-darktemplar-color.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="PermanentlyCloakedObserver">
-        <Icon value="Assets\Textures\BTN-ability-Protoss-permanentlycloaked-Observer.dds"/>
+        <Icon value="Assets\Textures\BTN-ability-Protoss-permanentlycloaked-Observer-color.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="PrismaticBeam">
-        <Icon value="Assets\Textures\btn-ability-protoss-prismaticbeam.dds"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-prismaticbeam-color.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="RapidRegeneration">
-        <Icon value="Assets\Textures\BTN-ability-zerg-rapidregeneration.dds"/>
+        <Icon value="Assets\Textures\BTN-ability-zerg-rapidregeneration-color.dds"/>
         <EditorCategories value="Race:Zerg"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="ResearchHiSecAutoTracking">
         <Icon value="Assets\Textures\BTN-Upgrade-Terran-hisecautotracking.dds"/>
@@ -342,21 +329,18 @@
         <EditorCategories value="Race:Zerg"/>
     </CButton>
     <CButton id="NeuralParasite">
-        <Icon value="Assets\Textures\BTN-Ability-Zerg-NeuralParasite.dds"/>
+        <Icon value="Assets\Textures\BTN-Ability-Zerg-NeuralParasite-color.dds"/>
         <EditorCategories value="Race:Zerg"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="StimMarauder">
-        <Icon value="Assets\Textures\btn-ability-terran-stimpack.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-terran-stimpack.dds"/>
+        <Icon value="Assets\Textures\btn-ability-terran-stimpack-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-stimpack-color.dds"/>
         <EditorCategories value="Race:Terran"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="SupplyDrop">
-        <Icon value="Assets\Textures\BTN-Ability-Terran-CalldownExtraSupplies.dds"/>
-        <AlertIcon value="Assets\Textures\BTN-Ability-Terran-CalldownExtraSupplies.dds"/>
+        <Icon value="Assets\Textures\BTN-Ability-Terran-CalldownExtraSupplies-color.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Ability-Terran-CalldownExtraSupplies-color.dds"/>
         <EditorCategories value="Race:Terran"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="SummonNydusWorm">
         <Icon value="Assets\Textures\btn-building-zerg-nydusworm.dds"/>
@@ -400,9 +384,8 @@
         <TintRacially value="1"/>
     </CButton>
     <CButton id="SwarmSeeds">
-        <Icon value="Assets\Textures\btn-ability-zerg-swarmseeds.dds"/>
+        <Icon value="Assets\Textures\btn-ability-zerg-swarmseeds-color.dds"/>
         <EditorCategories value="Race:Zerg"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="BuildTechLabFactory">
         <Icon value="Assets\Textures\btn-building-terran-techlab.dds"/>
@@ -420,14 +403,13 @@
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="250mmStrikeCannons">
-        <Icon value="Assets\Textures\btn-ability-terran-bombardmentstrike.dds"/>
+        <Icon value="Assets\Textures\btn-ability-terran-bombardmentstrike-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-bombardmentstrike-color.dds"/>
         <EditorCategories value="Race:Terran"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="TimeWarp">
-        <Icon value="Assets\Textures\btn-ability-protoss-chronoboost.dds"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-protoncharge-color.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="UpgradeBuildingArmorLevel1">
         <Icon value="Assets\Textures\BTN-upgrade-terran-buildingarmor.dds"/>
@@ -476,16 +458,14 @@
         <TintRacially value="1"/>
     </CButton>
     <CButton id="CloakOn">
-        <Icon value="Assets\Textures\btn-ability-terran-cloak.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-terran-cloak.dds"/>
+        <Icon value="Assets\Textures\btn-ability-terran-cloak-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-cloak-color.dds"/>
         <EditorCategories value="Race:Terran"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="CloakOff">
-        <Icon value="Assets\Textures\BTN-Ability-Terran-Decloak.dds"/>
-        <AlertIcon value="Assets\Textures\BTN-Ability-Terran-Decloak.dds"/>
+        <Icon value="Assets\Textures\BTN-Ability-Terran-Decloak-color.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Ability-Terran-Decloak-color.dds"/>
         <EditorCategories value="Race:Terran"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="TerranBuild">
         <Icon value="Assets\Textures\btn-command-terran-buildstructure.dds"/>
@@ -552,10 +532,9 @@
         <TintRacially value="1"/>
     </CButton>
     <CButton id="Scan">
-        <Icon value="Assets\Textures\btn-ability-terran-scannersweep.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-terran-scannersweep.dds"/>
+        <Icon value="Assets\Textures\btn-ability-terran-scannersweep-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-scannersweep-color.dds"/>
         <EditorCategories value="Race:Terran"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="MedivacLoad">
         <Icon value="Assets\Textures\btn-ability-terran-load.dds"/>
@@ -570,34 +549,29 @@
         <TintRacially value="1"/>
     </CButton>
     <CButton id="Stim">
-        <Icon value="Assets\Textures\btn-ability-terran-stimpack.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-terran-stimpack.dds"/>
+        <Icon value="Assets\Textures\btn-ability-terran-stimpack-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-stimpack-color.dds"/>
         <EditorCategories value="Race:Terran"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="StimRedirect">
-        <Icon value="Assets\Textures\btn-ability-terran-stimpack.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-terran-stimpack.dds"/>
+        <Icon value="Assets\Textures\btn-ability-terran-stimpack-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-stimpack-color.dds"/>
         <EditorCategories value="Race:Terran"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="Snipe">
-        <Icon value="Assets\Textures\btn-ability-terran-snipe.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-terran-snipe.dds"/>
+        <Icon value="Assets\Textures\btn-ability-terran-snipe-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-snipe-color.dds"/>
         <EditorCategories value="Race:Terran"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="NukeCalldown">
-        <Icon value="Assets\Textures\btn-ability-terran-nuclearstrike.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-terran-nuclearstrike.dds"/>
+        <Icon value="Assets\Textures\btn-ability-terran-nuclearstrike-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-nuclearstrike-color.dds"/>
         <EditorCategories value="Race:Terran"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="Heal">
-        <Icon value="Assets\Textures\btn-ability-terran-heal.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-terran-heal.dds"/>
+        <Icon value="Assets\Textures\btn-ability-terran-heal-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-heal-color.dds"/>
         <EditorCategories value="Race:Terran"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="SiegeTank">
         <Icon value="Assets\Textures\btn-unit-terran-siegetank.dds"/>
@@ -610,9 +584,8 @@
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="Vortex">
-        <Icon value="Assets\Textures\BTN-Ability-Protoss-Blackhole.dds"/>
+        <Icon value="Assets\Textures\BTN-Ability-Protoss-Blackhole-color.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="WeaponsFree">
         <Icon value="Assets\Textures\btn-ability-terran-weaponsfree.dds"/>
@@ -621,15 +594,13 @@
         <TintRacially value="1"/>
     </CButton>
     <CButton id="WormholeTransit">
-        <Icon value="Assets\Textures\btn-ability-protoss-wormholetransit.dds"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-wormholetransit-color.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="YamatoGun">
-        <Icon value="Assets\Textures\btn-ability-terran-yamatogun.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-terran-yamatogun.dds"/>
+        <Icon value="Assets\Textures\btn-ability-terran-yamatogun-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-yamatogun-color.dds"/>
         <EditorCategories value="Race:Terran"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="CommandCenter">
         <Icon value="Assets\Textures\btn-building-terran-commandcenter.dds"/>
@@ -692,11 +663,6 @@
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="UpgradeToPlanetaryFortress">
-        <Icon value="Assets\Textures\btn-building-terran-planetaryfortress.dds"/>
-        <AlertIcon value="Assets\Textures\btn-building-terran-planetaryfortress.dds"/>
-        <EditorCategories value="Race:Terran"/>
-    </CButton>
-    <CButton id="UpgradeToPlanetaryFortressFast">
         <Icon value="Assets\Textures\btn-building-terran-planetaryfortress.dds"/>
         <AlertIcon value="Assets\Textures\btn-building-terran-planetaryfortress.dds"/>
         <EditorCategories value="Race:Terran"/>
@@ -807,22 +773,19 @@
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="Stimpack">
-        <Icon value="Assets\Textures\btn-ability-terran-stimpack.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-terran-stimpack.dds"/>
+        <Icon value="Assets\Textures\btn-ability-terran-stimpack-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-stimpack-color.dds"/>
         <EditorCategories value="Race:Terran"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="ResearchStalkerTeleport">
-        <Icon value="Assets\Textures\btn-ability-protoss-blink.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-protoss-blink.dds"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-blink-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-blink-color.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="ResearchPersonalCloaking">
-        <Icon value="Assets\Textures\btn-ability-terran-cloak.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-terran-cloak.dds"/>
+        <Icon value="Assets\Textures\btn-ability-terran-cloak-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-cloak-color.dds"/>
         <EditorCategories value="Race:Terran"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="ResearchSiegeTech">
         <Icon value="Assets\Textures\btn-unit-terran-siegetanksiegemode.dds"/>
@@ -830,10 +793,9 @@
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="ResearchBansheeCloak">
-        <Icon value="Assets\Textures\btn-ability-terran-cloak.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-terran-cloak.dds"/>
+        <Icon value="Assets\Textures\btn-ability-terran-cloak-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-cloak-color.dds"/>
         <EditorCategories value="Race:Terran"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="TerranVehicleWeaponsLevel1">
         <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
@@ -908,16 +870,14 @@
         <TintRacially value="1"/>
     </CButton>
     <CButton id="PsiStorm">
-        <Icon value="Assets\Textures\btn-ability-protoss-psistorm.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-protoss-psistorm.dds"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-psistorm-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-psistorm-color.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="Hallucination">
-        <Icon value="Assets\Textures\btn-ability-protoss-hallucination.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-protoss-hallucination.dds"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-hallucination-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-hallucination-color.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="ProbeHallucination">
         <Icon value="Assets\Textures\btn-unit-protoss-probe.dds"/>
@@ -1175,16 +1135,14 @@
         <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="ResearchPsiStorm">
-        <Icon value="Assets\Textures\btn-ability-protoss-psistorm.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-protoss-psistorm.dds"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-psistorm-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-psistorm-color.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="ResearchHallucination">
-        <Icon value="Assets\Textures\btn-ability-protoss-hallucination.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-protoss-hallucination.dds"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-hallucination-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-hallucination-color.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="AssaultMode">
         <Icon value="Assets\Textures\btn-unit-terran-vikingassault.dds"/>
@@ -1197,10 +1155,9 @@
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="ResearchCharge">
-        <Icon value="Assets\Textures\btn-ability-protoss-charge.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-protoss-charge.dds"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-charge-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-charge-color.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="ResearchGraviticDrive">
         <Icon value="Assets\Textures\btn-upgrade-protoss-graviticdrive.dds"/>
@@ -1507,10 +1464,9 @@
         <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="Blink">
-        <Icon value="Assets\Textures\btn-ability-protoss-blink.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-protoss-blink.dds"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-blink-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-blink-color.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="Infestor">
         <Icon value="Assets\Textures\btn-unit-zerg-infestor.dds"/>
@@ -1572,16 +1528,14 @@
         <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="ForceField">
-        <Icon value="Assets\Textures\BTN-Ability-protoss-forcefield.dds"/>
-        <AlertIcon value="Assets\Textures\BTN-Ability-protoss-forcefield.dds"/>
+        <Icon value="Assets\Textures\BTN-Ability-protoss-forcefield-color.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Ability-protoss-forcefield-color.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="GravitonBeam">
-        <Icon value="Assets\Textures\btn-ability-protoss-gravitonbeam.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-protoss-gravitonbeam.dds"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-gravitonbeam-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-gravitonbeam-color.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="FusionCore">
         <Icon value="Assets\Textures\btn-building-terran-fusioncore.dds"/>
@@ -1589,16 +1543,14 @@
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="EMP">
-        <Icon value="Assets\Textures\btn-ability-terran-emp.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-terran-emp.dds"/>
+        <Icon value="Assets\Textures\btn-ability-terran-emp-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-emp-color.dds"/>
         <EditorCategories value="Race:Terran"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="ResearchShieldWall">
-        <Icon value="Assets\Textures\BTN-techupgrade-terran-combatshield.dds"/>
-        <AlertIcon value="Assets\Textures\BTN-techupgrade-terran-combatshield.dds"/>
+        <Icon value="Assets\Textures\BTN-techupgrade-terran-combatshield-color.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-techupgrade-terran-combatshield-color.dds"/>
         <EditorCategories value="Race:Terran"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="Marauder">
         <Icon value="Assets\Textures\btn-unit-terran-marauder.dds"/>
@@ -1674,9 +1626,8 @@
         <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="Transfusion">
-        <Icon value="Assets\Textures\btn-ability-zerg-transfusion.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-zerg-transfusion.dds"/>
-        <TintRacially value="1"/>
+        <Icon value="Assets\Textures\btn-ability-zerg-transfusion-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-transfusion-color.dds"/>
         <EditorCategories value="Race:Zerg"/>
     </CButton>
     <CButton id="Hellion">
@@ -1685,16 +1636,14 @@
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="GenerateCreep">
-        <Icon value="Assets\Textures\btn-ability-zerg-generatecreep.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-zerg-generatecreep.dds"/>
+        <Icon value="Assets\Textures\btn-ability-zerg-generatecreep-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-generatecreep-color.dds"/>
         <EditorCategories value="Race:Zerg"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="StopGenerateCreep">
-        <Icon value="Assets\Textures\btn-ability-zerg-generatecreepstop.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-zerg-generatecreepstop.dds"/>
+        <Icon value="Assets\Textures\btn-ability-zerg-generatecreepstop-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-generatecreepstop-color.dds"/>
         <EditorCategories value="Race:Zerg"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="NydusCanalLoad">
         <Icon value="Assets\Textures\btn-ability-terran-load.dds"/>
@@ -1709,28 +1658,24 @@
         <TintRacially value="1"/>
     </CButton>
     <CButton id="SpineCrawlerUproot">
-        <Icon value="Assets\Textures\btn-ability-zerg-uproot.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-zerg-uproot.dds"/>
+        <Icon value="Assets\Textures\btn-ability-zerg-uproot-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-uproot-color.dds"/>
         <EditorCategories value="Race:Zerg"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="SporeCrawlerUproot">
-        <Icon value="Assets\Textures\btn-ability-zerg-uproot.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-zerg-uproot.dds"/>
+        <Icon value="Assets\Textures\btn-ability-zerg-uproot-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-uproot-color.dds"/>
         <EditorCategories value="Race:Zerg"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="SpineCrawlerRoot">
-        <Icon value="Assets\Textures\btn-ability-zerg-root.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-zerg-root.dds"/>
+        <Icon value="Assets\Textures\btn-ability-zerg-root-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-root-color.dds"/>
         <EditorCategories value="Race:Zerg"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="SporeCrawlerRoot">
-        <Icon value="Assets\Textures\btn-ability-zerg-root.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-zerg-root.dds"/>
+        <Icon value="Assets\Textures\btn-ability-zerg-root-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-root-color.dds"/>
         <EditorCategories value="Race:Zerg"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="SelectBuilder">
         <Icon value="Assets\Textures\btn-unit-terran-scv.dds"/>
@@ -1761,21 +1706,18 @@
         <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="ResearchStrikeCannons">
-        <Icon value="Assets\Textures\btn-ability-terran-bombardmentstrike.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-terran-bombardmentstrike.dds"/>
+        <Icon value="Assets\Textures\btn-ability-terran-bombardmentstrike-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-bombardmentstrike-color.dds"/>
         <EditorCategories value="Race:Terran"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="ResearchNeuralParasite">
-        <Icon value="Assets\Textures\btn-ability-zerg-neuralparasite.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-zerg-neuralparasite.dds"/>
+        <Icon value="Assets\Textures\btn-ability-zerg-neuralparasite-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-neuralparasite-color.dds"/>
         <EditorCategories value="Race:Zerg"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="Contaminate">
-        <Icon value="Assets\Textures\btn-ability-zerg-contaminaite.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-zerg-contaminaite.dds"/>
+        <Icon value="Assets\Textures\btn-ability-zerg-contaminate-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-contaminate-color.dds"/>
         <EditorCategories value="Race:Zerg"/>
-        <TintRacially value="1"/>
     </CButton>
 </Catalog>

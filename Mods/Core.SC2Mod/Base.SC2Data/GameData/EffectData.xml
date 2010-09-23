@@ -2,6 +2,7 @@
 <Catalog>
     <CEffect default="1">
         <EditorCategories value="Race:Neutral"/>
+        <Chance value="1"/>
         <Marker Link="Effect/##id##"/>
     </CEffect>
     <CEffectApplyBehavior default="1">

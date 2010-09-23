@@ -19,6 +19,7 @@
         <Description value="Button/Tooltip/##id##"/>
         <DeathRevealRadius value="2"/>
         <DeathRevealDuration value="4"/>
+        <DeathRevealType value="Snapshot"/>
         <Race value="Neut"/>
         <DefaultAcquireLevel value="Offensive"/>
         <Response value="Acquire"/>
@@ -62,7 +63,7 @@
         <AIEvaluateAlias value="##id##"/>
         <ReviveType value="##id##"/>
         <PawnItemReduction value="1"/>
-        <Fidget DelayMax="30" DelayMin="10" TurnAngle="90" TurningRate="90">
+        <Fidget DelayMax="30" DelayMin="10" DistanceMin="1" DistanceMax="4" TurnAngle="90" TurningRate="90">
             <ChanceArray index="Idle" value="100"/>
         </Fidget>
     </CUnit>
@@ -99,6 +100,7 @@
         <FlagArray index="Turnable" value="0"/>
         <FlagArray index="Uncommandable" value="1"/>
         <FlagArray index="KillCredit" value="0"/>
+        <FlagArray index="Invulnerable" value="1"/>
         <Fidget DelayMin="0" DelayMax="0"/>
     </CUnit>
     <CUnit default="1" id="POWERUP">
@@ -344,5 +346,8 @@
         <Deceleration value="2.1875"/>
         <LateralAcceleration value="2.1875"/>
         <InnerRadius value="0.625"/>
+    </CUnit>
+    <CUnit id="StereoscopicOptionsUnit">
+        <EditorFlags index="NoPalettes" value="1"/>
     </CUnit>
 </Catalog>

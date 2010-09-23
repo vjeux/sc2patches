@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="us-ascii"?>
 <Catalog>
+    <CUpgrade default="1" id="TerranVehicleWeapons">
+        <EffectArray index="7" Value="3"/>
+        <EffectArray index="8" Value="3"/>
+        <EffectArray index="9" Value="3"/>
+        <EffectArray Reference="Effect,CrucioShockCannonBlast,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Reference="Effect,CrucioShockCannonDirected,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Reference="Effect,CrucioShockCannonDummy,AttributeBonus[Armored]" Value="2"/>
+    </CUpgrade>
+    <CUpgrade id="TerranVehicleWeaponsLevel1">
+        <EffectArray index="7" Value="3"/>
+        <EffectArray index="8" Value="3"/>
+        <EffectArray index="9" Value="3"/>
+        <EffectArray Operation="Add" Reference="Effect,CrucioShockCannonBlast,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Operation="Add" Reference="Effect,CrucioShockCannonDirected,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Operation="Add" Reference="Effect,CrucioShockCannonDummy,AttributeBonus[Armored]" Value="2"/>
+    </CUpgrade>
+    <CUpgrade id="TerranVehicleWeaponsLevel2">
+        <EffectArray index="7" Value="3"/>
+        <EffectArray index="8" Value="3"/>
+        <EffectArray index="9" Value="3"/>
+        <EffectArray Operation="Add" Reference="Effect,CrucioShockCannonBlast,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Operation="Add" Reference="Effect,CrucioShockCannonDirected,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Operation="Add" Reference="Effect,CrucioShockCannonDummy,AttributeBonus[Armored]" Value="2"/>
+    </CUpgrade>
+    <CUpgrade id="TerranVehicleWeaponsLevel3">
+        <EffectArray index="7" Value="3"/>
+        <EffectArray index="8" Value="3"/>
+        <EffectArray index="9" Value="3"/>
+        <EffectArray Operation="Add" Reference="Effect,CrucioShockCannonBlast,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Operation="Add" Reference="Effect,CrucioShockCannonDirected,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Operation="Add" Reference="Effect,CrucioShockCannonDummy,AttributeBonus[Armored]" Value="2"/>
+    </CUpgrade>
     <CUpgrade id="ZergFlyerWeaponsLevel1">
         <EffectArray index="5" Value="2"/>
     </CUpgrade>

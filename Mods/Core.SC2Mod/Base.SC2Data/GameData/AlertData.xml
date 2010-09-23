@@ -174,10 +174,12 @@
         <Flags index="Combine" value="0"/>
         <Display index="Other" value="0"/>
         <Icon value="Assets\Textures\icon-mineral.dds"/>
+        <PrimaryActions index="View" value="0"/>
     </CAlert>
     <CAlert id="ResourcesReceived">
         <Flags index="Combine" value="0"/>
         <Display index="Other" value="0"/>
         <Icon value="Assets\Textures\icon-mineral.dds"/>
+        <PrimaryActions index="View" value="0"/>
     </CAlert>
 </Catalog>

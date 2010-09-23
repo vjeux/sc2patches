@@ -29,6 +29,7 @@
         <On Terms="Behavior.WarpInEffect.On" Send="ModelSwap CarrierWarpInStargate"/>
         <On Terms="Behavior.WarpInEffect.On" Send="$Spell"/>
         <On Terms="Behavior.WarpInEffect.Off" Send="ModelSwap Carrier"/>
+        <On Terms="Behavior.WarpInEffect.Off" Send="AnimBracketStart GL_BSD GLbirth GLstand GLdeath"/>
     </CActorUnit>
     <CActorUnit id="Phoenix">
         <DeathActorModel value="PhoenixDeathModel"/>

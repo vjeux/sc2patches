@@ -16,6 +16,7 @@ const bool DEBUG_AI             = false;
 const bool DEBUG_MAIN_STATE     = false;
 const bool DEBUG_ATTACK_STATE   = false;
 const bool DEBUG_WAVE           = false;
+const bool DEBUG_WITH_MESSAGE   = false;
 
 const int e_flagsScouting       = 1;
 const int e_flagsDiversion      = 2;
@@ -236,11 +237,13 @@ bool g_debugMeleeInit = false;
 void DebugMeleeInit () {
     trigger t;
 
-    if (!g_debugMeleeInit) {
-        t = TriggerCreate("DebugMeleeTrigger");
-        TriggerAddEventChatMessage(t, 1, "waves", false);
+    if (DEBUG_WITH_MESSAGE) {
+        if (!g_debugMeleeInit) {
+            t = TriggerCreate("DebugMeleeTrigger");
+            TriggerAddEventChatMessage(t, 1, "waves", false);
 
-        g_debugMeleeInit = true;
+            g_debugMeleeInit = true;
+        }
     }
 }
 
@@ -1236,7 +1239,7 @@ void AIMeleeStart (int player) {
     wavetarget targD;
     wavetarget targO;
 
-    if (DEBUG_AI) {
+    if (DEBUG_WITH_MESSAGE) {
         DebugMeleeInit();
     }
 
@@ -1278,8 +1281,6 @@ void AIMeleeStart (int player) {
     AIDeclareTown(player, c_townOne, PlayerStartLocation(player));
     AISetMainTown(player, c_townOne);
     AIHarvest(player, c_townOne);
-    AISetNumScouts(player, 1);
-    AIScout(player);
     AISetAllStates(player, 1);
     
     targDPoint = AIWaveTargetGatherDPoint(player, c_townMain);
@@ -1303,12 +1304,23 @@ void AIMeleeStart (int player) {
     AIWaveSetType(AIWaveGet(player, c_waveHome),     c_waveStateIdle, targD);
     AIWaveSetType(AIWaveGet(player, c_waveDefend),   c_waveStateIdle, targD);
 
-    AISetMaxBestAttackersLimit(player, AIMeleeDiffSelect(player, 1, 1, 2, 4, 6, 8));
+    AISetMaxBestAttackersLimit(player, AIMeleeDiffSelect(player, 1, 2, 4, 8, 16, 32));
 
     AITransportIgnore(player, "VikingAssault");
     AITransportSetPanic(player, 0.6);
     AITransportSetReturn(player, targDPoint);
-   
+
+    AIEarlyDefenseEnable(player, false, false);
+    if (PlayerDifficulty(player) < c_skirCheater) {
+        AIEarlyDefenseProps(player, 30, 20, 30);
+        AISetNumScouts(player, 1);
+        AIScout(player);
+    } else {
+        // let insane AI defend against further threats
+        AIEarlyDefenseProps(player, 35, 35, 45);
+        AISetNumScouts(player, 0);
+    }
+
     AISpecifiedMakers();
     AISpecifiedHealers(player);
     AISetDefaultCombatFlags(player, true);

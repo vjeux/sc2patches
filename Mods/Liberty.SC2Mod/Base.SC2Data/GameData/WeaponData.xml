@@ -96,6 +96,7 @@
         <Icon value="Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds"/>
         <DisplayEffect value="PrismaticBeamMUx1"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Period value="0.6"/>
         <AllowedMovement value="Moving"/>
         <Options index="OnlyFireWhileInAttackOrder" value="0"/>
         <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
@@ -103,7 +104,6 @@
         <ArcSlop value="39.9902"/>
         <Range value="7"/>
         <RangeSlop value="2"/>
-        <Period value="0.6"/>
         <Backswing value="0.75"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="TwinIbiksCannon">
@@ -303,7 +303,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="D8Charge">
         <EditorCategories value="Race:Terran"/>
-        <Icon value="Assets\Textures\BTN-Ability-Terran-D8Charge.dds"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
         <DisplayEffect value="D8ChargeDamage"/>
         <TargetFilters value="Ground,Structure,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Period value="1.8"/>

@@ -1567,7 +1567,7 @@ static void ZergDefenseOtherTowns5 (int player) {
     int mainTown;
     int state;
     int minLeftInTown;
-    bool makeNydusNetwork = false;
+    //bool makeNydusNetwork = false;
 
     mainTown = AIGetMainTown(player);
     while (i < c_townMax) {
@@ -1599,18 +1599,18 @@ static void ZergDefenseOtherTowns5 (int player) {
             AISetStockEx(player, town, 2, c_ZB_SporeCrawler, c_makeResourceDefense, 0);
         }
 
-        // Request 1 nydus worm be made in each non-main town
-        if (AITechCount(player, c_ZB_NydusNetwork, c_techCountCompleteOnly)) {
-            AISetStockEx(player, town, 1, c_ZB_NydusWorm, c_makeDefense, 0);
-        }
-        else {
-            makeNydusNetwork = true;
-        }
+        //// Request 1 nydus worm be made in each non-main town
+        //if (AITechCount(player, c_ZB_NydusNetwork, c_techCountCompleteOnly)) {
+        //    AISetStockEx(player, town, 1, c_ZB_NydusWorm, c_makeDefense, 0);
+        //}
+        //else {
+        //    makeNydusNetwork = true;
+        //}
     }
 
-    if (makeNydusNetwork) {
-        AISetStockEx(player, c_townMain, 1, c_ZB_NydusNetwork, c_makeDefense, 0);
-    }
+    //if (makeNydusNetwork) {
+    //    AISetStockEx(player, c_townMain, 1, c_ZB_NydusNetwork, c_makeDefense, 0);
+    //}
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -2297,6 +2297,8 @@ static void ZergLateGameArmy5 (int player, int state) {
 //  ZergLate5
 //--------------------------------------------------------------------------------------------------
 void ZergLate5 (int player) {
+    int armyCompareEstimate = AIArmyComparisonEstimate(player);
+
     // only allow scouting if I have an overseer to scout with, ie stop using overloards
     AIScoutingEnableWithPreReq(player, 1, c_ZU_Overseer, 1, c_ZR_OverseerSpeed, c_techCountCompleteOnly);
     // calculate a limit on how much simultaneous teching can happen
@@ -2335,10 +2337,10 @@ void ZergLate5 (int player) {
     ZergLateGameArmy5(player, e_armyTypeBase);
 
 // Basic towns, farms, & peons
-    AIDefaultEconomy(player, c_ZB_Hatchery_Alias, c_ZB_Extractor, c_ZU_Overlord, c_ZU_Drone, 60, c_stockAlways);
+    AIDefaultEconomy(player, c_ZB_Hatchery_Alias, c_ZB_Extractor, c_ZU_Overlord, c_ZU_Drone, 75, c_stockAlways);
 
 // Low expand (we're running low on minerals/gas)
-    AIDefaultExpansion(player, c_ZB_Hatchery, 5000, 2500, c_expandVitalHard);
+    AIAdjustedDefaultExpansion(player, c_ZB_Hatchery, 7000, 2500, c_expandVitalHard, armyCompareEstimate);
     
 // Minimum normal detection
     if (AISuspectDetectionDanger(player)) {
@@ -2359,12 +2361,12 @@ void ZergLate5 (int player) {
 
 // Make Counter Units
     ZergMakeCounters5(player);
-    
+      
+// Normal expand
+    AIAdjustedDefaultExpansion(player, c_ZB_Hatchery, 12000, 5000, c_expandNormalHard, armyCompareEstimate);
+  
 // Medium sized army
     ZergLateGameArmy5(player, e_armyTypeMedium);
-
-// Normal expand
-    AIDefaultExpansion(player, c_ZB_Hatchery, 12000, 6000, c_expandNormalHard);
     
 // Multiple detectors & scouts & a transport
     AISetStock( player, 1, c_ZR_OverlordTransport );
@@ -2373,6 +2375,9 @@ void ZergLate5 (int player) {
 
 // Important upgrades
     ZergImportantUpgrades5(player);
+
+// Middle expand
+    AIAdjustedDefaultExpansion(player, c_ZB_Hatchery, 18000, 8500, c_expandNormalHard, armyCompareEstimate);
 
 // Main base defense
     ZergDefenseMainTown5(player);
@@ -2389,6 +2394,9 @@ void ZergLate5 (int player) {
 // Large sized army
     ZergLateGameArmy5(player, e_armyTypeLarge);
 
+// Late expand
+    AIAdjustedDefaultExpansion(player, c_ZB_Hatchery, 24000, 12000, c_expandNormalHard, armyCompareEstimate);
+
 // Other towns defense
     ZergDefenseOtherTowns5(player);
 
@@ -2403,19 +2411,19 @@ void ZergLate5 (int player) {
     AISetStockUnitNext( player, 1, c_ZB_Spire_Alias,        c_stockAlways );
     AISetStockUnitNext( player, 1, c_ZB_InfestationPit,     c_stockAlways );
     AISetStockUnitNext( player, 1, c_ZB_Hive,               c_stockAlways );
-    AISetStockUnitNext( player, 3, c_ZB_Hatchery_Alias,     c_stockAlways );
-    AISetStockUnitNext( player, 3, c_ZU_Queen,              c_stockAlways );
+    AISetStockUnitNext( player, 4, c_ZB_Hatchery_Alias,     c_stockAlways );
+    AISetStockUnitNext( player, 4, c_ZU_Queen,              c_stockAlways );
 
 // Extra research buildings
     if (AIHasRes(player,650,500)) {
         AISetStockUnitNext( player, 3, c_ZB_EvolutionChamber, c_stockAlways );
     }
 
+// Idle expand (very low priority, to prevent us from sitting around with idle peons)
+    AIAdjustedDefaultExpansion(player, c_ZB_Hatchery, 30000, 15000, c_expandIdleHard, armyCompareEstimate);
+
 // Entire Army
     ZergLateGameArmy5(player, e_armyTypeFull);
-
-// Idle expand (very low priority, to prevent us from sitting around with idle peons)
-    AIDefaultExpansion(player, c_ZB_Hatchery, 24000, 12000, c_expandIdleHard);
 
     AIEnableStock(player);    
 // ****************** End Restock ****************** //
