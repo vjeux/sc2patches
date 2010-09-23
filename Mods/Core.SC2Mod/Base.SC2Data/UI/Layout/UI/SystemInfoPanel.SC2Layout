@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="SystemInfoLocalTimeFrame" name="SystemInfoLocalTimeFrameTemplate">
+        <Frame type="Label" name="TimeLabel">
+            <Anchor side="Left" relative="$parent" pos="Min" offset="5"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5"/>
+            <Style val="@@SystemInfoHeader"/>
+        </Frame>
+    </Frame>
+    
+    <Frame type="SystemInfoBatteryFrame" name="SystemInfoBatteryFrameTemplate">
+        <Frame type="Label" name="ChargePercentLabel">
+            <Anchor side="Left" relative="$parent" pos="Min" offset="5"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5"/>
+            <Style val="@@SystemInfoHeader"/>
+        </Frame>
+
+        <Frame type="Label" name="ChargingLabel">
+            <Anchor side="Left" relative="$parent/ChargePercentLabel" pos="Max" offset="5"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-5"/>
+            <Anchor side="Top" relative="$parent/ChargePercentLabel" pos="Min" offset="0"/>
+            <Style val="@@SystemInfoHeader"/>
+            <Text val="@UI/SystemInfo/BatteryCharging"/>
+        </Frame>
+    </Frame>
+    
+    <Frame type="SystemInfoFramerateFrame" name="SystemInfoFramerateFrameTemplate">
+        <Frame type="Label" name="FramerateLabel">
+            <Anchor side="Left" relative="$parent" pos="Min" offset="5"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-5"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5"/>
+            <Style val="@@SystemInfoHeader"/>
+        </Frame>
+    </Frame>
+
+    <Frame type="SystemInfoWifiFrame" name="SystemInfoWifiFrameTemplate">
+        <Frame type="Label" name="SignalStrengthLabel">
+            <Anchor side="Left" relative="$parent" pos="Min" offset="5"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-5"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5"/>
+            <Style val="@@SystemInfoHeader"/>
+        </Frame>
+    </Frame>
+    
+    <Frame type="SystemInfoPanel" name="SystemInfoPanelTemplate">
+        <Frame type="Label" name="TitleLabel">
+            <Anchor side="Left" relative="$parent" pos="Min" offset="5"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-5"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="15"/>
+            <Style val="@@SystemInfoTitle"/>
+            <Text val="@UI/SystemInfo/Title"/>
+        </Frame>
+
+        <Frame type="SystemInfoLocalTimeFrame" name="LocalTimeFrame" template="SystemInfoPanel/SystemInfoLocalTimeFrameTemplate">
+            <Anchor side="Top" relative="$parent/TitleLabel" pos="Max" offset="10"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="25"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-25"/>
+            <Height val="40"/>
+            <CollapseLayout val="true"/>
+        </Frame>
+        
+        <Frame type="SystemInfoBatteryFrame" name="BatteryFrame" template="SystemInfoPanel/SystemInfoBatteryFrameTemplate">
+            <Anchor side="Top" relative="$parent/LocalTimeFrame" pos="Max" offset="5"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="25"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-25"/>
+            <Height val="40"/>
+            <CollapseLayout val="true"/>
+        </Frame>
+
+        <Frame type="SystemInfoWifiFrame" name="WifiFrame" template="SystemInfoPanel/SystemInfoWifiFrameTemplate">
+            <Anchor side="Top" relative="$parent/BatteryFrame" pos="Max" offset="5"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="25"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-25"/>
+            <Height val="40"/>
+            <CollapseLayout val="true"/>
+        </Frame>
+        
+        <Frame type="SystemInfoFramerateFrame" name="FramerateFrame" template="SystemInfoPanel/SystemInfoFramerateFrameTemplate">
+            <Anchor side="Top" relative="$parent/WifiFrame" pos="Max" offset="5"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="25"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-25"/>
+            <Height val="40"/>
+            <CollapseLayout val="true"/>
+        </Frame>
+
+        <Frame type="Frame" name="BottomAnchorFrame">
+            <Anchor side="Top" relative="$parent/FramerateFrame" pos="Max" offset="10"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Height val="0"/>            
+        </Frame>
+    </Frame>
+
+    <Frame type="SystemInfoTooltip" name="SystemInfoTooltipTemplate">
+        <Frame type="Image" name="BackgroundImage" template="StandardTemplates/StandardBorderTooltipGame">
+            <Anchor relative="$parent"/>
+        </Frame>
+        
+        <Frame type="SystemInfoPanel" name="SystemInfoPanel" template="SystemInfoPanel/SystemInfoPanelTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Width val="500"/>
+        </Frame>
+    </Frame>
+</Desc>

@@ -509,14 +509,14 @@
             <Frame type="Label" name="HardestDifficultyCompletedHeadingLabel">
                 <Anchor side="Top" relative="$parent" pos="Min" offset="20"/>
                 <Anchor side="Left" relative="$parent" pos="Min" offset="10"/>
-                <Anchor side="Right" relative="$parent" pos="Max" offset="-10"/>
+                <Anchor side="Right" relative="$parent" pos="Max" offset="-8"/>
                 <Style val="BattleReportPanelHardestDifficultyCompleteHeading"/>
                 <Text val="@UI/BattleReportPanelHardestDifficultyCompleted"/>
                 <Alpha val="170"/>
             </Frame>
 
             <Frame type="Label" name="HardestDifficultyCompletedTextLabel">
-                <Anchor side="Top" relative="$parent/HardestDifficultyCompletedHeadingLabel" pos="Max" offset="10"/>
+                <Anchor side="Bottom" relative="$parent" pos="Max" offset="-20"/>
                 <Anchor side="Left" relative="$parent" pos="Min" offset="10"/>
                 <Anchor side="Right" relative="$parent" pos="Max" offset="-10"/>
                 <Style val="BattleReportPanelHardestDifficultyCompleteText"/>

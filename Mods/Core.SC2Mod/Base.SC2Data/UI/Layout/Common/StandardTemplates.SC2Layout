@@ -304,6 +304,34 @@
         </Frame>
     </Frame>
 
+    <Frame type="Button" name="StandardCloseButtonTemplate">
+        <NormalImage val="NormalImage"/>
+        <HoverImage val="HoverImage"/>
+        <ClickSound val="@UI_ActionButtonSelect"/>
+        <Width val="28"/>
+        <Height val="28"/>
+
+        <Frame type="Image" name="NormalImage">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+            <Texture val="@@UI/StandardCloseButtonNormal" layer="0"/>
+            <StateCount val="2" layer="0"/>
+            <DescFlags val="Internal"/>
+        </Frame>
+
+        <Frame type="Image" name="HoverImage">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+            <Texture val="@@UI/StandardCloseButtonHover" layer="0"/>
+            <StateCount val="2" layer="0"/>
+            <DescFlags val="Internal"/>
+        </Frame>
+    </Frame>
+    
     <!-- EditBox -->
     <Frame type="EditBox" name="StandardEditBoxTemplate">
         <Style val="GlueEditBox"/>
@@ -700,7 +728,7 @@
             <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
             <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
             <Texture val="@@UI/InGameFrameDynamicToggleButtonNormal" layer="0"/>
-            <StateCount val="3" layer="0"/>
+            <StateCount val="2" layer="0"/>
             <TextureType val="Border" layer="0"/>
             <DescFlags val="Internal"/>
         </Frame>
@@ -711,7 +739,7 @@
             <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
             <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
             <Texture val="@@UI/InGameFrameDynamicToggleButtonHover" layer="0"/>
-            <StateCount val="3" layer="0"/>
+            <StateCount val="2" layer="0"/>
             <TextureType val="Border" layer="0"/>
             <DescFlags val="Internal"/>
         </Frame>

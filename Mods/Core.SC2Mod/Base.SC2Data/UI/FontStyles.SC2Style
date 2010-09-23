@@ -130,9 +130,13 @@
     <Style name="TimeLabel" template="StandardExtendedTemplate" height="#FontSizeLarge"/>
     <Style name="ResourcePanel" template="HeaderExtendedTemplate" height="#FontSizeSmall" vjustify="Middle"/>
     <Style name="TimePanelHeaderLabel" template="StandardExtendedTemplate" height="#FontSizeSmall" vjustify="Middle"/>
-    <Style name="TimePanelLabel" template="StandardExtendedTemplate" height="#FontSizeSmall" vjustify="Middle"/>    
+    <Style name="MissionTimePanel" template="StandardExtendedTemplate" height="20" vjustify="Middle" hjustify="Left"/>
+    <Style name="MissionTimePanel_Terr" template="MissionTimePanel" textcolor="#ColorTerranLabel"/>
+    <Style name="MissionTimePanel_Prot" template="MissionTimePanel" textcolor="#ColorProtossLabel"/>
+    <Style name="MissionTimePanel_Zerg" template="MissionTimePanel" textcolor="#ColorZergLabel"/>
+    <Style name="MissionTimeLabel" template="StandardExtendedTemplate" height="#FontSizeSmall" vjustify="Middle"/>
     <Style name="GameButtonCharge" template="HeaderExtendedTemplate" height="16" vjustify="Middle" styleflags="Shadow" shadowoffset="1"/>
-    <Style name="UnitButtonInfo" template="StandardExtendedTemplate" height="14" vjustify="Middle" styleflags="Shadow" shadowoffset="1"/>
+    <Style name="UnitButtonInfo" template="StandardExtendedTemplate" height="16" vjustify="Middle" hjustify="Right" styleflags="Shadow" shadowoffset="1"/>
     <Style name="IdleButtonCharge" template="StandardTemplate" height="#FontSizeSmall" hjustify="Center" vjustify="Middle" styleflags="!Shadow"/>
     <Style name="AlertIconCount" template="StandardExtendedTemplate" height="16" hjustify="Center" vjustify="Middle" styleflags="Shadow" shadowoffset="1"/>    
     <Style name="InfoPaneUnitName" template="HeaderExtendedTemplate" height="28" hjustify="Center" textcolor="#ColorTerranLabel"/>
@@ -295,7 +299,12 @@
     <Style name="AllianceColumnHeader_Terr" template="AllianceColumnHeader" textcolor="#ColorTerranLabel"/>
     <Style name="AllianceColumnHeader_Zerg" template="AllianceColumnHeader" textcolor="#ColorZergLabel"/>
     <Style name="AlliancePlayer" template="InternationalTemplate" height="20" vjustify="Middle" hjustify="Left"/>
-
+    <Style name="AllianceRace" template="InternationalTemplate" height="20" vjustify="Middle" hjustify="Center"/>
+    <Style name="AllianceMapName" template="HeaderExtendedTemplate" height="24" vjustify="Middle" hjustify="Center"/>
+    <Style name="AllianceMapName_Prot" template="AllianceMapName" textcolor="176fdb"/>
+    <Style name="AllianceMapName_Terr" template="AllianceMapName" textcolor="16918c"/>
+    <Style name="AllianceMapName_Zerg" template="AllianceMapName" textcolor="b26c39"/>
+    
     <!--Control Group -->
     <Style name="ControlGroupButtonIndex" template="StandardTemplate" height="#FontSizeSmall" vjustify="Middle" hjustify="Center" textcolor="#ColorWhite" styleflags="!Shadow"/>
     <Style name="ControlGroupButtonCount" template="StandardTemplate" height="#FontSizeSmall" vjustify="Middle" hjustify="Center" textcolor="#ColorTerranLabel" styleflags="!Shadow"/>
@@ -366,6 +375,18 @@
     <Style name="SystemAlert_Prot" template="SystemAlert" textcolor="00b0ff"/>
     <Style name="SystemAlert_Terr" template="SystemAlert" textcolor="10c878"/>
     <Style name="SystemAlert_Zerg" template="SystemAlert" textcolor="9e6325"/>
+    <Style name="SystemInfoTitle" template="HeaderExtendedTemplate" height="24" vjustify="Middle" hjustify="Center"/>
+    <Style name="SystemInfoTitle_Prot" template="SystemInfoTitle" textcolor="00b0ff"/>
+    <Style name="SystemInfoTitle_Terr" template="SystemInfoTitle" textcolor="10c878"/>
+    <Style name="SystemInfoTitle_Zerg" template="SystemInfoTitle" textcolor="9e6325"/>
+    <Style name="SystemInfoHeader" template="HeaderExtendedTemplate" height="20" vjustify="Middle" hjustify="Left"/>
+    <Style name="SystemInfoHeader_Prot" template="SystemInfoHeader" textcolor="00b0ff"/>
+    <Style name="SystemInfoHeader_Terr" template="SystemInfoHeader" textcolor="10c878"/>
+    <Style name="SystemInfoHeader_Zerg" template="SystemInfoHeader" textcolor="9e6325"/>
+    <Style name="SystemInfo" template="StandardTemplate" height="20" vjustify="Middle" hjustify="Left"/>
+    <Style name="SystemInfo_Prot" template="SystemInfo" textcolor="00b0ff"/>
+    <Style name="SystemInfo_Terr" template="SystemInfo" textcolor="10c878"/>
+    <Style name="SystemInfo_Zerg" template="SystemInfo" textcolor="9e6325"/>
     
     <!-- Resource Request Alert -->
     <Style name="ResourceRequestAlertItemTitle" template="HeaderTemplate" height="#FontSizeSmall" vjustify="Middle" hjustify="Left"/>
@@ -451,7 +472,7 @@
     
     <!-- Help Panel -->
     <Style name="HelpPanelNoHelpItemsLabel" template="StandardExtendedTemplate" height="#FontSizeMedium" hjustify="Center" vjustify="Middle" textcolor="beffffff"/>
-    <Style name="HelpPanelListBoxItemTitle" template="HeaderExtendedTemplate" height="20" vjustify="Middle"/>
+    <Style name="HelpPanelListBoxItemTitle" template="HeaderExtendedTemplate" height="20" vjustify="Top"/>
     <Style name="HelpPanelListBoxItemTitle_Prot" template="HelpPanelListBoxItemTitle" textcolor="#ColorProtossLabel"/>
     <Style name="HelpPanelListBoxItemTitle_Terr" template="HelpPanelListBoxItemTitle" textcolor="#ColorTerranLabel"/>
     <Style name="HelpPanelListBoxItemTitle_Zerg" template="HelpPanelListBoxItemTitle" textcolor="#ColorZergLabel"/>
@@ -553,10 +574,10 @@
     <Style name="BattleReportPanelSummaryText" template="HeaderExtendedTemplate" height="28" vjustify="Middle" hjustify="Left"/>
     <Style name="BattleReportPanelSummaryType" template="HeaderExtendedTemplate" height="#FontSizeSmall" vjustify="Middle" hjustify="Left"/>
     <Style name="BattleReportPanelPlaySceneButton" template="HeaderExtendedTemplate" height="20" vjustify="Middle" hjustify="Center" textcolor="d49736" highlightcolor="d49736"/>
-    <Style name="BattleReportPanelDifficultyButton" template="HeaderExtendedTemplate" height="18" vjustify="Middle" hjustify="Center" highlightcolor="ffffff"/>
-    <Style name="BattleReportPanelDifficultyButtonBestTime" template="HeaderExtendedTemplate" height="#FontSizeSmall" vjustify="Middle" hjustify="Center"/>
-    <Style name="BattleReportPanelHardestDifficultyCompleteHeading" template="HeaderTemplate" height="20" vjustify="Middle" hjustify="Center" textcolor="84d9ec"/>
-    <Style name="BattleReportPanelHardestDifficultyCompleteText" template="HeaderExtendedTemplate" height="#FontSizeMedium" vjustify="Middle" hjustify="Center"/>        
+    <Style name="BattleReportPanelDifficultyButton" template="HeaderExtendedTemplate" height="18" vjustify="Middle" hjustify="Center" highlightcolor="ffffff" styleflags="!Shadow"/>
+    <Style name="BattleReportPanelDifficultyButtonBestTime" template="HeaderExtendedTemplate" height="#FontSizeSmall" vjustify="Middle" hjustify="Center" styleflags="!Shadow"/>
+    <Style name="BattleReportPanelHardestDifficultyCompleteHeading" template="HeaderTemplate" height="20" vjustify="Middle" hjustify="Center" textcolor="84d9ec" styleflags="!Shadow"/>
+    <Style name="BattleReportPanelHardestDifficultyCompleteText" template="HeaderExtendedTemplate" height="#FontSizeMedium" vjustify="Middle" hjustify="Center" styleflags="!Shadow"/>        
     <Style name="BattleReportPanelListBoxText" template="HeaderTemplate" height="#FontSizeSmall" vjustify="Middle" hjustify="Left"/>
     <Style name="BattleReportPanelListBoxType" template="HeaderTemplate" height="#FontSizeSmall" vjustify="Middle" hjustify="Left"/>
     <Style name="BattleReportPanelBonusTitle" template="HeaderExtendedTemplate" height="16" vjustify="Middle" hjustify="Left" textcolor="405a5b"/>

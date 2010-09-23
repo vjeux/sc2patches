@@ -45,7 +45,7 @@
             <Anchor side="Top" relative="$parent" pos="Min" offset="50"/>
             <Anchor side="Left" relative="$parent" pos="Min" offset="10"/>
             <Anchor side="Right" relative="$parent" pos="Mid" offset="-10"/>
-            <Height val="245"/>
+            <Height val="280"/>
 
             <Frame type="Label" name="MouseHeader" template="GameplayOptionsPanel/GameplayHeaderLabelTemplate">
                 <Text val="@UI/Mouse"/>
@@ -85,6 +85,18 @@
                 <Anchor side="Top" relative="$parent/MouseWheelZoomCheckBox" pos="Min" offset="0"/>
                 <Anchor side="Bottom" relative="$parent/MouseWheelZoomCheckBox" pos="Max" offset="0"/>
                 <Anchor side="Left" relative="$parent/MouseWheelZoomCheckBox" pos="Max" offset="10"/>
+            </Frame>
+
+            <Frame type="Label" name="CursorConfineLabel" template="GameplayOptionsPanel/GameplayLabelTemplate">
+                <Text val="@UI/CursorConfine_Colon"/>
+                <Anchor side="Top" relative="$parent/MouseWheelZoomCheckBox" pos="Max" offset="20"/>
+                <Anchor side="Left" relative="$parent" pos="Min" offset="#GameplayColumnLeftMarginGap"/>
+            </Frame>
+
+            <Frame type="Pulldown" name="CursorConfinePulldown" template="GameplayOptionsPanel/GameplayPulldownTemplate">
+                <Anchor side="Top" relative="$parent/CursorConfineLabel" pos="Max" offset="0"/>
+                <Anchor side="Left" relative="$parent/CursorConfineLabel" pos="Min" offset="0"/>
+                <Tooltip val="@UI/GameplayOptionsTooltips/CursorConfine"/>
             </Frame>
         </Frame>
 
@@ -278,8 +290,21 @@
                 <Anchor side="Left" relative="$parent/ShowAlertsCheckBox" pos="Max" offset="10"/>
             </Frame>
 
+            <Frame type="CheckBox" name="ShowMissionTimeCheckBox" template="GameplayOptionsPanel/GameplayCheckBoxTemplate">
+                <Anchor side="Top" relative="$parent/ShowAlertsLabel" pos="Max" offset="#GameplayCheckBoxVerticalGap"/>
+                <Anchor side="Left" relative="$parent" pos="Min" offset="#GameplayColumnLeftMarginGap"/>
+                <Tooltip val="@UI/GameplayOptionsTooltips/ShowMissionTime"/>
+            </Frame>
+
+            <Frame type="Label" name="ShowMissionTimeLabel" template="GameplayOptionsPanel/GameplayLabelTemplate">
+                <Text val="@UI/ShowMissionTime"/>
+                <Anchor side="Top" relative="$parent/ShowMissionTimeCheckBox" pos="Min" offset="0"/>
+                <Anchor side="Bottom" relative="$parent/ShowMissionTimeCheckBox" pos="Max" offset="0"/>
+                <Anchor side="Left" relative="$parent/ShowMissionTimeCheckBox" pos="Max" offset="10"/>
+            </Frame>
+            
             <Frame type="CheckBox" name="WorldObjectTooltipsCheckBox" template="GameplayOptionsPanel/GameplayCheckBoxTemplate">
-                <Anchor side="Top" relative="$parent/ShowAlertsCheckBox" pos="Max" offset="#GameplayCheckBoxVerticalGap"/>
+                <Anchor side="Top" relative="$parent/ShowMissionTimeCheckBox" pos="Max" offset="#GameplayCheckBoxVerticalGap"/>
                 <Anchor side="Left" relative="$parent" pos="Min" offset="#GameplayColumnLeftMarginGap"/>
                 <Tooltip val="@UI/GameplayOptionsTooltips/WorldObjectTooltips"/>
             </Frame>
@@ -355,7 +380,7 @@
                 <Anchor side="Bottom" relative="$parent/SwapCtrlCmdCheckBox" pos="Max" offset="0"/>
                 <Anchor side="Left" relative="$parent/SwapCtrlCmdCheckBox" pos="Max" offset="10"/>
             </Frame>
-
+            
             <Frame type="CheckBox" name="TeenCheckBox" template="GameplayOptionsPanel/GameplayCheckBoxTemplate">
                 <Anchor side="Top" relative="$parent/WinKeyDisableLabel" pos="Max" offset="#GameplayCheckBoxVerticalGap"/>
                 <Anchor side="Left" relative="$parent" pos="Min" offset="#GameplayColumnLeftMarginGap"/>

@@ -42,6 +42,11 @@
             <TextureType val="HorizontalBorder"/>            
         </Frame>
 
+        <Frame type="Button" name="CloseButton" template="StandardTemplates/StandardCloseButtonTemplate">
+            <Anchor side="Top" relative="$parent/BorderImage" pos="Min" offset="8"/>
+            <Anchor side="Right" relative="$parent/BorderImage" pos="Max" offset="-8"/>
+        </Frame>
+        
         <Frame type="Label" name="RequestLabel">
             <Anchor side="Top" relative="$parent" pos="Min" offset="5"/>
             <Anchor side="Left" relative="$parent" pos="Min" offset="10"/>

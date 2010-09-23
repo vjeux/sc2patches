@@ -23,27 +23,42 @@
     </Frame>
     
     <Frame type="LeaderPanelUnitIcon" name="LeaderPanelUnitIconTemplate">
-        <Height val="64"/>
+        <Height val="72"/>
         <Width val="64"/>
         <AcceptsMouse val="true"/>
 
         <Frame type="Image" name="BackgroundImage">
-            <Anchor relative="$parent"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Height val="64"/>
             <Texture val="@@UI/LeaderPanelUnitBackground" layer="0"/>
             <TextureType val="Border" layer="0"/>
             <Tiled val="true" layer="0"/>
         </Frame>
 
         <Frame type="Image" name="IconImage">
-            <Anchor relative="$parent"/>
+            <Anchor relative="$parent/BackgroundImage"/>
             <Texture val="@@UI/LeaderPanelUnitBackground" layer="0"/>
             <TextureType val="Normal" layer="0"/>            
         </Frame>
         
         <Frame type="Label" name="NumberLabel">
             <Style val="UnitCountValue"/>
-            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
-            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/IconImage" pos="Max" offset="0"/>
+            <Anchor side="Right" relative="$parent/IconImage" pos="Max" offset="0"/>
+        </Frame>
+        
+        <Frame type="ProgressBar" name="ProgressBar">
+            <Texture val="@@UI/ProgressQueue"/>
+            <MinValue val="0.000000"/>
+            <FillInset val="0.03125"/>
+            <Anchor side="Top" relative="$parent/IconImage" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent/IconImage" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent/IconImage" pos="Max" offset="0"/>
+            <Height val="8"/>
+            <Color val="##StandardProgressBorder"/>
+            <ColorStep val="##StandardProgressFill"/>
         </Frame>
     </Frame>
 
@@ -139,7 +154,7 @@
             <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>            
             <Style val="LeaderboardHeaderLabel"/>            
             <Text val="@UI/Harvesters"/>
-            <Width val="140"/>
+            <Width val="160"/>
         </Frame>
 
         <Frame type="Frame" name="FirstIconAnchor">
@@ -438,7 +453,7 @@
             <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
             <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
             <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
-            <Width val="120"/>
+            <Width val="140"/>
             <Style val="ResourceValue"/>
         </Frame>
 
@@ -634,7 +649,7 @@
     <Frame type="Frame" name="LeaderPanelProductionFrameSlotTemplate">
         <Anchor side="Left" relative="$parent" pos="Min" offset="22"/>
         <Anchor side="Right" relative="$parent" pos="Max" offset="-22"/>
-        <Height val="66"/>
+        <Height val="74"/>
 
         <Frame type="Image" name="PlayerImage" template="LeaderPanel/LeaderPanelPlayerImageTemplate">
             <Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>

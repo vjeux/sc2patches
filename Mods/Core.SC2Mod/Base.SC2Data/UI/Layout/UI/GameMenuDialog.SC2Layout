@@ -460,6 +460,7 @@
             <Anchor side="Left" relative="$parent/HotkeysButton" pos="Min" offset="0"/>
             <Text val="@UI/GameMenuSocial_Control"/>
             <Shortcut val="@UI/Social_Hotkey"/>
+            <CollapseLayout val="true"/>
         </Frame>
 
         <Frame type="Button" name="VideoButton" template="StandardTemplates/StandardVerticalTabButtonTemplate">
@@ -467,8 +468,17 @@
             <Anchor side="Left" relative="$parent/SocialButton" pos="Min" offset="0"/>
             <Text val="@UI/GameMenuVideo_Control"/>
             <Shortcut val="@UI/Video_Hotkey"/>
+            <CollapseLayout val="true"/>
         </Frame>
 
+        <Frame type="Button" name="StereoscopicButton" template="StandardTemplates/StandardVerticalTabButtonTemplate">
+            <Anchor side="Top" relative="$parent/VideoButton" pos="Max" offset="-22"/>
+            <Anchor side="Left" relative="$parent/VideoButton" pos="Min" offset="0"/>
+            <Text val="@UI/GameMenuStereoscopic_Control"/>
+            <Shortcut val="@UI/Stereoscopic_Hotkey"/>
+            <CollapseLayout val="true"/>
+        </Frame>
+        
         <Frame type="GraphicsOptionsPanel" name="GraphicsOptionsPanel" template="GraphicsOptionsPanel/GraphicsOptionsPanelTemplate">
             <Anchor side="Top" relative="$parent" pos="Min" offset="95"/>
             <Anchor side="Bottom" relative="$parent" pos="Max" offset="-80"/>
@@ -523,8 +533,16 @@
             <Anchor side="Left" relative="$parent/GraphicsOptionsPanel" pos="Min" offset="0"/>
             <Anchor side="Right" relative="$parent/GraphicsOptionsPanel" pos="Max" offset="0"/>
             <Visible val="false"/>
-        </Frame>       
+        </Frame>
 
+        <Frame type="StereoscopicOptionsPanel" name="StereoscopicOptionsPanel" template="StereoscopicOptionsPanel/StereoscopicOptionsPanelTemplate">
+            <Anchor side="Top" relative="$parent/GraphicsOptionsPanel" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/GraphicsOptionsPanel" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent/GraphicsOptionsPanel" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent/GraphicsOptionsPanel" pos="Max" offset="0"/>
+            <Visible val="false"/>
+        </Frame>
+        
         <Frame type="Button" name="CancelButton" template="StandardTemplates/StandardLargePanelLeftButtonTemplate">
             <Anchor side="Bottom" relative="$parent/BorderImage" pos="Max" offset="10"/>
             <Anchor side="Left" relative="$parent/BorderImage" pos="Min" offset="0"/>

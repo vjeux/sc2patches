@@ -26,7 +26,6 @@
             <Anchor side="Right" relative="$parent/BackgroundFrame/BorderImage" pos="Mid" offset="0"/>
             <Width val="350"/>
             <Text val="@UI/WaitingForServerSurrender_Control"/>
-            <Shortcut val="@UI/WaitingForServerSurrender_Hotkey"/>
         </Frame>
     </Frame>
 </Desc>

@@ -125,6 +125,12 @@
                     <Height val="64"/>
                 </Frame>
 
+                <Frame type="MissionTimePanel" name="MissionTimePanel" template="MissionTimePanel/MissionTimePanelTemplate">
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="-303"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="7"/>
+                    <Width val="200"/>
+                </Frame>
+                
                 <Frame type="Image" name="BattleNetButtonFriendsFrameImage">
                     <Anchor side="Bottom" relative="$parent" pos="Max" offset="-277"/>
                     <Anchor side="Right" relative="$parent" pos="Max" offset="-10"/>
@@ -244,7 +250,7 @@
 
                 <Frame type="Button" name="CharacterSheetButton">
                     <Anchor side="Top" relative="$parent" pos="Min" offset="5"/>
-                    <Anchor side="Right" relative="$parent" pos="Max" offset="-15"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="-10"/>
                     <HighlightOnHover val="true"/>
                     <HighlightOnFocus val="true"/>
                     <Width val="36"/>
@@ -270,7 +276,7 @@
 
                 <Frame type="Button" name="AllianceButton">
                     <Anchor side="Top" relative="$parent/CharacterSheetButton" pos="Min" offset="0"/>
-                    <Anchor side="Right" relative="$parent/CharacterSheetButton" pos="Min" offset="-15"/>
+                    <Anchor side="Right" relative="$parent/CharacterSheetButton" pos="Min" offset="-5"/>
                     <HighlightOnHover val="true"/>
                     <HighlightOnFocus val="true"/>
                     <Width val="36"/>
@@ -297,7 +303,7 @@
 
                 <Frame type="Button" name="TeamResourceButton">
                     <Anchor side="Top" relative="$parent/AllianceButton" pos="Min" offset="0"/>
-                    <Anchor side="Right" relative="$parent/AllianceButton" pos="Min" offset="-15"/>
+                    <Anchor side="Right" relative="$parent/AllianceButton" pos="Min" offset="-5"/>
                     <HighlightOnHover val="true"/>
                     <HighlightOnFocus val="true"/>
                     <Width val="36"/>
@@ -400,7 +406,7 @@
                 <Frame type="TimePanel" name="TimePanel" template="TimePanel/TimePanelTemplate">
                     <Visible val="false"/>
                     <BatchText val="true"/>
-                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="35"/>
                     <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
                     <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
                     <Width val="280"/>
@@ -408,7 +414,7 @@
                 </Frame>
                 
                 <Frame type="ResourceRequestAlertPanel" name="ResourceRequestAlertPanel" template="ResourceRequestAlertPanel/ResourceRequestAlertPanelTemplate">
-                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="-430"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="-460"/>
                     <Anchor side="Right" relative="$parent" pos="Max" offset="-10"/>
                     <Width val="260"/>
                     <Height val="600"/>
@@ -597,9 +603,9 @@
                 </Frame>
 
                 <Frame type="AlliancePanel" name="AlliancePanel" template="AlliancePanel/AlliancePanelTemplate">
-                    <Anchor side="Top" relative="$parent" pos="Min" offset="50"/>
-                    <Anchor side="Left" relative="$parent" pos="Min" offset="50"/>
-                    <Width val="690"/>
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="40"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Width val="800"/>
                 </Frame>
 
                 <Frame type="TeamResourcePanel" name="TeamResourcePanel" template="TeamResourcePanel/TeamResourcePanelTemplate">

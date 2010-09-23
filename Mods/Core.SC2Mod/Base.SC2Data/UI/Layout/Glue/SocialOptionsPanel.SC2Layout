@@ -34,7 +34,7 @@
 
     <Frame type="BlockedPlayerItem" name="BlockedPlayerItem">
         <Frame type="Label" name="Label">
-            <Style val="GlueListBox"/>
+            <Style val="StandardListBoxInternational"/>
             <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
             <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
             <Anchor side="Left" relative="$parent" pos="Min" offset="10"/>

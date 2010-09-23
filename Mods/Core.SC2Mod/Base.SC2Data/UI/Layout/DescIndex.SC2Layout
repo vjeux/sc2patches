@@ -20,6 +20,7 @@
     <include path="UI/Layout/Glue/HotkeyOptionsPanel.SC2Layout"/>
     <include path="UI/Layout/Glue/SoundOptionsPanel.SC2Layout"/>
     <include path="UI/Layout/Glue/VoiceOptionsPanel.SC2Layout"/>
+    <include path="UI/Layout/Glue/StereoscopicOptionsPanel.SC2Layout"/>
     <Include path="UI/Layout/Glue/DifficultySelectionDialog.SC2Layout"/>
     <Include path="UI/Layout/Glue/LoadGameDialog.SC2Layout"/>
     <Include path="UI/Layout/Glue/SaveReplayDialog.SC2Layout"/>
@@ -47,12 +48,14 @@
     <Include path="UI/Layout/Glue/ScreenCredits.SC2Layout"/>
     
     <!-- UI Layout -->
+    <Include path="UI/Layout/UI/SystemInfoPanel.SC2Layout"/>
     <Include path="UI/Layout/UI/DebugPanel.SC2Layout"/>
     <Include path="UI/Layout/UI/CampaignTemplates.SC2Layout"/>
     <Include path="UI/Layout/UI/PortraitPanel.SC2Layout"/>
     <Include path="UI/Layout/UI/AchievementPanel.SC2Layout"/>
     <Include path="UI/Layout/UI/ConsolePanel.SC2Layout"/>
     <Include path="UI/Layout/UI/TimePanel.SC2Layout"/>
+    <Include path="UI/Layout/UI/MissionTimePanel.SC2Layout"/>
     <Include path="UI/Layout/UI/ResourcePanel.SC2Layout"/>
     <Include path="UI/Layout/UI/MenuBar.SC2Layout"/>
     <Include path="UI/Layout/UI/SubtitlePanel.SC2Layout"/>
@@ -63,6 +66,7 @@
     <Include path="UI/Layout/UI/ResearchPanel.SC2Layout"/>
     <Include path="UI/Layout/UI/TeamResourcePanel.SC2Layout"/>
     <Include path="UI/Layout/UI/AlliancePanel.SC2Layout"/>
+    
     <Include path="UI/Layout/UI/TriggerDialogFrame.SC2Layout"/>
     <Include path="UI/Layout/UI/TriggerWindowPanel.SC2Layout"/>
     <Include path="UI/Layout/UI/ObjectivePanel.SC2Layout"/>
